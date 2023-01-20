@@ -1,71 +1,56 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <!--
-      This is the page head - it contains info the browser uses to display the page
-      You won't see what's in the head in the page
-      Scroll down to the body element for the page content
-    -->
-
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" href="https://glitch.com/favicon.ico" />
-
-    <!-- 
-      This is an HTML comment
-      You can write text in a comment and the content won't be visible in the page
-    -->
-
     <title>Gohar's Website</title>
-
-    <!-- Meta tags for SEO and social sharing -->
-    <link rel="canonical" href="https://glitch-hello-website.glitch.me/" />
-    <meta
-      name="description"
-      content="A simple website, built with Glitch. Remix it to get your own."
-    />
-    <meta name="robots" content="index,follow" />
-    <meta property="og:title" content="Gohar's Website" />
-    <meta property="og:type" content="article" />
-    <meta property="og:url" content="https://glitch-hello-website.glitch.me/" />
-    <meta
-      property="og:description"
-      content="A simple website, built with Glitch. Remix it to get your own."
-    />
-    <meta
-      property="og:image"
-      content="https://cdn.glitch.com/605e2a51-d45f-4d87-a285-9410ad350515%2Fhello-website-social.png?v=1616712748147"
-    />
-    <meta name="twitter:card" content="summary" />
-
-    <!-- Import thewebpage's stylesheet -->
-    <link rel="stylesheet" href="/style.css" />
-
-    <!-- Import the webpage's javascript file -->
-    <script src="/script.js" defer></script>
+    <style>
+      body {
+        background-color: #ADD8E6;
+      }
+      h1 {
+        text-align: center;
+        font-size: 40px;
+        color: #00008B;
+      }
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      .fun-section {
+        text-align: center;
+        margin-top: 50px;
+      }
+      .fun-section h2 {
+        color: #8B0000;
+      }
+      .fun-section p {
+        font-size: 20px;
+        color: #000000;
+      }
+      .button {
+        background-color: #4CAF50;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+      }
+    </style>
   </head>
   <body>
-    <!--
-      This is the body of the page
-      Look at the elements and see how they appear in the rendered page on the right
-      Each element is defined using tags, with < and > indicating where each one opens and closes
-      There are elements for sections of the page, images, text, and more
-      The elements include attributes referenced in the CSS for the page style
-    -->
-
-    <!-- The wrapper and content divs set margins and positioning -->
-
-      <div class="content" role="main">
-<div class="center" style="display: flex; justify-content: center; align-items: center;">
-      <div class="content" role="main">
-
-<h1 class="title">Gohar's Website</h1>
-<button onclick="location.href='https://pastebin.com/tS26S0Wm'" style="background-color: blue;color: white;padding: 10px 20px;text-align: center;text-decoration: none;display: inline-block;font-size: 16px;">Useful Websites</button>
-<button onclick="location.href='https://chat.openai.com/chat'" style="background-color: blue;color: white;padding: 10px 20px;text-align: center;text-decoration: none;display: inline-block;font-size: 16px;">ChatGPT</button>
-<button onclick="location.href='https://quillbot.com/summarize'" style="background-color: blue;color: white;padding: 10px 20px;text-align: center;text-decoration: none;display: inline-block;font-size: 16px;">Summarizer tool</button>
-
-</div>
-</div>
-
+    <div class="container">
+      <h1>Gohar's Website</h1>
+    </div>
+    <div class="fun-section">
+      <h2>Fun Stuff</h2>
+      <p>Here are some links to some fun websites:</p>
+      <a href="https://www.w3schools.com/js/" class="button">JavaScript Tutorials</a>
+      <a href="https://www.codecademy.com/learn/learn-html" class="button">HTML Tutorials</a>
+      <a href="https://www.khanacademy.org/computing/computer-programming" class="button">Programming Tutorials</a>
+    </div>
   </body>
 </html>

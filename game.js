@@ -27,20 +27,33 @@ function startGame() {
     document.body.removeChild(document.body.firstChild);
   }
 
-  // Create a new canvas element for the game screen
-  var canvas = document.createElement("canvas");
-  canvas.id = "game-canvas";
-  canvas.width = 800;
-  canvas.height = 600;
-  canvas.style.backgroundColor = "blue"
-  document.body.appendChild(canvas);
+ // Create a new canvas element for the game screen
+var canvas = document.createElement("canvas");
+canvas.id = "game-canvas";
+canvas.width = 800;
+canvas.height = 600;
+document.body.appendChild(canvas);
 
-  var ctx = canvas.getContext("2d");
-  var x = canvas.width / 2;
-  var y = canvas.height / 2;
-  var vx = 0;
-  var vy = 0;
+var ctx = canvas.getContext("2d");
+var img = new Image();
+img.src = "https://cdn.discordapp.com/attachments/1067525557824266400/1069078026509373492/desktop-wallpaper-dbz-sky-background-dragon-ball-landscape.png";
+canvas.style.backgroundImage = "url('" + img.src + "')";
+canvas.style.backgroundSize = canvas.width + "px " + canvas.height + "px";
+canvas.style.backgroundPosition = "center";
 
+var x = canvas.width / 2;
+var y = canvas.height / 2;
+var vx = 0;
+var vy = 0;
+
+
+  // Checks if background image loaded
+  img.onload = function(){
+    console.log("Image loaded successfully");
+    ctx.drawImage(img, 0, 0);
+}
+
+  
   // Set circle radius
   var radius = 50;
 

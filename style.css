@@ -57,7 +57,6 @@ button img {
     padding: 0;
     -webkit-text-size-adjust: 100%;
     position: relative;
-    font-size: 50px;
 }
 
 #no-button {
@@ -68,7 +67,6 @@ button img {
     padding: 0;
     -webkit-text-size-adjust: 100%;
     position: relative;
-    font-size: 50px;
 }
 
 #game-canvas {

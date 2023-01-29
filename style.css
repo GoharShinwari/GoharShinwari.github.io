@@ -1,12 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
 
-@media only screen and (max-width: 600px) {
-    #yes-button, #no-button {
-        font-size: 30px;
-    }
-}
-
-
 body {
     background-color: #f0f0f0;
     font-family: Arial, sans-serif;
@@ -57,28 +50,30 @@ button img {
 
 
 #yes-button {
-    width: 100px;
-    height: 100px;
-    margin: 20px;
-    border: solid black 2px;
-    padding: 10px;
+    width: 10vw;
+    height: 10vh;
+    margin: 2vh;
+    border: solid black 0.2vh;
+    padding: 1vh;
     -webkit-text-size-adjust: 100%;
     position: relative;
-    font-size: 50px;
-    line-height: 100px;
+    font-size: 5vh;
+    line-height: 10vh;
 }
 
 #no-button {
-    width: 100px;
-    height: 100px;
-    margin: 20px;
-    border: solid black 2px;
-    padding: 10px;
+    width: 10vw;
+    height: 10vh;
+    margin: 2vh;
+    border: solid black 0.2vh;
+    padding: 1vh;
     -webkit-text-size-adjust: 100%;
     position: relative;
-    font-size: 50px;
-    line-height: 100px;
+    font-size: 5vh;
+    line-height: 10vh;
 }
+
+
 
 #game-canvas {
     background-color: black;

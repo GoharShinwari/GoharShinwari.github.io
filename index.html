@@ -1,28 +1,30 @@
-  <!DOCTYPE html>
-    <html>
-      <head>
-        <link rel="stylesheet" type="text/css" href="style.css">
-        <script src="game.js"></script>
-        <title>DBZ Character Select</title>
-          <h1>Who would you like to play as?</h1>
-          <div id="character-select">
-            <button id="goku-button" onclick="selectCharacter('Goku')">
-              <img src="https://cdn.discordapp.com/attachments/1069016535542276208/1069020500497547334/latest.png" alt="Goku">
-            </button>
-            <button id="vegeta-button" onclick="selectCharacter('Vegeta')">
-              <img src="https://cdn.discordapp.com/attachments/1069016535542276208/1069020591413264444/latest.png" alt="Vegeta">
-            </button>
-          </div>
-          <div id="selected-character"></div>
-        
-          <div id="confirmation-button" style="display:none;">
-            <p>Are you sure you want to select this character?</p>
-            <button id="yes-button" onclick="startGame()">Yes</button>
-            
-            <button id="no-button" onclick="cancelSelection()">No</button>
-          </div>
-
-          </div> 
-      </body>
-    </html>
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="game.js"></script>
+    <title>DBZ Character Select</title>
+      <h1>Who would you like to play as?</h1>
+      <div id="character-select">
+        <button id="goku-button" onclick="selectCharacter('Goku')">
+          <img src="https://cdn.discordapp.com/attachments/1069016535542276208/1069020500497547334/latest.png" alt="Goku">
+        </button>
+        <button id="vegeta-button" onclick="selectCharacter('Vegeta')">
+          <img src="https://cdn.discordapp.com/attachments/1069016535542276208/1069020591413264444/latest.png" alt="Vegeta">
+        </button>
+      </div>
+      <div id="selected-character"></div>
     
+      <div id="confirmation-button" style="display:none;">
+        <p>Are you sure you want to select this character?</p>
+        <button id="yes-button" onclick="startGame()">
+        <img src="https://cdn.discordapp.com/attachments/1067525557824266400/1069063405895417856/6-66356_clip-art-yes-hd-png-download.png" alt="Yes">
+        
+        <button id="no-button" onclick="cancelSelection()">
+        <img src="https://cdn.discordapp.com/attachments/1067525557824266400/1069063434370564216/217-2172073_no-button-clip-art-no-button-png.png" alt="Goku">
+
+      </div>
+
+      </div> 
+  </body>
+</html>

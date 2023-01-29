@@ -2,15 +2,15 @@ function selectCharacter(name) {
   document.getElementById("selected-character").innerHTML = "You have selected " + name + "!";
 }
 function selectCharacter(character) {
-  // Show the confirmation button
+  // Displays the confirmation button
   document.getElementById("confirmation-button").style.display = "block";
 
-  // Display the selected character name
+  // Displays Goku or Vegeta
   document.getElementById("selected-character").innerHTML = "Selected Character: " + character;
 }
 
 function cancelSelection() {
-  // Hide the confirmation button
+  // Hides the confirmation button
   document.getElementById("confirmation-button").style.display = "none";
 
   // Clear the selected character name
@@ -22,12 +22,12 @@ function hideConfirmation() {
 }
 
 function startGame() {
-  // Remove all elements from the HTML body
+  // Removes everything from the HTML page
   while (document.body.firstChild) {
     document.body.removeChild(document.body.firstChild);
   }
 
- // Create a new canvas element for the game screen
+ // Creates a canvas for the game to run on
 var canvas = document.createElement("canvas");
 canvas.id = "game-canvas";
 canvas.width = 800;
@@ -47,17 +47,17 @@ var vx = 0;
 var vy = 0;
 
 
-  // Checks if background image loaded
+  // This checks if the image is loaded or not just for personl use 
   img.onload = function(){
     console.log("Image loaded successfully");
     ctx.drawImage(img, 0, 0);
 }
 
   
-  // Set circle radius
+  // Circle Radius
   var radius = 50;
 
-  // Listen for key presses
+  // Listens for the key presses
   document.addEventListener("keydown", keyDownHandler, false);
   document.addEventListener("keyup", keyUpHandler, false);
 
@@ -89,14 +89,14 @@ var vy = 0;
     // Clear canvas
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    // Create an image object
+    // Create an image 
     var img = new Image();
     img.src = "https://cdn.discordapp.com/attachments/1067525557824266400/1069074784937316392/dcbr9p9-9c926e24-3fc6-4f0c-8fff-ee08a32a7edb.png";
 
     // Draw image
     ctx.drawImage(img, x, y, 100, 100);
 
-    // Check if the image is going past the canvas boundaries
+    // Check if the image is going past the canvas
     if (x + 100 > canvas.width) {
       x = canvas.width - 100;
     } else if (x < 0) {

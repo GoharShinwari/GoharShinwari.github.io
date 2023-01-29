@@ -50,27 +50,20 @@ button img {
 
 
 #yes-button {
-    width: 10vw;
-    height: 10vh;
+    width: 150px;
+    height: 150px;
     margin: 2vh;
-    border: solid black 0.2vh;
-    padding: 1vh;
-    -webkit-text-size-adjust: 100%;
+    border: solid black 0.5vh;
     position: relative;
-    font-size: 5vh;
-    line-height: 10vh;
+
 }
 
 #no-button {
-    width: 10vw;
-    height: 10vh;
+    width: 150px;
+    height: 150px;
     margin: 2vh;
-    border: solid black 0.2vh;
-    padding: 1vh;
-    -webkit-text-size-adjust: 100%;
+    border: solid black 0.5vh;
     position: relative;
-    font-size: 5vh;
-    line-height: 10vh;
 }
 
 

@@ -55,6 +55,7 @@ button img {
     margin: 20px;
     border: solid black 2px;
     padding: 0;
+    -webkit-text-size-adjust: 100%;
     position: relative;
     font-size: 50px;
 }
@@ -65,6 +66,7 @@ button img {
     margin: 20px;
     border: solid black 2px;
     padding: 0;
+    -webkit-text-size-adjust: 100%;
     position: relative;
     font-size: 50px;
 }

@@ -1,5 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
 
+@media only screen and (max-width: 600px) {
+    #yes-button, #no-button {
+        font-size: 30px;
+    }
+}
+
+
 body {
     background-color: #f0f0f0;
     font-family: Arial, sans-serif;

@@ -6,6 +6,21 @@
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
+
+
+    <div class="text-center" style="background-color:#313743; padding:15px;color:#fff">
+        <p>
+            <strong>
+                <script>
+                    var today = new Date();
+                    var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+                    document.write(today.toLocaleDateString('en-US', options));
+                </script>
+            </strong>
+        </p>
+    </div>
+
+
     <header>
         <h1>Muslim Prayer Times</h1>
     </header>

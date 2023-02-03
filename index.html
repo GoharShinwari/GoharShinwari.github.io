@@ -1,88 +1,15 @@
 ﻿<!DOCTYPE html>
 <html>
-<head>
-    <meta charset="UTF-8">
-    <title>Muslim Prayer Times</title>
+  <head>
+    <title>Incremental Game</title>
+  </head>
+  <body>
+    <h1>Power Level: <span id="powerLevel">0</span></h1>
+    <button id="trainButton"></button>
+    <div id="centerImage"></div>
+    <button id="resetButton">Reset Power Level</button>
+
+    <script src="code.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css">
-</head>
-<body>
-
-
-    <div class="text-center" style="background-color:#313743; padding:15px;color:#fff">
-        <p>
-            <strong>
-                <script>
-                    var today = new Date();
-                    var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-                    document.write(today.toLocaleDateString('en-US', options));
-                </script>
-            </strong>
-        </p>
-    </div>
-
-
-    <header>
-        <h1>Muslim Prayer Times</h1>
-    </header>
-
-    <main>
-        <section>
-            <h2>
-                Fajr
-                <p id="fajr-time"></p>
-            </h2>
-        </section>
-
-        <section>
-            <h2>
-                Dhuhr
-                <p id="dhuhr-time"></p>
-            </h2>
-        </section>
-
-        <section>
-            <h2>
-                Asr
-                <p id="asr-time"></p>
-            </h2>
-        </section>
-
-        <section>
-            <h2>
-                Maghrib
-                <p id="maghrib-time"></p>
-            </h2>
-        </section>
-
-        <section>
-            <h2>
-                Isha
-                <p id="isha-time"></p>
-            </h2>
-        </section>
-    </main>
-
-
-    <script>
-        const fetchPrayerTimes = async () => {
-            const response = await fetch('https://api.aladhan.com/v1/timingsByCity?city=NewJersey&country=UnitedStates');
-            const data = await response.json();
-            document.getElementById("fajr-time").innerHTML = convertTo12HourFormat(data.data.timings.Fajr);
-            document.getElementById("dhuhr-time").innerHTML = convertTo12HourFormat(data.data.timings.Dhuhr);
-            document.getElementById("asr-time").innerHTML = convertTo12HourFormat(data.data.timings.Asr);
-            document.getElementById("maghrib-time").innerHTML = convertTo12HourFormat(data.data.timings.Maghrib);
-            document.getElementById("isha-time").innerHTML = convertTo12HourFormat(data.data.timings.Isha);
-        };
-
-        const convertTo12HourFormat = (time) => {
-            let hours = parseInt(time.split(':')[0]);
-            let minutes = time.split(':')[1];
-            let ampm = hours >= 12 ? 'PM' : 'AM';
-            hours = hours % 12 || 12;
-            return `${hours}:${minutes} ${ampm}`;
-        };
-
-        fetchPrayerTimes();
-    </script>
-</body>
+  </body>
 </html>

@@ -1,52 +1,38 @@
 body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    background-color: #313743;
-    color: white;
+  background-color: #0f0f23;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  text-align: center;
 }
 
-header h1 {
-    margin-top: 50px;
-    color: white;
-}
-
-main {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-section {
-  width: 200px;
-  margin: 50px;
-  text-align: left;
-}
-
-footer {
+h1 {
+  font-size: 48px;
   margin-top: 50px;
 }
 
-h2 {
-    color: #fff;
+button {
+  background-color: transparent;
+  background-image: url(https://media.discordapp.net/attachments/1067525557824266400/1070865990235201626/D48dtsjJmQ3zAAAAAElFTkSuQmCC-removebg-preview.png?width=583&height=346);
+  background-size: 350px;
+  background-repeat: no-repeat;  border: none;
+  background-position: center;
+  cursor: pointer;
+  height: 225px;
+  width: 225px;
+  margin-top: 50px;
+  align-items: center;
+  justify-content: center;
+  display: inline-block;
 }
 
-.prayer-time-button {
-    width: 200px;
-    height: 50px;
-    margin: 10px auto;
-    text-align: center;
-    border-radius: 5px;
-    cursor: pointer;
 
-}
 
-.prayer-time-button h2 {
-    margin: 0;
-    padding: 15px 0;
-}
-
-.prayer-time-button p {
-    margin: 0;
-    font-size: 20px;
-    font-weight: bold;
+#centerImage {
+  background-image: url(https://media.discordapp.net/attachments/1067525557824266400/1070874235347664937/D8OiWCt.png?width=609&height=609);
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 400px;
+  width: 400px;
+  margin: 0 auto;
+  margin-top: 50px;
 }

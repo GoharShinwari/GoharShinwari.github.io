@@ -1,1 +1,1 @@
-“homepage”: "www.goharworld.org"
+www.goharworld.org

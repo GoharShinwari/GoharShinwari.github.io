@@ -1,61 +1,60 @@
 body {
-    background-color: #0f0f23;
-    color: #fff;
-    font-family: Arial, sans-serif;
-    text-align: center;
+  background-color: #0f0f23;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  text-align: center;
 }
 
 h1 {
-    font-size: 48px;
-    margin-top: 50px;
+  font-size: 48px;
+  margin-top: 50px;
 }
 
-#trainButton {
-    background-color: transparent;
-    background-image: url(https://media.discordapp.net/attachments/1067525557824266400/1070865990235201626/D48dtsjJmQ3zAAAAAElFTkSuQmCC-removebg-preview.png?width=583&height=346);
-    background-size: 350px;
-    background-repeat: no-repeat;
-    border: none;
-    background-position: center;
-    cursor: pointer;
-    height: 225px;
-    width: 225px;
-    margin-top: 50px;
-    align-items: center;
-    justify-content: center;
-    display: inline-block;
+ #trainButton {
+  background-color: transparent;
+  background-image: url(https://media.discordapp.net/attachments/1067525557824266400/1070865990235201626/D48dtsjJmQ3zAAAAAElFTkSuQmCC-removebg-preview.png?width=583&height=346);
+  background-size: 350px;
+  background-repeat: no-repeat;  border: none;
+  background-position: center;
+  cursor: pointer;
+  height: 225px;
+  width: 225px;
+  margin-top: 50px;
+  align-items: center;
+  justify-content: center;
+  display: inline-block;
 }
 
 #resetButton {
-    height: 50px;
-    width: 50px;
-    background-color: orangered;
+  height: 50px;
+  width: 50px;
+  background-color: orangered;
 }
 
 #buttons {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
 }
 
 .upgradeButton {
-    padding: 10px 20px;
-    border-radius: 5px;
-    border: none;
-    margin: 0 10px;
-    background-color: #1DB954;
-    color: white;
-    font-size: 16px;
-    cursor: pointer;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  margin: 0 10px;
+  background-color: #1DB954;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
 }
 
 #centerImage {
-    background-image: url(https://media.discordapp.net/attachments/1067525557824266400/1070871816010219560/depesc9-ec92d5b4-67a9-4b99-9215-b40b32e171bf.png?width=813&height=610);
-    background-size: contain;
-    background-repeat: no-repeat;
-    width: 400px;
-    height: 400px;
-    background-size: cover;
-    background-position: center;
-    margin: 20px auto;
+  background-image: url(https://media.discordapp.net/attachments/1067525557824266400/1070871816010219560/depesc9-ec92d5b4-67a9-4b99-9215-b40b32e171bf.png?width=813&height=610);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 400px;
+  height: 400px;
+  background-size: cover;
+  background-position: center;
+  margin: 20px auto;
 }

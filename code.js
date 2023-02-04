@@ -15,10 +15,8 @@ const button10 = document.getElementById("button10");
 
 var multiplier = 1;
 
-
-
-
 let currentPowerLevel = 0;
+
 
 if (localStorage.getItem("powerLevel")) {
   currentPowerLevel = parseInt(localStorage.getItem("powerLevel"));
@@ -132,3 +130,117 @@ button7.addEventListener("click", function() {
   alert("Your power level is not high enough to transform into MUI Goku");
   }
   });
+
+  let button11 = false;
+  let button12 = false;
+  let button13 = false;
+  let button14 = false;
+  let button15 = false;
+  let button16 = false;
+  
+  document.getElementById("button11").addEventListener("click", function() {
+    if (currentPowerLevel >= 1000) {
+      button11 = true;
+      button12 = false;
+      button13 = false;
+      button14 = false;
+      button15 = false;
+      button16 = false;
+    }
+    else {
+      alert("Your power level is not high enough train at Kame Island!");
+      }
+  });
+  
+  document.getElementById("button12").addEventListener("click", function() {
+    if (currentPowerLevel >= 10000) {
+      button12 = true;
+      button11 = false;
+      button13 = false;
+      button14 = false;
+      button15 = false;
+      button16 = false;
+    }   
+     else {
+      alert("Your power level is not high enough train at Korrin's Tower!");
+      }
+  });
+  
+  document.getElementById("button13").addEventListener("click", function() {
+    if (currentPowerLevel >= 100000) {
+      button13 = true;
+      button11 = false;
+      button12 = false;
+      button14 = false;
+      button15 = false;
+      button16 = false;
+    }
+    else {
+      alert("Your power level is not high enough train at The Lookout!");
+      }
+  });
+  
+  document.getElementById("button14").addEventListener("click", function() {
+    if (currentPowerLevel >= 1000000) {
+      button14 = true;
+      button11 = false;
+      button12 = false;
+      button13 = false;
+      button15 = false;
+      button16 = false;
+    }
+    else {
+      alert("Your power level is not high enough train at The Hyperbolic Time Chamber!");
+      }
+  });
+  
+  document.getElementById("button15").addEventListener("click", function() {
+    if (currentPowerLevel >= 10000000) {
+      button15 = true;
+      button11 = false;
+      button12 = false;
+      button13 = false;
+      button14 = false;
+      button16 = false;
+    }
+    else {
+      alert("Your power level is not high enough train at King Kai's Planet!");
+      }
+  });
+  
+  document.getElementById("button16").addEventListener("click", function() {
+    if (currentPowerLevel >= 100000000) {
+      button16 = true;
+      button11 = false;
+      button12 = false;
+      button13 = false;
+      button14 = false;
+      button15 = false;
+    }
+    else {
+      alert("Your power level is not high enough train at Beerus' Planet!");
+      }
+  });
+  
+  setInterval(() => {
+    if (button11) {
+      currentPowerLevel += 10;
+    }
+    if (button12) {
+      currentPowerLevel += 100;
+    }
+    if (button13) {
+      currentPowerLevel += 1000;
+    }
+    if (button14) {
+      currentPowerLevel += 10000;
+    }
+    if (button15) {
+      currentPowerLevel += 100000;
+    }
+    if (button16) {
+      currentPowerLevel += 1000000;
+    }
+    document.getElementById("powerLevel").innerHTML = currentPowerLevel;
+  }, 1000);
+  

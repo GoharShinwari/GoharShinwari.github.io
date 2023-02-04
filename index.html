@@ -1,32 +1,26 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <script src="game.js"></script>
-    <title>DBZ Character Select</title>
-      <h1>Who would you like to play as?</h1>
-      <div id="character-select">
-        <button id="goku-button" onclick="selectCharacter('Goku')">
-          <img src="https://cdn.discordapp.com/attachments/1069016535542276208/1069020500497547334/latest.png" alt="Goku">
-        </button>
-        <button id="vegeta-button" onclick="selectCharacter('Vegeta')">
-          <img src="https://cdn.discordapp.com/attachments/1069016535542276208/1069020591413264444/latest.png" alt="Vegeta">
-        </button>
-      </div>
-      <div id="selected-character"></div>
+    <title>Incremental Game</title>
+  </head>
+  <body>
     
-      <div id="confirmation-button" style="display:none;">
-        <p>Are you sure you want to select this character?</p>
-        <button id="yes-button" onclick="startGame()">
-        <img src="https://cdn.discordapp.com/attachments/1067525557824266400/1069063405895417856/6-66356_clip-art-yes-hd-png-download.png" alt="Yes">
-        
-        <button id="no-button" onclick="cancelSelection()">
-        <img src="https://cdn.discordapp.com/attachments/1067525557824266400/1069063434370564216/217-2172073_no-button-clip-art-no-button-png.png" alt="Goku">
+    <h1>Power Level: <span id="powerLevel">0</span></h1>
+    <button id="trainButton"></button>
 
-      </div>
-      <div id="additional-text" style="display:none;"></div>
-      </div> 
+    <div id="centerImage"></div>
 
+<div id="buttons">
+  <button id="button1" class="upgradeButton">KaioKen Goku (150 Powerlevel Required)</button>
+  <button id="button2" class="upgradeButton">SSJ Goku (500 Powerlevel Required)</button>
+  <button id="button3" class="upgradeButton">SSJ2 Goku (5000 Powerlevel Required)</button>
+  <button id="button4" class="upgradeButton">SSJ3 Goku (50000 Powerlevel Required)</button>
+  <button id="button5" class="upgradeButton">SSJ4 Goku (500000 Powerlevel Required)</button>
+</div>
 
+<button id="resetButton"></button>
+<h2> Press Button to Reset</h2>
+    <script src="code.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
   </body>
 </html>

@@ -1,118 +1,83 @@
-function selectCharacter(name) {
-  document.getElementById("selected-character").innerHTML = "You have selected " + name + "!";
-}
-function selectCharacter(character) {
-  // Displays the confirmation button
-  document.getElementById("confirmation-button").style.display = "block";
+const powerLevel = document.getElementById("powerLevel");
+const trainButton = document.getElementById("trainButton");
+const centerImage = document.getElementById("centerImage");
+const resetButton = document.getElementById("resetButton");
+const button1 = document.getElementById("button1");
+const button2 = document.getElementById("button2");
+const button3 = document.getElementById("button3");
+const button4 = document.getElementById("button4");
+const button5 = document.getElementById("button5");
+var multiplier = 1;
 
-  // Displays Goku or Vegeta
-  document.getElementById("selected-character").innerHTML = "Selected Character: " + character;
-}
 
-function cancelSelection() {
-  // Hides the confirmation button
-  document.getElementById("confirmation-button").style.display = "none";
 
-  // Clear the selected character name
-  document.getElementById("selected-character").innerHTML = "";
-}
 
-function hideConfirmation() {
-  document.getElementById("confirmation-button").style.display = "none";
+let currentPowerLevel = 0;
+
+if (localStorage.getItem("powerLevel")) {
+  currentPowerLevel = parseInt(localStorage.getItem("powerLevel"));
+  powerLevel.innerHTML = currentPowerLevel;
 }
 
-function startGame() {
-  // Removes everything from the HTML page
-  while (document.body.firstChild) {
-    document.body.removeChild(document.body.firstChild);
+trainButton.addEventListener("click", function() {
+  currentPowerLevel += multiplier;
+  powerLevel.innerHTML = currentPowerLevel;
+  localStorage.setItem("powerLevel", currentPowerLevel);
+
+});
+
+resetButton.addEventListener("click", function() {
+  currentPowerLevel = 0;
+  powerLevel.innerHTML = currentPowerLevel;
+  localStorage.setItem("powerLevel", currentPowerLevel);
+  centerImage.style.backgroundImage = "https://media.discordapp.net/attachments/1067525557824266400/1070871816010219560/depesc9-ec92d5b4-67a9-4b99-9215-b40b32e171bf.png?width=813&height=610";
+}); 
+
+
+
+button1.addEventListener("click", function() {
+  if (currentPowerLevel >= 150) {
+    centerImage.style.backgroundImage = "url('https://images-ext-2.discordapp.net/external/C37HM8WiJ-FmY67LW9TR-TjxFAKCgHw2M5oBxKhyQxM/https/gamepress.gg/dblegends/sites/dblegends/files/2022-02/i5IPZPe.png?width=609&height=609')";
+    multiplier = 2;
+  } else {
+    alert("Your power level is not high enough to transform into KaioKen Goku");
+    currentPowerLevel
   }
-
- // Creates a canvas for the game to run on
-var canvas = document.createElement("canvas");
-canvas.id = "game-canvas";
-canvas.width = 800;
-canvas.height = 600;
-document.body.appendChild(canvas);
-
-var ctx = canvas.getContext("2d");
-var img = new Image();
-img.src = "https://cdn.discordapp.com/attachments/1067525557824266400/1069078026509373492/desktop-wallpaper-dbz-sky-background-dragon-ball-landscape.png";
-canvas.style.backgroundImage = "url('" + img.src + "')";
-canvas.style.backgroundSize = canvas.width + "px " + canvas.height + "px";
-canvas.style.backgroundPosition = "center";
-
-var x = canvas.width / 2;
-var y = canvas.height / 2;
-var vx = 0;
-var vy = 0;
+});
 
 
-  // This checks if the image is loaded or not just for personl use 
-  img.onload = function(){
-    console.log("Image loaded successfully");
-    ctx.drawImage(img, 0, 0);
+button2.addEventListener("click", function() {
+if (currentPowerLevel >= 500) {
+    centerImage.style.backgroundImage = "url('https://images-ext-1.discordapp.net/external/iQ0SgKTmW7bOSBNZsm5zg5DKkopbykcqvpDNmc0tMMo/%3Fitok%3DTWkPQqpY/https/gamepress.gg/dblegends/sites/dblegends/files/styles/522x522/public/2021-05/lOju6wl.png?width=470&height=470')";
+    multiplier = 50;
+} else {
+alert("Your power level is not high enough to transform into SSJ Goku");
 }
+});
 
-  
-  // Circle Radius
-  var radius = 50;
-
-  // Listens for the key presses
-  document.addEventListener("keydown", keyDownHandler, false);
-  document.addEventListener("keyup", keyUpHandler, false);
-
-  function keyDownHandler(e) {
-    if (e.key == "Right" || e.key == "ArrowRight") {
-      vx = 5;
-    } else if (e.key == "Left" || e.key == "ArrowLeft") {
-      vx = -5;
-    } else if (e.key == "Up" || e.key == "ArrowUp") {
-      vy = -5;
-    } else if (e.key == "Down" || e.key == "ArrowDown") {
-      vy = 5;
-    }
-  }
-
-  function keyUpHandler(e) {
-    if (e.key == "Right" || e.key == "ArrowRight" || e.key == "Left" || e.key == "ArrowLeft") {
-      vx = 0;
-    } else if (e.key == "Up" || e.key == "ArrowUp" || e.key == "Down" || e.key == "ArrowDown") {
-      vy = 0;
-    }
-  }
-
-
-  // Animation loop
-  function animate() {
-    requestAnimationFrame(animate);
-
-    // Clear canvas
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-    // Create an image 
-    var img = new Image();
-    img.src = "https://cdn.discordapp.com/attachments/1067525557824266400/1069074784937316392/dcbr9p9-9c926e24-3fc6-4f0c-8fff-ee08a32a7edb.png";
-
-    // Draw image
-    ctx.drawImage(img, x, y, 100, 100);
-
-    // Check if the image is going past the canvas
-    if (x + 100 > canvas.width) {
-      x = canvas.width - 100;
-    } else if (x < 0) {
-      x = 0;
-    }
-
-    if (y + 100 > canvas.height) {
-      y = canvas.height - 100;
-    } else if (y < 0) {
-      y = 0;
-    }
-
-    // Update position
-    x += vx;
-    y += vy;
-  }
-
-  animate();
+button3.addEventListener("click", function() {
+if (currentPowerLevel >= 5000) {
+    centerImage.style.backgroundImage = "url('https://media.discordapp.net/attachments/1067525557824266400/1071190774068297768/RLHhO3g.png?width=470&height=470')";
+    multiplier = 500;
+} else {
+alert("Your power level is not high enough to transform into SSJ2 Goku");
 }
+});
+
+button4.addEventListener("click", function() {
+if (currentPowerLevel >= 50000) {
+    centerImage.style.backgroundImage = "url('https://gamepress.gg/dblegends/sites/dblegends/files/2019-10/3YDgjhf.png')";
+    multiplier = 5000;
+} else {
+alert("Your power level is not high enough to transform into SSJ3 Goku");
+}
+});
+
+button5.addEventListener("click", function() {
+if (currentPowerLevel >= 500000) {
+    centerImage.style.backgroundImage = "url('https://images-ext-2.discordapp.net/external/Ipib-8vRJbyphGVMi2BD0Bh3qa_a3nQU8qjRY78GByY/%3Fitok%3DXn7yY7Hj/https/gamepress.gg/dblegends/sites/dblegends/files/styles/522x522/public/2021-04/AIUVUDX.png?width=470&height=470')";
+    multiplier = 10000;
+} else {
+alert("Your power level is not high enough to transform into Goku");
+}
+});

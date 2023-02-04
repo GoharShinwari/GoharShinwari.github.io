@@ -1,102 +1,60 @@
-@import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
-
 body {
-    background-color: #f0f0f0;
+    background-color: #0f0f23;
+    color: #fff;
     font-family: Arial, sans-serif;
     text-align: center;
-}
-
-#character-select {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  }
+  
+  h1 {
+    font-size: 48px;
     margin-top: 50px;
-}
-
-button {
-    width: 150px;
-    height: 200px;
-    margin: 10px;
-    background-color: #007bff;
-    border: none;
+  }
+  
+   #trainButton {
+    background-color: transparent;
+    background-image: url(https://media.discordapp.net/attachments/1067525557824266400/1070865990235201626/D48dtsjJmQ3zAAAAAElFTkSuQmCC-removebg-preview.png?width=583&height=346);
+    background-size: 350px;
+    background-repeat: no-repeat;  border: none;
+    background-position: center;
     cursor: pointer;
-}
-
-button img {
-    width: 100%;
-    height: 100%;
-}
-
-#selected-character {
+    height: 225px;
+    width: 225px;
     margin-top: 50px;
-    font-size: 36px;
-    color: #000000;
-}
-
-#character-select {
+    align-items: center;
+    justify-content: center;
+    display: inline-block;
+  }
+  
+  #resetButton {
+    height: 50px;
+    width: 50px;
+    background-color: orangered;
+  }
+  
+  #buttons {
     display: flex;
     justify-content: center;
-    align-items: center;
-}
-
-#character-select button {
-    width: 200px;
-    height: 200px;
-    margin: 20px;
-    border: solid black 2px;
-    padding: 0;
-    position: relative;
-}
-
-
-#yes-button {
-    width: 150px;
-    height: 150px;
-    margin: 2vh;
-    border: solid black 0.5vh;
-    position: relative;
-
-}
-
-#no-button {
-    width: 150px;
-    height: 150px;
-    margin: 2vh;
-    border: solid black 0.5vh;
-    position: relative;
-}
-
-
-
-#game-canvas {
-    background-color: black;
-}
-
-#character-select img {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-#selected-character {
-    text-align: center;
-    font-size: 2em;
-    margin-top: 50px;
-}
-
-h1 {
-    font-family: 'Special Elite', cursive;
-    font-size: 32px;
-}
-
-p {
-    font-family: 'Special Elite', cursive;
-    font-size: 28px;
-}
-
+    margin-bottom: 20px;
+  }
+  
+  .upgradeButton {
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    margin: 0 10px;
+    background-color: #1DB954;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  #centerImage {
+    background-image: url(https://media.discordapp.net/attachments/1067525557824266400/1070871816010219560/depesc9-ec92d5b4-67a9-4b99-9215-b40b32e171bf.png?width=813&height=610);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 400px;
+    height: 400px;
+    background-size: cover;
+    background-position: center;
+    margin: 20px auto;
+  }

@@ -32,10 +32,26 @@ body {
   }
   
   #buttons {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
   }
+
+  #buttons1 {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+  }
+  
+  button.upgradeButton {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
   
   .upgradeButton {
     padding: 10px 20px;

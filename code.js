@@ -114,7 +114,7 @@ button7.addEventListener("click", function() {
   });
 
   button9.addEventListener("click", function() {
-  if (currentPowerLevel >= 5000000000) {
+  if (currentPowerLevel >= 500000000) {
       centerImage.style.backgroundImage = "url('https://media.discordapp.net/attachments/1067525557824266400/1071469968903917679/5aHUyRX.png?width=586&height=586')";
       multiplier = 100000000;
   } else {
@@ -123,7 +123,7 @@ button7.addEventListener("click", function() {
   });
 
   button10.addEventListener("click", function() {
-  if (currentPowerLevel >= 50000000000) {
+  if (currentPowerLevel >= 5000000000) {
       centerImage.style.backgroundImage = "url('https://media.discordapp.net/attachments/1067525557824266400/1071470047991693322/l1wQqq2.png?width=586&height=586')";
       multiplier = 1000000000;
   } else {

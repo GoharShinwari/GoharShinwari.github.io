@@ -107,7 +107,7 @@ button7.addEventListener("click", function() {
   });
   
   button8.addEventListener("click", function() {
-  if (currentPowerLevel >= 500000000) {
+  if (currentPowerLevel >= 5000000000) {
       centerImage.style.backgroundImage = "url('https://media.discordapp.net/attachments/1067525557824266400/1071469740641497139/FN8-dsqX0AIdlG0.png?width=440&height=586')";
       multiplier = 10000000;
   } else {

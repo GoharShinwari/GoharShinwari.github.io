@@ -41,19 +41,6 @@ trainButton.addEventListener("click", function() {
 
 });
 
-resetButton.addEventListener("click", function() {
-  currentPowerLevel = 0;
-  powerLevel.innerHTML = currentPowerLevel;
-  localStorage.setItem("powerLevel", currentPowerLevel);
-  button11 = false;
-  button12 = false;
-  button13 = false;
-  button14 = false;
-  button15 = false;
-  button16 = false;
-  button17 = false;
-  centerImage.style.backgroundImage = "url('https://media.discordapp.net/attachments/1067525557824266400/1071579223191457802/D8OiWCt.png?width=586&height=586')";
-}); 
 
 
 
@@ -301,4 +288,91 @@ button7.addEventListener("click", function() {
     if (currentPowerLevel >= 1000000000) 
     document.body.style.backgroundImage = "url('https://media.discordapp.net/attachments/1067525557824266400/1071586492784320592/stage_of_tournament_power_final_by_tadeodb_dc52cey-fullview.png  ')";
   });
-  
+
+const upgradeBtn = document.getElementById("upgradeBtn");
+const kiBlastBtn = document.getElementById("kiBlastBtn");
+const kamehamehaBtn = document.getElementById("kamehamehaBtn");
+const spiritBombBtn = document.getElementById("spiritBombBtn");
+const upgradeModal = document.getElementById("upgradeModal");
+const closeBtn = document.getElementsByClassName("close")[0];
+
+
+resetButton.addEventListener("click", function () {
+    currentPowerLevel = 0;
+    powerLevel.innerHTML = currentPowerLevel;
+    localStorage.setItem("powerLevel", currentPowerLevel);
+    button11 = false;
+    button12 = false;
+    button13 = false;
+    button14 = false;
+    button15 = false;
+    button16 = false;
+    button17 = false;
+    centerImage.style.backgroundImage = "url('https://media.discordapp.net/attachments/1067525557824266400/1071579223191457802/D8OiWCt.png?width=586&height=586')";
+
+        localStorage.setItem("kiBlastLevel", 1);
+   
+        localStorage.setItem("kamehamehaLevel", 1);
+    
+        localStorage.setItem("spiritBombLevel", 1);
+
+});
+
+
+if (localStorage.getItem("kiBlastLevel") === null) {
+    localStorage.setItem("kiBlastLevel", 1);
+}
+if (localStorage.getItem("kamehamehaLevel") === null) {
+    localStorage.setItem("kamehamehaLevel", 1);
+}
+if (localStorage.getItem("spiritBombLevel") === null) {
+    localStorage.setItem("spiritBombLevel", 1);
+}
+
+kiBlastBtn.innerHTML = `Ki Blast (${localStorage.getItem("kiBlastLevel")}/5)`;
+kamehamehaBtn.innerHTML = `Kamehameha (${localStorage.getItem("kamehamehaLevel")}/5)`;
+spiritBombBtn.innerHTML = `Spirit Bomb (${localStorage.getItem("spiritBombLevel")}/5)`;
+
+upgradeBtn.addEventListener("click", function () {
+    upgradeModal.style.display = "block";
+});
+
+closeBtn.addEventListener("click", function () {
+    upgradeModal.style.display = "none";
+});
+
+kiBlastBtn.addEventListener("click", function () {
+    var currentLevel = parseInt(localStorage.getItem("kiBlastLevel")) || 0;
+    if (currentPowerLevel >= (1000 * (currentLevel + 1)) && currentLevel < 5) {
+        localStorage.setItem("kiBlastLevel", currentLevel + 1);
+        kiBlastBtn.innerHTML = Ki Blast(${ currentLevel + 1} /5);
+} else if (currentLevel >= 5) {
+    alert("Ki Blast is already at maximum level");
+} else {
+    alert("Not enough power level to upgrade Ki Blast");
+}
+});
+
+kamehamehaBtn.addEventListener("click", function () {
+    var currentLevel = parseInt(localStorage.getItem("kamehamehaLevel")) || 0;
+    if (currentPowerLevel >= (1000 * (currentLevel + 1)) && currentLevel < 5) {
+        localStorage.setItem("kamehamehaLevel", currentLevel + 1);
+        kamehamehaBtn.innerHTML = Kamehameha(${ currentLevel + 1} /5);
+} else if (currentLevel >= 5) {
+    alert("Kamehameha is already at maximum level");
+} else {
+    alert("Not enough power level to upgrade Kamehameha");
+}
+});
+
+spiritBombBtn.addEventListener("click", function () {
+    var currentLevel = parseInt(localStorage.getItem("spiritBombLevel")) || 0;
+    if (currentPowerLevel >= (1000 * (currentLevel + 1)) && currentLevel < 5) {
+        localStorage.setItem("spiritBombLevel", currentLevel + 1);
+        spiritBombBtn.innerHTML = Spirit Bomb(${ currentLevel + 1} /5);
+} else if (currentLevel >= 5) {
+    alert("Spirit Bomb is already at maximum level");
+} else {
+    alert("Not enough power level to upgrade Spirit Bomb");
+}
+});

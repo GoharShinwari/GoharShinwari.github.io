@@ -45,24 +45,29 @@ trainButton.addEventListener("click", function() {
 
 
 button1.addEventListener("click", function() {
-  if (currentPowerLevel >= 150) {
-    centerImage.style.backgroundImage = "url('https://images-ext-2.discordapp.net/external/C37HM8WiJ-FmY67LW9TR-TjxFAKCgHw2M5oBxKhyQxM/https/gamepress.gg/dblegends/sites/dblegends/files/2022-02/i5IPZPe.png?width=609&height=609')";
-    multiplier = 5;
+  var kiBlastLevel = parseInt(localStorage.getItem("kiBlastLevel")) || 0;
+  var kamehamehaLevel = parseInt(localStorage.getItem("kamehamehaLevel")) || 0;
+  var spiritBombLevel = parseInt(localStorage.getItem("spiritBombLevel")) || 0;
+  if (currentPowerLevel >= 150 && kiBlastLevel >= 1 && kamehamehaLevel >= 1 && spiritBombLevel >= 1) {
+  centerImage.style.backgroundImage = "url('https://images-ext-2.discordapp.net/external/C37HM8WiJ-FmY67LW9TR-TjxFAKCgHw2M5oBxKhyQxM/https/gamepress.gg/dblegends/sites/dblegends/files/2022-02/i5IPZPe.png?width=609&height=609')";
+  multiplier = 5;
   } else {
-    alert("Your power level is not high enough to transform into KaioKen Goku");
-    currentPowerLevel
+  alert("Your power level and/or upgrades are not high enough to transform into KaioKen Goku");
   }
-});
+  });
 
 
-button2.addEventListener("click", function() {
-if (currentPowerLevel >= 500) {
-    centerImage.style.backgroundImage = "url('https://images-ext-1.discordapp.net/external/iQ0SgKTmW7bOSBNZsm5zg5DKkopbykcqvpDNmc0tMMo/%3Fitok%3DTWkPQqpY/https/gamepress.gg/dblegends/sites/dblegends/files/styles/522x522/public/2021-05/lOju6wl.png?width=470&height=470')";
-    multiplier = 50;
-} else {
-alert("Your power level is not high enough to transform into SSJ Goku");
-}
-});
+  button2.addEventListener("click", function() {
+    var kiBlastLevel = parseInt(localStorage.getItem("kiBlastLevel")) || 0;
+    var kamehamehaLevel = parseInt(localStorage.getItem("kamehamehaLevel")) || 0;
+    var spiritBombLevel = parseInt(localStorage.getItem("spiritBombLevel")) || 0;
+    if (currentPowerLevel >= 500 && kiBlastLevel >= 2 && kamehamehaLevel >= 2 && spiritBombLevel >= 1) {
+      centerImage.style.backgroundImage = "url('https://images-ext-1.discordapp.net/external/iQ0SgKTmW7bOSBNZsm5zg5DKkopbykcqvpDNmc0tMMo/%3Fitok%3DTWkPQqpY/https/gamepress.gg/dblegends/sites/dblegends/files/styles/522x522/public/2021-05/lOju6wl.png?width=470&height=470')";
+      multiplier = 50;
+  } else {
+    alert("Your power level and/or upgrades are not high enough to transform into SSJ Goku");
+  }
+  });  
 
 button3.addEventListener("click", function() {
 if (currentPowerLevel >= 5000) {
@@ -345,8 +350,8 @@ kiBlastBtn.addEventListener("click", function () {
     var currentLevel = parseInt(localStorage.getItem("kiBlastLevel")) || 0;
     if (currentPowerLevel >= (1000 * (currentLevel + 1)) && currentLevel < 5) {
         localStorage.setItem("kiBlastLevel", currentLevel + 1);
-        kiBlastBtn.innerHTML = Ki Blast(${ currentLevel + 1} /5);
-} else if (currentLevel >= 5) {
+        kiBlastBtn.innerHTML = `Ki Blast (${currentLevel + 1}/5)`;
+  } else if (currentLevel >= 5) {
     alert("Ki Blast is already at maximum level");
 } else {
     alert("Not enough power level to upgrade Ki Blast");
@@ -357,7 +362,7 @@ kamehamehaBtn.addEventListener("click", function () {
     var currentLevel = parseInt(localStorage.getItem("kamehamehaLevel")) || 0;
     if (currentPowerLevel >= (1000 * (currentLevel + 1)) && currentLevel < 5) {
         localStorage.setItem("kamehamehaLevel", currentLevel + 1);
-        kamehamehaBtn.innerHTML = Kamehameha(${ currentLevel + 1} /5);
+        kamehamehaBtn.innerHTML = `Kamehameha(${ currentLevel + 1} /5)`;
 } else if (currentLevel >= 5) {
     alert("Kamehameha is already at maximum level");
 } else {
@@ -369,7 +374,7 @@ spiritBombBtn.addEventListener("click", function () {
     var currentLevel = parseInt(localStorage.getItem("spiritBombLevel")) || 0;
     if (currentPowerLevel >= (1000 * (currentLevel + 1)) && currentLevel < 5) {
         localStorage.setItem("spiritBombLevel", currentLevel + 1);
-        spiritBombBtn.innerHTML = Spirit Bomb(${ currentLevel + 1} /5);
+        spiritBombBtn.innerHTML = `Spirit Bomb(${ currentLevel + 1} /5)`;
 } else if (currentLevel >= 5) {
     alert("Spirit Bomb is already at maximum level");
 } else {

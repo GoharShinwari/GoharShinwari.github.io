@@ -13,10 +13,21 @@ const button8 = document.getElementById("button8");
 const button9 = document.getElementById("button9");
 const button10 = document.getElementById("button10");
 
+
+
 var multiplier = 1;
 
 let currentPowerLevel = 0;
 
+let button11 = false;
+let button12 = false;
+let button13 = false;
+let button14 = false;
+let button15 = false;
+let button16 = false;
+let button17 = false;
+
+let backgroundImage = 1;
 
 if (localStorage.getItem("powerLevel")) {
   currentPowerLevel = parseInt(localStorage.getItem("powerLevel"));
@@ -34,7 +45,14 @@ resetButton.addEventListener("click", function() {
   currentPowerLevel = 0;
   powerLevel.innerHTML = currentPowerLevel;
   localStorage.setItem("powerLevel", currentPowerLevel);
-  centerImage.style.backgroundImage = "https://media.discordapp.net/attachments/1067525557824266400/1070871816010219560/depesc9-ec92d5b4-67a9-4b99-9215-b40b32e171bf.png?width=813&height=610";
+  button11 = false;
+  button12 = false;
+  button13 = false;
+  button14 = false;
+  button15 = false;
+  button16 = false;
+  button17 = false;
+  centerImage.style.backgroundImage = "url('https://media.discordapp.net/attachments/1067525557824266400/1071579223191457802/D8OiWCt.png?width=586&height=586')";
 }); 
 
 
@@ -42,7 +60,7 @@ resetButton.addEventListener("click", function() {
 button1.addEventListener("click", function() {
   if (currentPowerLevel >= 150) {
     centerImage.style.backgroundImage = "url('https://images-ext-2.discordapp.net/external/C37HM8WiJ-FmY67LW9TR-TjxFAKCgHw2M5oBxKhyQxM/https/gamepress.gg/dblegends/sites/dblegends/files/2022-02/i5IPZPe.png?width=609&height=609')";
-    multiplier = 2;
+    multiplier = 5;
   } else {
     alert("Your power level is not high enough to transform into KaioKen Goku");
     currentPowerLevel
@@ -130,13 +148,6 @@ button7.addEventListener("click", function() {
   alert("Your power level is not high enough to transform into MUI Goku");
   }
   });
-
-  let button11 = false;
-  let button12 = false;
-  let button13 = false;
-  let button14 = false;
-  let button15 = false;
-  let button16 = false;
   
   document.getElementById("button11").addEventListener("click", function() {
     if (currentPowerLevel >= 1000) {
@@ -221,6 +232,21 @@ button7.addEventListener("click", function() {
       alert("Your power level is not high enough train at Beerus' Planet!");
       }
   });
+
+  document.getElementById("button17").addEventListener("click", function() {
+    if (currentPowerLevel >= 1000000000) {
+      button16 = false;
+      button11 = false;
+      button12 = false;
+      button13 = false;
+      button14 = false;
+      button15 = false;
+      button17 = true;
+    }
+    else {
+      alert("Your power level is not high enough train at the Tournament of Power!");
+      }
+  });
   
   setInterval(() => {
     if (button11) {
@@ -241,6 +267,38 @@ button7.addEventListener("click", function() {
     if (button16) {
       currentPowerLevel += 1000000;
     }
+    if (button17) {
+      currentPowerLevel += 10000000;
+    }
     document.getElementById("powerLevel").innerHTML = currentPowerLevel;
   }, 1000);
+
+  document.getElementById("button11").addEventListener("click", function() {
+    if (currentPowerLevel >= 1000) 
+    document.body.style.backgroundImage = "url('https://media.discordapp.net/attachments/1067525557824266400/1071585507022217277/1135882.png?width=880&height=587')";
+  });
+  document.getElementById("button12").addEventListener("click", function() {
+    if (currentPowerLevel >= 10000) 
+    document.body.style.backgroundImage = "url('https://media.discordapp.net/attachments/1067525557824266400/1071585642116567100/3iit6tfl2vq61.png?width=1043&height=586')";
+  });
+  document.getElementById("button13").addEventListener("click", function() {
+    if (currentPowerLevel >= 100000) 
+    document.body.style.backgroundImage = "url('https://media.discordapp.net/attachments/1067525557824266400/1071585709682597948/512.png')";
+  });
+  document.getElementById("button14").addEventListener("click", function() {
+    if (currentPowerLevel >= 1000000) 
+    document.body.style.backgroundImage = "url('https://media.discordapp.net/attachments/1067525557824266400/1071585856005079040/9w75jzayzmo41.png?width=1043&height=586')";
+  });
+  document.getElementById("button15").addEventListener("click", function() {
+    if (currentPowerLevel >= 10000000) 
+    document.body.style.backgroundImage = "url('https://media.discordapp.net/attachments/1067525557824266400/1071586316124426350/cxr1jbqa5ej51.png?width=1043&height=586')";
+  });
+  document.getElementById("button16").addEventListener("click", function() {
+    if (currentPowerLevel >= 100000000) 
+    document.body.style.backgroundImage = "url('https://media.discordapp.net/attachments/1067525557824266400/1071586382079869009/ddreo4j-413f9a26-fdf8-40c0-b159-b9ab0f024d95.png?width=886&height=586')";
+  });
+  document.getElementById("button17").addEventListener("click", function() {
+    if (currentPowerLevel >= 1000000000) 
+    document.body.style.backgroundImage = "url('https://media.discordapp.net/attachments/1067525557824266400/1071586492784320592/stage_of_tournament_power_final_by_tadeodb_dc52cey-fullview.png  ')";
+  });
   

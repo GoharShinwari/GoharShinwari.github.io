@@ -49,8 +49,8 @@ button1.addEventListener("click", function() {
   var kamehamehaLevel = parseInt(localStorage.getItem("kamehamehaLevel")) || 0;
   var spiritBombLevel = parseInt(localStorage.getItem("spiritBombLevel")) || 0;
   if (currentPowerLevel >= 150 && kiBlastLevel >= 1 && kamehamehaLevel >= 1 && spiritBombLevel >= 1) {
-  centerImage.style.backgroundImage = "url('https://images-ext-2.discordapp.net/external/C37HM8WiJ-FmY67LW9TR-TjxFAKCgHw2M5oBxKhyQxM/https/gamepress.gg/dblegends/sites/dblegends/files/2022-02/i5IPZPe.png?width=609&height=609')";
-  multiplier = 5;
+      centerImage.style.backgroundImage = "url('https://images-ext-2.discordapp.net/external/C37HM8WiJ-FmY67LW9TR-TjxFAKCgHw2M5oBxKhyQxM/https/gamepress.gg/dblegends/sites/dblegends/files/2022-02/i5IPZPe.png?width=609&height=609')";
+      multiplier = 5;
   } else {
   alert("Your power level and/or upgrades are not high enough to transform into KaioKen Goku");
   }
@@ -69,77 +69,101 @@ button1.addEventListener("click", function() {
   }
   });  
 
-button3.addEventListener("click", function() {
-if (currentPowerLevel >= 5000) {
-    centerImage.style.backgroundImage = "url('https://media.discordapp.net/attachments/1067525557824266400/1071190774068297768/RLHhO3g.png?width=470&height=470')";
-    multiplier = 500;
-} else {
-alert("Your power level is not high enough to transform into SSJ2 Goku");
-}
-});
+  button3.addEventListener("click", function() {
+    var kiBlastLevel = parseInt(localStorage.getItem("kiBlastLevel")) || 0;
+    var kamehamehaLevel = parseInt(localStorage.getItem("kamehamehaLevel")) || 0;
+    var spiritBombLevel = parseInt(localStorage.getItem("spiritBombLevel")) || 0;
+    if (currentPowerLevel >= 5000 && kiBlastLevel >= 3 && kamehamehaLevel >= 1 && spiritBombLevel >= 1) {
+        centerImage.style.backgroundImage = "url('https://media.discordapp.net/attachments/1067525557824266400/1071190774068297768/RLHhO3g.png?width=470&height=470')";
+        multiplier = 500;
+    } else {
+    alert("Your power level and/or upgrades are not high enough to transform into SSJ2 Goku");
+    }
+    });
+    
+    button4.addEventListener("click", function() {
+    var kiBlastLevel = parseInt(localStorage.getItem("kiBlastLevel")) || 0;
+    var kamehamehaLevel = parseInt(localStorage.getItem("kamehamehaLevel")) || 0;
+    var spiritBombLevel = parseInt(localStorage.getItem("spiritBombLevel")) || 0;
+    if (currentPowerLevel >= 50000 && kiBlastLevel >= 3 && kamehamehaLevel >= 2 && spiritBombLevel >= 2) {
+         centerImage.style.backgroundImage = "url('https://gamepress.gg/dblegends/sites/dblegends/files/2019-10/3YDgjhf.png')";
+         multiplier = 5000;
+    } else {
+    alert("Your power level and/or upgrades are not high enough to transform into SSJ3 Goku");
+    }
+    });
+    
+    button5.addEventListener("click", function() {
+    var kiBlastLevel = parseInt(localStorage.getItem("kiBlastLevel")) || 0;
+    var kamehamehaLevel = parseInt(localStorage.getItem("kamehamehaLevel")) || 0;
+    var spiritBombLevel = parseInt(localStorage.getItem("spiritBombLevel")) || 0;
+    if (currentPowerLevel >= 500000 && kiBlastLevel >= 3 && kamehamehaLevel >= 3 && spiritBombLevel >= 3) {
+         centerImage.style.backgroundImage = "url('https://images-ext-2.discordapp.net/external/Ipib-8vRJbyphGVMi2BD0Bh3qa_a3nQU8qjRY78GByY/%3Fitok%3DXn7yY7Hj/https/gamepress.gg/dblegends/sites/dblegends/files/styles/522x522/public/2021-04/AIUVUDX.png?width=470&height=470')";
+         multiplier = 10000;
+    } else {
+    alert("Your power level and/or upgrades are not high enough to transform into SSJ4 Goku");
+    }
+    });
 
-button4.addEventListener("click", function() {
-if (currentPowerLevel >= 50000) {
-    centerImage.style.backgroundImage = "url('https://gamepress.gg/dblegends/sites/dblegends/files/2019-10/3YDgjhf.png')";
-    multiplier = 5000;
-} else {
-alert("Your power level is not high enough to transform into SSJ3 Goku");
-}
-});
-
-button5.addEventListener("click", function() {
-if (currentPowerLevel >= 500000) {
-    centerImage.style.backgroundImage = "url('https://images-ext-2.discordapp.net/external/Ipib-8vRJbyphGVMi2BD0Bh3qa_a3nQU8qjRY78GByY/%3Fitok%3DXn7yY7Hj/https/gamepress.gg/dblegends/sites/dblegends/files/styles/522x522/public/2021-04/AIUVUDX.png?width=470&height=470')";
-    multiplier = 10000;
-} else {
-alert("Your power level is not high enough to transform into SSJ4 Goku");
-}
-});
-
-button6.addEventListener("click", function() {
-  if (currentPowerLevel >= 5000000) {
-      centerImage.style.backgroundImage = "url('https://media.discordapp.net/attachments/1067525557824266400/1071469246376312882/spssjggokuredfighter.png')";
-      multiplier = 100000;
-  } else {
-  alert("Your power level is not high enough to transform into SSG Goku");
-  }
-  });
-
-button7.addEventListener("click", function() {
-  if (currentPowerLevel >= 50000000) {
-      centerImage.style.backgroundImage = "url('https://media.discordapp.net/attachments/1067525557824266400/1071469344044883988/Q4AVP3W.png')";
-      multiplier = 1000000;
-  } else {
-  alert("Your power level is not high enough to transform into SSB Goku");
-  }
-  });
-  
-  button8.addEventListener("click", function() {
-  if (currentPowerLevel >= 500000000) {
-      centerImage.style.backgroundImage = "url('https://media.discordapp.net/attachments/1067525557824266400/1071469740641497139/FN8-dsqX0AIdlG0.png?width=440&height=586')";
-      multiplier = 10000000;
-  } else {
-  alert("Your power level is not high enough to transform into SSB KK Goku");
-  }
-  });
-
-  button9.addEventListener("click", function() {
-  if (currentPowerLevel >= 5000000000) {
-      centerImage.style.backgroundImage = "url('https://media.discordapp.net/attachments/1067525557824266400/1071469968903917679/5aHUyRX.png?width=586&height=586')";
-      multiplier = 100000000;
-  } else {
-  alert("Your power level is not high enough to transform into UI Goku");
-  }
-  });
-
-  button10.addEventListener("click", function() {
-  if (currentPowerLevel >= 50000000000) {
-      centerImage.style.backgroundImage = "url('https://media.discordapp.net/attachments/1067525557824266400/1071470047991693322/l1wQqq2.png?width=586&height=586')";
-      multiplier = 1000000000;
-  } else {
-  alert("Your power level is not high enough to transform into MUI Goku");
-  }
-  });
+    button6.addEventListener("click", function() {
+      var kiBlastLevel = parseInt(localStorage.getItem("kiBlastLevel")) || 0;
+      var kamehamehaLevel = parseInt(localStorage.getItem("kamehamehaLevel")) || 0;
+      var spiritBombLevel = parseInt(localStorage.getItem("spiritBombLevel")) || 0;
+      if (currentPowerLevel >= 5000000 && kiBlastLevel >= 4 && kamehamehaLevel >= 3 && spiritBombLevel >= 3) {
+          centerImage.style.backgroundImage = "url('https://media.discordapp.net/attachments/1067525557824266400/1071469246376312882/spssjggokuredfighter.png')";
+          multiplier = 100000;
+      } else {
+      alert("Your power level and/or upgrades are not high enough to transform into SSG Goku");
+      }
+      });
+    
+    button7.addEventListener("click", function() {
+      var kiBlastLevel = parseInt(localStorage.getItem("kiBlastLevel")) || 0;
+      var kamehamehaLevel = parseInt(localStorage.getItem("kamehamehaLevel")) || 0;
+      var spiritBombLevel = parseInt(localStorage.getItem("spiritBombLevel")) || 0;
+      if (currentPowerLevel >= 50000000 && kiBlastLevel >= 5 && kamehamehaLevel >= 4 && spiritBombLevel >= 3) {
+          centerImage.style.backgroundImage = "url('https://media.discordapp.net/attachments/1067525557824266400/1071469344044883988/Q4AVP3W.png')";
+          multiplier = 1000000;
+      } else {
+      alert("Your power level and/or upgrades are not high enough to transform into SSB Goku");
+      }
+      });
+      
+    button8.addEventListener("click", function() {
+      var kiBlastLevel = parseInt(localStorage.getItem("kiBlastLevel")) || 0;
+      var kamehamehaLevel = parseInt(localStorage.getItem("kamehamehaLevel")) || 0;
+      var spiritBombLevel = parseInt(localStorage.getItem("spiritBombLevel")) || 0;
+      if (currentPowerLevel >= 500000000 && kiBlastLevel >= 5 && kamehamehaLevel >= 5 && spiritBombLevel >= 3) {
+          centerImage.style.backgroundImage = "url('https://media.discordapp.net/attachments/1067525557824266400/1071469740641497139/FN8-dsqX0AIdlG0.png?width=440&height=586')";
+          multiplier = 10000000;
+      } else {
+      alert("Your power level and/or upgrades are not high enough to transform into SSB KK Goku");
+      }
+      });
+      button9.addEventListener("click", function() {
+        var kiBlastLevel = parseInt(localStorage.getItem("kiBlastLevel")) || 0;
+        var kamehamehaLevel = parseInt(localStorage.getItem("kamehamehaLevel")) || 0;
+        var spiritBombLevel = parseInt(localStorage.getItem("spiritBombLevel")) || 0;
+        if (currentPowerLevel >= 5000000000 && kiBlastLevel >= 5 && kamehamehaLevel >= 5 && spiritBombLevel >= 4) {
+        centerImage.style.backgroundImage = "url('https://media.discordapp.net/attachments/1067525557824266400/1071469968903917679/5aHUyRX.png?width=586&height=586')";
+        multiplier = 100000000;
+        } else {
+        alert("Your power level and/or upgrades are not high enough to transform into UI Goku");
+        }
+        });
+        
+        button10.addEventListener("click", function() {
+        var kiBlastLevel = parseInt(localStorage.getItem("kiBlastLevel")) || 0;
+        var kamehamehaLevel = parseInt(localStorage.getItem("kamehamehaLevel")) || 0;
+        var spiritBombLevel = parseInt(localStorage.getItem("spiritBombLevel")) || 0;
+        var defeatedJiren = localStorage.getItem("defeatedJiren") || false;
+        if (currentPowerLevel >= 50000000000 && kiBlastLevel >= 5 && kamehamehaLevel >= 5 && spiritBombLevel >= 5 && defeatedJiren === "true") {
+        centerImage.style.backgroundImage = "url('https://media.discordapp.net/attachments/1067525557824266400/1071470047991693322/l1wQqq2.png?width=586&height=586')";
+        multiplier = 1000000000;
+        } else {
+        alert("Your power level and/or upgrades are not high enough and/or you haven't defeated Jiren to transform into MUI Goku");
+        }
+        });
   
   document.getElementById("button11").addEventListener("click", function() {
     if (currentPowerLevel >= 1000) {

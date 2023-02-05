@@ -156,8 +156,7 @@ button1.addEventListener("click", function() {
         var kiBlastLevel = parseInt(localStorage.getItem("kiBlastLevel")) || 0;
         var kamehamehaLevel = parseInt(localStorage.getItem("kamehamehaLevel")) || 0;
         var spiritBombLevel = parseInt(localStorage.getItem("spiritBombLevel")) || 0;
-        var defeatedJiren = localStorage.getItem("defeatedJiren") || false;
-        if (currentPowerLevel >= 50000000000 && kiBlastLevel >= 5 && kamehamehaLevel >= 5 && spiritBombLevel >= 5 && defeatedJiren === "true") {
+        if (currentPowerLevel >= 50000000000 && kiBlastLevel >= 5 && kamehamehaLevel >= 5 && spiritBombLevel >= 5) {
         centerImage.style.backgroundImage = "url('https://media.discordapp.net/attachments/1067525557824266400/1071470047991693322/l1wQqq2.png?width=586&height=586')";
         multiplier = 1000000000;
         } else {

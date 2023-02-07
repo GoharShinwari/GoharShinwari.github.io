@@ -12,6 +12,7 @@ const button7 = document.getElementById("button7");
 const button8 = document.getElementById("button8");
 const button9 = document.getElementById("button9");
 const button10 = document.getElementById("button10");
+const button18 = document.getElementById("button18");
 
 
 
@@ -280,7 +281,7 @@ button1.addEventListener("click", function() {
       currentPowerLevel += 100000;
     }
     if (button16) {
-      currentPowerLevel += 1000000;
+      currentPowerLevel += 1000000; 
     }
     if (button17) {
       currentPowerLevel += 10000000;
@@ -383,7 +384,7 @@ kiBlastBtn.addEventListener("click", function () {
 
 kamehamehaBtn.addEventListener("click", function () {
     var currentLevel = parseInt(localStorage.getItem("kamehamehaLevel")) || 0;
-    if (currentPowerLevel >= (1000 * (currentLevel + 1)) && currentLevel < 5) {
+    if (currentPowerLevel >= (1500 * (currentLevel + 1)) && currentLevel < 5) {
         localStorage.setItem("kamehamehaLevel", currentLevel + 1);
         kamehamehaBtn.innerHTML = `Kamehameha(${ currentLevel + 1} /5)`;
 } else if (currentLevel >= 5) {
@@ -395,7 +396,7 @@ kamehamehaBtn.addEventListener("click", function () {
 
 spiritBombBtn.addEventListener("click", function () {
     var currentLevel = parseInt(localStorage.getItem("spiritBombLevel")) || 0;
-    if (currentPowerLevel >= (1000 * (currentLevel + 1)) && currentLevel < 5) {
+    if (currentPowerLevel >= (2000 * (currentLevel + 1)) && currentLevel < 5) {
         localStorage.setItem("spiritBombLevel", currentLevel + 1);
         spiritBombBtn.innerHTML = `Spirit Bomb(${ currentLevel + 1} /5)`;
 } else if (currentLevel >= 5) {
@@ -404,3 +405,40 @@ spiritBombBtn.addEventListener("click", function () {
     alert("Not enough power level to upgrade Spirit Bomb");
 }
 });
+
+var oldHTML;
+
+function createNewScreen() {
+    oldHTML = document.body.innerHTML;
+    document.body.innerHTML = "";
+    document.body.innerHTML = "<h1 style='text-align: center; color: white; background-color: #008080; padding: 20px;'>Boss Selection</h1>" +
+        "<button id='goBackBtn' style='display: block; margin: 0 auto;'>Go back</button>" +
+        "<div style='display: flex; justify-content: center; align-items: center;'>" +
+        "<div style='margin: 20px; text-align: center;'>" +
+        "<img style='display: block; width: 250px; height: 250px; margin-bottom: 20px; margin-left: 50px;' src='https://media.discordapp.net/attachments/1067525557824266400/1072310350562721792/O1FlHVi_1.png?width=472&height=207' alt='Beerus'>" +
+        "<p style='text-align: center; color: white;'>Challenge Lord Beerus! (25,000,000 Powerlevel Required)</p>" +
+        "</div>" +
+        "<div style='margin: 20px; text-align: center;'>" +
+        "<img style='display: block; width: 250px; height: 250px; margin-bottom: 20px; margin-left: 50px;' src='https://media.discordapp.net/attachments/1067525557824266400/1072310553831293019/l4IMSEd_1.png?width=521&height=202' alt='Jiren'>" +
+        "<p style='text-align: center; color: white;'>Challenge Jiren (25,000,000,000 Powerlevel Required)</p>" +
+        "</div>" +
+
+        "</div>";
+    document.body.style.backgroundColor = "#0f0f23";
+    document.getElementById("goBackBtn").addEventListener("click", goBack);
+    document.querySelectorAll("img")[0].style.boxShadow = "0px 0px 10px purple";
+    document.querySelectorAll("img")[1].style.boxShadow = "0px 0px 10px red";
+    document.querySelectorAll("img").forEach(img => {
+        img.style.borderRadius = "10px";
+        img.style.cursor = "pointer";
+    });
+
+    document.querySelectorAll("div")[1].firstChild.style.boxShadow = "0px 0px 10px purple";
+    document.querySelectorAll("img")[0].lastChild.style.boxShadow = "0px 0px 10px red";}
+
+
+
+function goBack() {
+    document.body.innerHTML = "";
+    document.body.innerHTML = oldHTML;
+}   

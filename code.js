@@ -27,6 +27,8 @@ let button14 = false;
 let button15 = false;
 let button16 = false;
 let button17 = false;
+let BeerusFight = false;
+let JirenFight = false;
 
 let backgroundImage = 1;
 
@@ -45,42 +47,84 @@ trainButton.addEventListener("click", function() {
 
 
 
-button1.addEventListener("click", function() {
-  var kiBlastLevel = parseInt(localStorage.getItem("kiBlastLevel")) || 0;
-  var kamehamehaLevel = parseInt(localStorage.getItem("kamehamehaLevel")) || 0;
-  var spiritBombLevel = parseInt(localStorage.getItem("spiritBombLevel")) || 0;
-  if (currentPowerLevel >= 150 && kiBlastLevel >= 1 && kamehamehaLevel >= 1 && spiritBombLevel >= 1) {
-      centerImage.style.backgroundImage = "url('https://images-ext-2.discordapp.net/external/C37HM8WiJ-FmY67LW9TR-TjxFAKCgHw2M5oBxKhyQxM/https/gamepress.gg/dblegends/sites/dblegends/files/2022-02/i5IPZPe.png?width=609&height=609')";
-      multiplier = 5;
-  } else {
-  alert("Your power level and/or upgrades are not high enough to transform into KaioKen Goku");
-  }
-  });
+button1.addEventListener("click", function () {
+    var kiBlastLevel = parseInt(localStorage.getItem("kiBlastLevel")) || 0;
+    var kamehamehaLevel = parseInt(localStorage.getItem("kamehamehaLevel")) || 0;
+    var spiritBombLevel = parseInt(localStorage.getItem("spiritBombLevel")) || 0;
+    if (currentPowerLevel >= 150 && kiBlastLevel >= 1 && kamehamehaLevel >= 1 && spiritBombLevel >= 1) {
+        centerImage.style.backgroundImage = "url('https://images-ext-2.discordapp.net/external/C37HM8WiJ-FmY67LW9TR-TjxFAKCgHw2M5oBxKhyQxM/https/gamepress.gg/dblegends/sites/dblegends/files/2022-02/i5IPZPe.png?width=609&height=609')";
+        multiplier = 5;
+    } else {
+
+        var reason = "";
+        if (currentPowerLevel < 150) {
+            reason = "Your current power level is not high enough.";
+        }
+        if (kiBlastLevel < 1) {
+            reason += "You need to upgrade your ki blast.";
+        }
+        if (kamehamehaLevel < 1) {
+            reason += "You need to upgrade your kamehameha.";
+        }
+        if (spiritBombLevel < 1) {
+            reason += "You need to upgrade your spirit bomb.";
+        }
+        alert(reason);
+    }
+});
 
 
   button2.addEventListener("click", function() {
     var kiBlastLevel = parseInt(localStorage.getItem("kiBlastLevel")) || 0;
     var kamehamehaLevel = parseInt(localStorage.getItem("kamehamehaLevel")) || 0;
     var spiritBombLevel = parseInt(localStorage.getItem("spiritBombLevel")) || 0;
-    if (currentPowerLevel >= 500 && kiBlastLevel >= 2 && kamehamehaLevel >= 2 && spiritBombLevel >= 1) {
+    if (currentPowerLevel >= 500 && kiBlastLevel >= 2 && kamehamehaLevel >= 1 && spiritBombLevel >= 1) {
       centerImage.style.backgroundImage = "url('https://images-ext-1.discordapp.net/external/iQ0SgKTmW7bOSBNZsm5zg5DKkopbykcqvpDNmc0tMMo/%3Fitok%3DTWkPQqpY/https/gamepress.gg/dblegends/sites/dblegends/files/styles/522x522/public/2021-05/lOju6wl.png?width=470&height=470')";
       multiplier = 50;
-  } else {
-    alert("Your power level and/or upgrades are not high enough to transform into SSJ Goku");
-  }
+    } else {
+
+        var reason = "";
+        if (currentPowerLevel < 500) {
+            reason = "Your current power level is not high enough. ";
+        }
+        if (kiBlastLevel < 2) {
+            reason += "You need to upgrade your ki blast. ";
+        }
+        if (kamehamehaLevel < 1) {
+            reason += "You need to upgrade your kamehameha. ";
+        }
+        if (spiritBombLevel < 1) {
+            reason += "You need to upgrade your spirit bomb. ";
+        }
+        alert(reason);
+    }
   });  
 
   button3.addEventListener("click", function() {
     var kiBlastLevel = parseInt(localStorage.getItem("kiBlastLevel")) || 0;
     var kamehamehaLevel = parseInt(localStorage.getItem("kamehamehaLevel")) || 0;
     var spiritBombLevel = parseInt(localStorage.getItem("spiritBombLevel")) || 0;
-    if (currentPowerLevel >= 5000 && kiBlastLevel >= 3 && kamehamehaLevel >= 1 && spiritBombLevel >= 1) {
+    if (currentPowerLevel >= 5000 && kiBlastLevel >= 3 && kamehamehaLevel >= 2 && spiritBombLevel >= 1) {
         centerImage.style.backgroundImage = "url('https://media.discordapp.net/attachments/1067525557824266400/1071190774068297768/RLHhO3g.png?width=470&height=470')";
         multiplier = 500;
     } else {
-    alert("Your power level and/or upgrades are not high enough to transform into SSJ2 Goku");
-    }
-    });
+
+          var reason = "";
+        if (currentPowerLevel < 5000) {
+              reason = "Your current power level is not high enough. ";
+          }
+          if (kiBlastLevel < 3) {
+              reason += "You need to upgrade your ki blast. ";
+          }
+          if (kamehamehaLevel < 2) {
+              reason += "You need to upgrade your kamehameha. ";
+          }
+          if (spiritBombLevel < 1) {
+              reason += "You need to upgrade your spirit bomb. ";
+          }
+          alert(reason);
+      }
+  });  
     
     button4.addEventListener("click", function() {
     var kiBlastLevel = parseInt(localStorage.getItem("kiBlastLevel")) || 0;
@@ -90,8 +134,22 @@ button1.addEventListener("click", function() {
          centerImage.style.backgroundImage = "url('https://gamepress.gg/dblegends/sites/dblegends/files/2019-10/3YDgjhf.png')";
          multiplier = 5000;
     } else {
-    alert("Your power level and/or upgrades are not high enough to transform into SSJ3 Goku");
-    }
+
+            var reason = "";
+        if (currentPowerLevel < 50000) {
+                reason = "Your current power level is not high enough. ";
+            }
+            if (kiBlastLevel < 3) {
+                reason += "You need to upgrade your ki blast. ";
+            }
+            if (kamehamehaLevel < 2) {
+                reason += "You need to upgrade your kamehameha. ";
+            }
+            if (spiritBombLevel < 2) {
+                reason += "You need to upgrade your spirit bomb. ";
+            }
+        alert(reason);
+        }
     });
     
     button5.addEventListener("click", function() {
@@ -102,8 +160,22 @@ button1.addEventListener("click", function() {
          centerImage.style.backgroundImage = "url('https://images-ext-2.discordapp.net/external/Ipib-8vRJbyphGVMi2BD0Bh3qa_a3nQU8qjRY78GByY/%3Fitok%3DXn7yY7Hj/https/gamepress.gg/dblegends/sites/dblegends/files/styles/522x522/public/2021-04/AIUVUDX.png?width=470&height=470')";
          multiplier = 10000;
     } else {
-    alert("Your power level and/or upgrades are not high enough to transform into SSJ4 Goku");
-    }
+
+            var reason = "";
+        if (currentPowerLevel < 500000) {
+                reason = "Your current power level is not high enough. ";
+            }
+            if (kiBlastLevel < 3) {
+                reason += "You need to upgrade your ki blast. ";
+            }
+            if (kamehamehaLevel < 3) {
+                reason += "You need to upgrade your kamehameha. ";
+            }
+            if (spiritBombLevel < 3) {
+                reason += "You need to upgrade your spirit bomb. ";
+            }
+        alert(reason);
+        }
     });
 
     button6.addEventListener("click", function() {
@@ -114,9 +186,23 @@ button1.addEventListener("click", function() {
           centerImage.style.backgroundImage = "url('https://media.discordapp.net/attachments/1067525557824266400/1071469246376312882/spssjggokuredfighter.png')";
           multiplier = 100000;
       } else {
-      alert("Your power level and/or upgrades are not high enough to transform into SSG Goku");
-      }
-      });
+
+            var reason = "";
+          if (currentPowerLevel < 5000000) {
+                reason = "Your current power level is not high enough. ";
+            }
+            if (kiBlastLevel < 4) {
+                reason += "You need to upgrade your ki blast. ";
+            }
+            if (kamehamehaLevel < 3) {
+                reason += "You need to upgrade your kamehameha. ";
+            }
+            if (spiritBombLevel < 3) {
+                reason += "You need to upgrade your spirit bomb. ";
+            }
+          alert(reason);
+        }
+    });
     
     button7.addEventListener("click", function() {
       var kiBlastLevel = parseInt(localStorage.getItem("kiBlastLevel")) || 0;
@@ -125,10 +211,29 @@ button1.addEventListener("click", function() {
       if (currentPowerLevel >= 50000000 && kiBlastLevel >= 5 && kamehamehaLevel >= 4 && spiritBombLevel >= 3) {
           centerImage.style.backgroundImage = "url('https://media.discordapp.net/attachments/1067525557824266400/1071469344044883988/Q4AVP3W.png')";
           multiplier = 1000000;
-      } else {
-      alert("Your power level and/or upgrades are not high enough to transform into SSB Goku");
-      }
-      });
+          BeerusFight = true;
+        } else {
+
+            var reason = "";
+            if (currentPowerLevel < 5000000) {
+                reason = "Your current power level is not high enough. ";
+            }
+            if (kiBlastLevel < 5) {
+                reason += "You need to upgrade your ki blast. ";
+            }
+            if (kamehamehaLevel < 4) {
+                reason += "You need to upgrade your kamehameha. ";
+            }
+            if (spiritBombLevel < 3) {
+                reason += "You need to upgrade your spirit bomb. ";
+            }
+            if (!BeerusFight) {
+                reason += "You need to defeat Beerus! ";
+            }
+          alert(reason);
+        }
+    });
+
       
     button8.addEventListener("click", function() {
       var kiBlastLevel = parseInt(localStorage.getItem("kiBlastLevel")) || 0;
@@ -138,32 +243,80 @@ button1.addEventListener("click", function() {
           centerImage.style.backgroundImage = "url('https://media.discordapp.net/attachments/1067525557824266400/1071469740641497139/FN8-dsqX0AIdlG0.png?width=440&height=586')";
           multiplier = 10000000;
       } else {
-      alert("Your power level and/or upgrades are not high enough to transform into SSB KK Goku");
-      }
-      });
-      button9.addEventListener("click", function() {
-        var kiBlastLevel = parseInt(localStorage.getItem("kiBlastLevel")) || 0;
-        var kamehamehaLevel = parseInt(localStorage.getItem("kamehamehaLevel")) || 0;
-        var spiritBombLevel = parseInt(localStorage.getItem("spiritBombLevel")) || 0;
-        if (currentPowerLevel >= 5000000000 && kiBlastLevel >= 5 && kamehamehaLevel >= 5 && spiritBombLevel >= 4) {
+
+            var reason = "";
+          if (currentPowerLevel < 500000000) {
+                reason = "Your current power level is not high enough. ";
+            }
+            if (kiBlastLevel < 5) {
+                reason += "You need to upgrade your ki blast. ";
+            }
+            if (kamehamehaLevel < 5) {
+                reason += "You need to upgrade your kamehameha. ";
+            }
+            if (spiritBombLevel < 3) {
+                reason += "You need to upgrade your spirit bomb. ";
+            }
+          alert(reason);
+        }
+    });
+
+button9.addEventListener("click", function () {
+    var kiBlastLevel = parseInt(localStorage.getItem("kiBlastLevel")) || 0;
+    var kamehamehaLevel = parseInt(localStorage.getItem("kamehamehaLevel")) || 0;
+    var spiritBombLevel = parseInt(localStorage.getItem("spiritBombLevel")) || 0;
+    if (currentPowerLevel >= 5000000000 && kiBlastLevel >= 5 && kamehamehaLevel >= 5 && spiritBombLevel >= 4) {
         centerImage.style.backgroundImage = "url('https://media.discordapp.net/attachments/1067525557824266400/1071469968903917679/5aHUyRX.png?width=586&height=586')";
         multiplier = 100000000;
-        } else {
-        alert("Your power level and/or upgrades are not high enough to transform into UI Goku");
+    } else {
+
+        var reason = "";
+        if (currentPowerLevel < 5000000000) {
+            reason = "Your current power level is not high enough. ";
         }
-        });
-        
-        button10.addEventListener("click", function() {
-        var kiBlastLevel = parseInt(localStorage.getItem("kiBlastLevel")) || 0;
-        var kamehamehaLevel = parseInt(localStorage.getItem("kamehamehaLevel")) || 0;
-        var spiritBombLevel = parseInt(localStorage.getItem("spiritBombLevel")) || 0;
-        if (currentPowerLevel >= 50000000000 && kiBlastLevel >= 5 && kamehamehaLevel >= 5 && spiritBombLevel >= 5) {
+        if (kiBlastLevel < 5) {
+            reason += "You need to upgrade your ki blast. ";
+        }
+        if (kamehamehaLevel < 5) {
+            reason += "You need to upgrade your kamehameha. ";
+        }
+        if (spiritBombLevel < 4) {
+            reason += "You need to upgrade your spirit bomb. ";
+        }
+        alert(reason);
+    }
+});
+
+button10.addEventListener("click", function () {
+    var kiBlastLevel = parseInt(localStorage.getItem("kiBlastLevel")) || 0;
+    var kamehamehaLevel = parseInt(localStorage.getItem("kamehamehaLevel")) || 0;
+    var spiritBombLevel = parseInt(localStorage.getItem("spiritBombLevel")) || 0;
+    var reason = "";
+
+    if (currentPowerLevel < 50000000000) {
+        reason = "Your current power level is not high enough. ";
+    }
+    if (kiBlastLevel < 5) {
+        reason += "You need to upgrade your ki blast. ";
+    }
+    if (kamehamehaLevel < 5) {
+        reason += "You need to upgrade your kamehameha. ";
+    }
+    if (spiritBombLevel < 5) {
+        reason += "You need to upgrade your spirit bomb. ";
+    }
+    if (!JirenFight) {
+        reason += "You need to defeat Jiren! ";
+    }
+
+    if (currentPowerLevel >= 50000000000 && kiBlastLevel >= 5 && kamehamehaLevel >= 5 && spiritBombLevel >= 5 && JirenFight == true) {
         centerImage.style.backgroundImage = "url('https://media.discordapp.net/attachments/1067525557824266400/1071470047991693322/l1wQqq2.png?width=586&height=586')";
         multiplier = 1000000000;
-        } else {
-        alert("Your power level and/or upgrades are not high enough and/or you haven't defeated Jiren to transform into MUI Goku");
-        }
-        });
+    } else {
+        alert(reason);
+    }
+});
+
   
   document.getElementById("button11").addEventListener("click", function() {
     if (currentPowerLevel >= 1000) {
@@ -398,47 +551,275 @@ spiritBombBtn.addEventListener("click", function () {
     var currentLevel = parseInt(localStorage.getItem("spiritBombLevel")) || 0;
     if (currentPowerLevel >= (2000 * (currentLevel + 1)) && currentLevel < 5) {
         localStorage.setItem("spiritBombLevel", currentLevel + 1);
-        spiritBombBtn.innerHTML = `Spirit Bomb(${ currentLevel + 1} /5)`;
-} else if (currentLevel >= 5) {
-    alert("Spirit Bomb is already at maximum level");
-} else {
-    alert("Not enough power level to upgrade Spirit Bomb");
-}
+        spiritBombBtn.innerHTML = `Spirit Bomb(${currentLevel + 1} /5)`;
+    } else if (currentLevel >= 5) {
+        alert("Spirit Bomb is already at maximum level");
+    } else {
+        alert("Not enough power level to upgrade Spirit Bomb");
+    }
 });
 
-var oldHTML;
+
 
 function createNewScreen() {
     oldHTML = document.body.innerHTML;
     document.body.innerHTML = "";
     document.body.innerHTML = "<h1 style='text-align: center; color: white; background-color: #008080; padding: 20px;'>Boss Selection</h1>" +
-        "<button id='goBackBtn' style='display: block; margin: 0 auto;'>Go back</button>" +
+        "<button id='goBackBtn' style='display: block; margin: 0 auto; width: 250px; height: 50px; margin-top: 20px; background-color: #0f0f23; color: white; border-radius: 10px; box-shadow: 0px 0px 10px black; cursor: pointer; font-size: 20px;'>Go back</button>" +
         "<div style='display: flex; justify-content: center; align-items: center;'>" +
-        "<div style='margin: 20px; text-align: center;'>" +
-        "<img style='display: block; width: 250px; height: 250px; margin-bottom: 20px; margin-left: 50px;' src='https://media.discordapp.net/attachments/1067525557824266400/1072310350562721792/O1FlHVi_1.png?width=472&height=207' alt='Beerus'>" +
+        "<div id='divBeerus' style='margin: 20px; text-align: center;'>" +
+        "<img id='imgBeerus' style='display: block; width: 250px; height: 250px; margin-bottom: 20px; margin-left: 50px;' src='https://media.discordapp.net/attachments/1067525557824266400/1072310350562721792/O1FlHVi_1.png?width=472&height=207' alt='Beerus'>" +
         "<p style='text-align: center; color: white;'>Challenge Lord Beerus! (25,000,000 Powerlevel Required)</p>" +
         "</div>" +
-        "<div style='margin: 20px; text-align: center;'>" +
-        "<img style='display: block; width: 250px; height: 250px; margin-bottom: 20px; margin-left: 50px;' src='https://media.discordapp.net/attachments/1067525557824266400/1072310553831293019/l4IMSEd_1.png?width=521&height=202' alt='Jiren'>" +
+        "<div id='divJiren' style='margin: 20px; text-align: center;'>" +
+        "<img id='imgJiren' style='display: block; width: 250px; height: 250px; margin-bottom: 20px; margin-left: 50px;' src='https://media.discordapp.net/attachments/1067525557824266400/1072310553831293019/l4IMSEd_1.png?width=521&height=202' alt='Jiren'>" +
         "<p style='text-align: center; color: white;'>Challenge Jiren (25,000,000,000 Powerlevel Required)</p>" +
         "</div>" +
 
         "</div>";
     document.body.style.backgroundColor = "#0f0f23";
-    document.getElementById("goBackBtn").addEventListener("click", goBack);
+
+    var goBackBtn = document.getElementById("goBackBtn");
+    goBackBtn.removeEventListener("click", goBack);
+    goBackBtn.addEventListener("click", function () {
+        location.reload();
+    });
+
+    
+
     document.querySelectorAll("img")[0].style.boxShadow = "0px 0px 10px purple";
     document.querySelectorAll("img")[1].style.boxShadow = "0px 0px 10px red";
     document.querySelectorAll("img").forEach(img => {
         img.style.borderRadius = "10px";
         img.style.cursor = "pointer";
     });
+    document.getElementById("imgBeerus").addEventListener("click", challengeBeerus);
+    document.getElementById("imgJiren").addEventListener("click", challengeJiren);
+}
 
-    document.querySelectorAll("div")[1].firstChild.style.boxShadow = "0px 0px 10px purple";
-    document.querySelectorAll("img")[0].lastChild.style.boxShadow = "0px 0px 10px red";}
+
+document.querySelectorAll("div")[1].firstChild.style.boxShadow = "0px 0px 10px purple";
+document.querySelectorAll("img")[0].lastChild.style.boxShadow = "0px 0px 10px red";
 
 
 
 function goBack() {
     document.body.innerHTML = "";
     document.body.innerHTML = oldHTML;
-}   
+}
+
+
+function challengeBeerus() {
+    if (currentPowerLevel >= 25000000) {
+        document.body.innerHTML = "";
+        document.body.style.backgroundColor = "#0f0f23";
+        document.body.innerHTML =
+            "<div id='score'>Score: <span id='player-score'>0</span> - <span id='computer-score'>0</span></div>" + 
+            "<div id='gameOver' style='display: none;'>" +
+            "<p style='color: white; font-size: 24px;' id='resultText'></p>" +
+            "</div>" +
+            "<div style='display: flex; flex-direction: column; align-items: center;'>" +
+            "<p style='color: white; font-size: 24px;'>Let's play Rock, Paper, Scissors!</p>" +
+            "<div style='display: flex; justify-content: space-between; width: 50%;'>" +
+            "<img src='https://media.discordapp.net/attachments/1067525557824266400/1072662765627519128/image_1.png' style='width: 500px; height: 500px;'>" +
+            "<div style='display: flex; flex-direction: column; align-items: center;'>" +
+            "<button id='rock' style='background-color: white; font-size: 20px; padding: 10px 20px;'>Rock</button>" +
+            "<button id='paper' style='background-color: white; font-size: 20px; padding: 10px 20px;'>Paper</button>" +
+            "<button id='scissors' style='background-color: white; font-size: 20px; padding: 10px 20px;'>Scissors</button>" +
+            "<p id='result' style='color: white; font-size: 20px;'></p>" +
+            "</div>" +
+            "<img src='https://media.discordapp.net/attachments/1067525557824266400/1071837156596789248/UgteUdL.png' style='width: 500px; height: 500px;'>" +
+            "</div>" +
+            "</div>";
+
+
+        var playerScoreSpan = document.getElementById("player-score");
+        var computerScoreSpan = document.getElementById("computer-score");
+        var resultP = document.getElementById("result");
+        var rockBtn = document.getElementById("rock");
+        var paperBtn = document.getElementById("paper");
+        var scissorsBtn = document.getElementById("scissors");
+        var playerScore = 0;
+        var computerScore = 0;
+
+        function getComputerChoice() {
+            var choices = ['rock', 'paper', 'scissors'];
+            var randomIndex = Math.floor(Math.random() * 3);
+            return choices[randomIndex];
+        }
+
+        function win(playerChoice, computerChoice) {
+            playerScore++;
+            playerScoreSpan.innerHTML = playerScore;
+            resultP.innerHTML = "You win! " + playerChoice + " beats " + computerChoice + ".";
+            checkForWin();
+        }
+
+        function lose(playerChoice, computerChoice) {
+            computerScore++;
+            computerScoreSpan.innerHTML = computerScore;
+            resultP.innerHTML = "You lose! " + computerChoice + " beats " + playerChoice + ".";
+            checkForWin();
+        }
+
+        function checkForWin() {
+            if (playerScore === 3) {
+                resultP.innerHTML = "You beat Beerus! Congrats!";
+                disableButtons();
+                BeerusFight = true;
+            } else if (computerScore === 3) {
+                resultP.innerHTML = "Beerus has beaten you. Better luck next time.";
+                disableButtons();
+            }
+        }
+
+        function disableButtons() {
+            rockBtn.disabled = true;
+            paperBtn.disabled = true;
+            scissorsBtn.disabled = true;
+        }
+
+        rockBtn.addEventListener("click", function () {
+            var computerChoice = getComputerChoice();
+            if (computerChoice === "rock") {
+                resultP.innerHTML = "It's a draw!";
+            } else if (computerChoice === "paper") {
+                lose("rock", "paper");
+            } else {
+                win("rock", "scissors");
+            }
+        });
+
+        paperBtn.addEventListener("click", function () {
+            var computerChoice = getComputerChoice();
+            if (computerChoice === "rock") {
+                win("paper", "rock");
+            } else if (computerChoice === "paper") {
+                resultP.innerHTML = "It's a draw!";
+            } else {
+                lose("paper", "scissors");
+            }
+        });
+
+        scissorsBtn.addEventListener("click", function () {
+            var computerChoice = getComputerChoice();
+            if (computerChoice === "rock") {
+                lose("scissors", "rock");
+            } else if (computerChoice === "paper") {
+                win("scissors", "paper");
+            } else {
+                resultP.innerHTML = "It's a draw!";
+            }
+        });
+
+    } else {
+        alert("To challenge Lord Beerus get your powerlevel to 25,000,000!");
+    }
+}
+
+function challengeJiren() {
+    if (currentPowerLevel >= 25000000000) {
+        document.body.innerHTML = "";
+        document.body.style.backgroundColor = "#0f0f23";
+        document.body.innerHTML =
+            "<div id='score'>Score: <span id='player-score'>0</span> - <span id='computer-score'>0</span></div>" +
+            "<div id='gameOver' style='display: none;'>" +
+            "<p style='color: white; font-size: 24px;' id='resultText'></p>" +
+            "</div>" +
+            "<div style='display: flex; flex-direction: column; align-items: center;'>" +
+            "<p style='color: white; font-size: 24px;'>Let's play Rock, Paper, Scissors!</p>" +
+            "<div style='display: flex; justify-content: space-between; width: 50%;'>" +
+            "<img src='https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/4c208d33-9bf9-4217-8941-f9ceac3c8824/df6qzhr-8778c440-31f0-4d0b-a8ba-fbc2f22bbec8.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzRjMjA4ZDMzLTliZjktNDIxNy04OTQxLWY5Y2VhYzNjODgyNFwvZGY2cXpoci04Nzc4YzQ0MC0zMWYwLTRkMGItYThiYS1mYmMyZjIyYmJlYzgucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.C_pJOiJVjePrz07EcsXmijxthyrtPPmiLAEYVA7sJEw' style='width: 500px; height: 500px;'>" +
+            "<div style='display: flex; flex-direction: column; align-items: center;'>" +
+            "<button id='rock' style='background-color: white; font-size: 20px; padding: 10px 20px;'>Rock</button>" +
+            "<button id='paper' style='background-color: white; font-size: 20px; padding: 10px 20px;'>Paper</button>" +
+            "<button id='scissors' style='background-color: white; font-size: 20px; padding: 10px 20px;'>Scissors</button>" +
+            "<p id='result' style='color: white; font-size: 20px;'></p>" +
+            "</div>" +
+            "<img src='https://media.discordapp.net/attachments/1067525557824266400/1072681010275287080/image_2.png' style='width: 500px; height: 500px;'>" +
+            "</div>" +
+            "</div>";
+
+
+        var playerScoreSpan = document.getElementById("player-score");
+        var computerScoreSpan = document.getElementById("computer-score");
+        var resultP = document.getElementById("result");
+        var rockBtn = document.getElementById("rock");
+        var paperBtn = document.getElementById("paper");
+        var scissorsBtn = document.getElementById("scissors");
+        var playerScore = 0;
+        var computerScore = 0;
+
+        function getComputerChoice() {
+            var choices = ['rock', 'paper', 'scissors'];
+            var randomIndex = Math.floor(Math.random() * 3);
+            return choices[randomIndex];
+        }
+
+        function win(playerChoice, computerChoice) {
+            playerScore++;
+            playerScoreSpan.innerHTML = playerScore;
+            resultP.innerHTML = "You win! " + playerChoice + " beats " + computerChoice + ".";
+            checkForWin();
+        }
+
+        function lose(playerChoice, computerChoice) {
+            computerScore++;
+            computerScoreSpan.innerHTML = computerScore;
+            resultP.innerHTML = "You lose! " + computerChoice + " beats " + playerChoice + ".";
+            checkForWin();
+        }
+
+        function checkForWin() {
+            if (playerScore === 3) {
+                resultP.innerHTML = "You beat Jiren! Congrats!";
+                disableButtons();
+                JirenFight = true;
+            } else if (computerScore === 3) {
+                resultP.innerHTML = "Jiren has beaten you. Better luck next time.";
+                disableButtons();
+            }
+        }
+
+        function disableButtons() {
+            rockBtn.disabled = true;
+            paperBtn.disabled = true;
+            scissorsBtn.disabled = true;
+        }
+
+        rockBtn.addEventListener("click", function () {
+            var computerChoice = getComputerChoice();
+            if (computerChoice === "rock") {
+                resultP.innerHTML = "It's a draw!";
+            } else if (computerChoice === "paper") {
+                lose("rock", "paper");
+            } else {
+                win("rock", "scissors");
+            }
+        });
+
+        paperBtn.addEventListener("click", function () {
+            var computerChoice = getComputerChoice();
+            if (computerChoice === "rock") {
+                win("paper", "rock");
+            } else if (computerChoice === "paper") {
+                resultP.innerHTML = "It's a draw!";
+            } else {
+                lose("paper", "scissors");
+            }
+        });
+
+        scissorsBtn.addEventListener("click", function () {
+            var computerChoice = getComputerChoice();
+            if (computerChoice === "rock") {
+                lose("scissors", "rock");
+            } else if (computerChoice === "paper") {
+                win("scissors", "paper");
+            } else {
+                resultP.innerHTML = "It's a draw!";
+            }
+        });
+    } else {
+        alert("To challenge Jiren get your powerlevel to 25,000,000,000!");
+    }
+}

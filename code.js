@@ -16,7 +16,7 @@ const button18 = document.getElementById("button18");
 
 
 
-var multiplier = 1;
+var multiplier = 1000000;
 
 let currentPowerLevel = 0;
 
@@ -45,6 +45,245 @@ trainButton.addEventListener("click", function() {
 });
 
 
+function challengeBeerus() {
+    if (currentPowerLevel >= 25000000) {
+        document.body.innerHTML = "";
+        document.body.style.backgroundColor = "#0f0f23";
+        document.body.innerHTML =
+            "<div id='score'>Score: <span id='player-score'>0</span> - <span id='computer-score'>0</span></div>" +
+            "<div id='gameOver' style='display: none;'>" +
+            "<p style='color: white; font-size: 24px;' id='resultText'></p>" +
+            "</div>" +
+            "<div style='display: flex; flex-direction: column; align-items: center;'>" +
+            "<p style='color: white; font-size: 24px;'>Let's play Rock, Paper, Scissors!</p>" +
+            "<div style='display: flex; justify-content: space-between; width: 50%;'>" +
+            "<img src='https://media.discordapp.net/attachments/1067525557824266400/1072662765627519128/image_1.png' style='width: 500px; height: 500px;'>" +
+            "<div style='display: flex; flex-direction: column; align-items: center;'>" +
+            "<button id='rock' style='background-color: white; font-size: 20px; padding: 10px 20px;'>Rock</button>" +
+            "<button id='paper' style='background-color: white; font-size: 20px; padding: 10px 20px;'>Paper</button>" +
+            "<button id='scissors' style='background-color: white; font-size: 20px; padding: 10px 20px;'>Scissors</button>" +
+            "<p id='result' style='color: white; font-size: 20px;'></p>" +
+            "</div>" +
+            "<img src='https://media.discordapp.net/attachments/1067525557824266400/1071837156596789248/UgteUdL.png' style='width: 500px; height: 500px;'>" +
+            "<button id='goBackBtn' style='display: block; margin: 20px auto; width: 250px; height: 50px; margin-top: 20px; background-color: #0f0f23; color: white; border-radius: 10px; box-shadow: 0px 0px 10px black; cursor: pointer;   font-size: 20px; align-items: center;'>Leave Fight.</button>" +
+            "</div>" +
+            "</div>";
+
+        var goBackBtn = document.getElementById("goBackBtn");
+        goBackBtn.removeEventListener("click", goBack);
+        goBackBtn.addEventListener("click", function () {
+            location.reload();
+        });
+
+        function goBack() {
+            document.body.innerHTML = "";
+            document.body.innerHTML = oldHTML;
+        }
+
+        var playerScoreSpan = document.getElementById("player-score");
+        var computerScoreSpan = document.getElementById("computer-score");
+        var resultP = document.getElementById("result");
+        var rockBtn = document.getElementById("rock");
+        var paperBtn = document.getElementById("paper");
+        var scissorsBtn = document.getElementById("scissors");
+        var playerScore = 0;
+        var computerScore = 0;
+
+        function getComputerChoice() {
+            var choices = ['rock', 'paper', 'scissors'];
+            var randomIndex = Math.floor(Math.random() * 3);
+            return choices[randomIndex];
+        }
+
+        function win(playerChoice, computerChoice) {
+            playerScore++;
+            playerScoreSpan.innerHTML = playerScore;
+            resultP.innerHTML = "You win! " + playerChoice + " beats " + computerChoice + ".";
+            checkForWin();
+        }
+
+        function lose(playerChoice, computerChoice) {
+            computerScore++;
+            computerScoreSpan.innerHTML = computerScore;
+            resultP.innerHTML = "You lose! " + computerChoice + " beats " + playerChoice + ".";
+            checkForWin();
+        }
+
+        function checkForWin() {
+            if (playerScore === 3) {
+                resultP.innerHTML = "You beat Beerus! Congrats!";
+                disableButtons();
+                localStorage.setItem("BeerusFight", true);
+            } else if (computerScore === 3) {
+                resultP.innerHTML = "Beerus has beaten you. Better luck next time.";
+                disableButtons();
+            }
+        }
+
+
+        function disableButtons() {
+            rockBtn.disabled = true;
+            paperBtn.disabled = true;
+            scissorsBtn.disabled = true;
+        }
+
+        rockBtn.addEventListener("click", function () {
+            var computerChoice = getComputerChoice();
+            if (computerChoice === "rock") {
+                resultP.innerHTML = "It's a draw!";
+            } else if (computerChoice === "paper") {
+                lose("rock", "paper");
+            } else {
+                win("rock", "scissors");
+            }
+        });
+
+        paperBtn.addEventListener("click", function () {
+            var computerChoice = getComputerChoice();
+            if (computerChoice === "rock") {
+                win("paper", "rock");
+            } else if (computerChoice === "paper") {
+                resultP.innerHTML = "It's a draw!";
+            } else {
+                lose("paper", "scissors");
+            }
+        });
+
+        scissorsBtn.addEventListener("click", function () {
+            var computerChoice = getComputerChoice();
+            if (computerChoice === "rock") {
+                lose("scissors", "rock");
+            } else if (computerChoice === "paper") {
+                win("scissors", "paper");
+            } else {
+                resultP.innerHTML = "It's a draw!";
+            }
+        });
+
+    } else {
+        alert("To challenge Lord Beerus get your powerlevel to 25,000,000!");
+    }
+}
+
+function challengeJiren() {
+    if (currentPowerLevel >= 25000000000) {
+        document.body.innerHTML = "";
+        document.body.style.backgroundColor = "#0f0f23";
+        document.body.innerHTML =
+            "<div id='score'>Score: <span id='player-score'>0</span> - <span id='computer-score'>0</span></div>" +
+            "<div id='gameOver' style='display: none;'>" +
+            "<p style='color: white; font-size: 24px;' id='resultText'></p>" +
+            "</div>" +
+            "<div style='display: flex; flex-direction: column; align-items: center;'>" +
+            "<p style='color: white; font-size: 24px;'>Let's play Rock, Paper, Scissors!</p>" +
+            "<div style='display: flex; justify-content: space-between; width: 50%;'>" +
+            "<img src='https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/4c208d33-9bf9-4217-8941-f9ceac3c8824/df6qzhr-8778c440-31f0-4d0b-a8ba-fbc2f22bbec8.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzRjMjA4ZDMzLTliZjktNDIxNy04OTQxLWY5Y2VhYzNjODgyNFwvZGY2cXpoci04Nzc4YzQ0MC0zMWYwLTRkMGItYThiYS1mYmMyZjIyYmJlYzgucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.C_pJOiJVjePrz07EcsXmijxthyrtPPmiLAEYVA7sJEw' style='width: 500px; height: 500px;'>" +
+            "<div style='display: flex; flex-direction: column; align-items: center;'>" +
+            "<button id='rock' style='background-color: white; font-size: 20px; padding: 10px 20px;'>Rock</button>" +
+            "<button id='paper' style='background-color: white; font-size: 20px; padding: 10px 20px;'>Paper</button>" +
+            "<button id='scissors' style='background-color: white; font-size: 20px; padding: 10px 20px;'>Scissors</button>" +
+            "<p id='result' style='color: white; font-size: 20px;'></p>" +
+            "</div>" +
+            "<img src='https://media.discordapp.net/attachments/1067525557824266400/1072681010275287080/image_2.png' style='width: 500px; height: 500px;'>" +
+            "<button id='goBackBtn' style='display: block; margin: 20px auto; width: 250px; height: 50px; margin-top: 20px; background-color: #0f0f23; color: white; border-radius: 10px; box-shadow: 0px 0px 10px black; cursor: pointer;   font-size: 20px; text-align: center;'>Leave Fight.</button>" +
+            "</div>" +
+            "</div>";
+
+
+        var goBackBtn = document.getElementById("goBackBtn");
+        goBackBtn.removeEventListener("click", goBack);
+        goBackBtn.addEventListener("click", function () {
+            location.reload();
+        });
+
+        function goBack() {
+            document.body.innerHTML = "";
+            document.body.innerHTML = oldHTML;
+        }
+
+        var playerScoreSpan = document.getElementById("player-score");
+        var computerScoreSpan = document.getElementById("computer-score");
+        var resultP = document.getElementById("result");
+        var rockBtn = document.getElementById("rock");
+        var paperBtn = document.getElementById("paper");
+        var scissorsBtn = document.getElementById("scissors");
+        var playerScore = 0;
+        var computerScore = 0;
+
+        function getComputerChoice() {
+            var choices = ['rock', 'paper', 'scissors'];
+            var randomIndex = Math.floor(Math.random() * 3);
+            return choices[randomIndex];
+        }
+
+        function win(playerChoice, computerChoice) {
+            playerScore++;
+            playerScoreSpan.innerHTML = playerScore;
+            resultP.innerHTML = "You win! " + playerChoice + " beats " + computerChoice + ".";
+            checkForWin();
+        }
+
+        function lose(playerChoice, computerChoice) {
+            computerScore++;
+            computerScoreSpan.innerHTML = computerScore;
+            resultP.innerHTML = "You lose! " + computerChoice + " beats " + playerChoice + ".";
+            checkForWin();
+        }
+
+        function checkForWin() {
+            if (playerScore === 3) {
+                resultP.innerHTML = "You beat Jiren! Congrats!";
+                disableButtons();
+                localStorage.setItem("JirenFight", true);
+            } else if (computerScore === 3) {
+                resultP.innerHTML = "Jiren has beaten you. Better luck next time.";
+                disableButtons();
+            }
+        }
+
+
+        function disableButtons() {
+            rockBtn.disabled = true;
+            paperBtn.disabled = true;
+            scissorsBtn.disabled = true;
+        }
+
+        rockBtn.addEventListener("click", function () {
+            var computerChoice = getComputerChoice();
+            if (computerChoice === "rock") {
+                resultP.innerHTML = "It's a draw!";
+            } else if (computerChoice === "paper") {
+                lose("rock", "paper");
+            } else {
+                win("rock", "scissors");
+            }
+        });
+
+        paperBtn.addEventListener("click", function () {
+            var computerChoice = getComputerChoice();
+            if (computerChoice === "rock") {
+                win("paper", "rock");
+            } else if (computerChoice === "paper") {
+                resultP.innerHTML = "It's a draw!";
+            } else {
+                lose("paper", "scissors");
+            }
+        });
+
+        scissorsBtn.addEventListener("click", function () {
+            var computerChoice = getComputerChoice();
+            if (computerChoice === "rock") {
+                lose("scissors", "rock");
+            } else if (computerChoice === "paper") {
+                win("scissors", "paper");
+            } else {
+                resultP.innerHTML = "It's a draw!";
+            }
+        });
+    } else {
+        alert("To challenge Jiren get your powerlevel to 25,000,000,000!");
+    }
+}
 
 
 button1.addEventListener("click", function () {
@@ -184,7 +423,7 @@ button1.addEventListener("click", function () {
       var spiritBombLevel = parseInt(localStorage.getItem("spiritBombLevel")) || 0;
       if (currentPowerLevel >= 5000000 && kiBlastLevel >= 4 && kamehamehaLevel >= 3 && spiritBombLevel >= 3) {
           centerImage.style.backgroundImage = "url('https://media.discordapp.net/attachments/1067525557824266400/1071469246376312882/spssjggokuredfighter.png')";
-          multiplier = 100000;
+          multiplier = 50000000000;
       } else {
 
             var reason = "";
@@ -203,19 +442,18 @@ button1.addEventListener("click", function () {
           alert(reason);
         }
     });
-    
-    button7.addEventListener("click", function() {
-      var kiBlastLevel = parseInt(localStorage.getItem("kiBlastLevel")) || 0;
-      var kamehamehaLevel = parseInt(localStorage.getItem("kamehamehaLevel")) || 0;
-      var spiritBombLevel = parseInt(localStorage.getItem("spiritBombLevel")) || 0;
-      if (currentPowerLevel >= 50000000 && kiBlastLevel >= 5 && kamehamehaLevel >= 4 && spiritBombLevel >= 3) {
-          centerImage.style.backgroundImage = "url('https://media.discordapp.net/attachments/1067525557824266400/1071469344044883988/Q4AVP3W.png')";
-          multiplier = 1000000;
-          BeerusFight = true;
-        } else {
 
+    button7.addEventListener("click", function () {
+        var kiBlastLevel = parseInt(localStorage.getItem("kiBlastLevel")) || 0;
+        var kamehamehaLevel = parseInt(localStorage.getItem("kamehamehaLevel")) || 0;
+        var spiritBombLevel = parseInt(localStorage.getItem("spiritBombLevel")) || 0;
+        var BeerusFight = JSON.parse(localStorage.getItem("BeerusFight")) || false;
+        if (currentPowerLevel >= 50000000 && kiBlastLevel >= 5 && kamehamehaLevel >= 4 && spiritBombLevel >= 3 && BeerusFight) {
+            centerImage.style.backgroundImage = "url('https://media.discordapp.net/attachments/1067525557824266400/1071469344044883988/Q4AVP3W.png')";
+            multiplier = 1000000;
+        } else {
             var reason = "";
-            if (currentPowerLevel < 5000000) {
+            if (currentPowerLevel < 50000000) {
                 reason = "Your current power level is not high enough. ";
             }
             if (kiBlastLevel < 5) {
@@ -230,9 +468,12 @@ button1.addEventListener("click", function () {
             if (!BeerusFight) {
                 reason += "You need to defeat Beerus! ";
             }
-          alert(reason);
+            alert(reason);
         }
     });
+    
+
+
 
       
     button8.addEventListener("click", function() {
@@ -287,35 +528,38 @@ button9.addEventListener("click", function () {
     }
 });
 
-button10.addEventListener("click", function () {
-    var kiBlastLevel = parseInt(localStorage.getItem("kiBlastLevel")) || 0;
-    var kamehamehaLevel = parseInt(localStorage.getItem("kamehamehaLevel")) || 0;
-    var spiritBombLevel = parseInt(localStorage.getItem("spiritBombLevel")) || 0;
-    var reason = "";
+    button10.addEventListener("click", function () {
+        var kiBlastLevel = parseInt(localStorage.getItem("kiBlastLevel")) || 0;
+        var kamehamehaLevel = parseInt(localStorage.getItem("kamehamehaLevel")) || 0;
+        var spiritBombLevel = parseInt(localStorage.getItem("spiritBombLevel")) || 0;
+        var reason = "";
+        var JirenFight = JSON.parse(localStorage.getItem("JirenFight")) || false;
 
-    if (currentPowerLevel < 50000000000) {
-        reason = "Your current power level is not high enough. ";
-    }
-    if (kiBlastLevel < 5) {
-        reason += "You need to upgrade your ki blast. ";
-    }
-    if (kamehamehaLevel < 5) {
-        reason += "You need to upgrade your kamehameha. ";
-    }
-    if (spiritBombLevel < 5) {
-        reason += "You need to upgrade your spirit bomb. ";
-    }
-    if (!JirenFight) {
-        reason += "You need to defeat Jiren! ";
-    }
+        if (currentPowerLevel >= 50000000000 && kiBlastLevel >= 5 && kamehamehaLevel >= 5 && spiritBombLevel >= 5 && JirenFight == true) {
+            centerImage.style.backgroundImage = "url('https://media.discordapp.net/attachments/1067525557824266400/1071470047991693322/l1wQqq2.png?width=586&height=586')";
+            multiplier = 1000000000;
+        } else {
 
-    if (currentPowerLevel >= 50000000000 && kiBlastLevel >= 5 && kamehamehaLevel >= 5 && spiritBombLevel >= 5 && JirenFight == true) {
-        centerImage.style.backgroundImage = "url('https://media.discordapp.net/attachments/1067525557824266400/1071470047991693322/l1wQqq2.png?width=586&height=586')";
-        multiplier = 1000000000;
-    } else {
-        alert(reason);
-    }
-});
+            var reason = "";
+            if (currentPowerLevel < 50000000000) {
+                reason = "Your current power level is not high enough. ";
+            }
+            if (kiBlastLevel < 5) {
+                reason += "You need to upgrade your ki blast. ";
+            }
+            if (kamehamehaLevel < 5) {
+                reason += "You need to upgrade your kamehameha. ";
+            }
+            if (spiritBombLevel < 5) {
+                reason += "You need to upgrade your spirit bomb. ";
+            }
+            if (!JirenFight) {
+                reason += "You need to defeat Jiren! ";
+            }
+            alert(reason);
+        }
+    });
+
 
   
   document.getElementById("button11").addEventListener("click", function() {
@@ -498,6 +742,9 @@ resetButton.addEventListener("click", function () {
     
         localStorage.setItem("spiritBombLevel", 1);
 
+    BeerusFight = false;
+    JirenFight = false;
+
 });
 
 
@@ -606,220 +853,4 @@ document.querySelectorAll("img")[0].lastChild.style.boxShadow = "0px 0px 10px re
 function goBack() {
     document.body.innerHTML = "";
     document.body.innerHTML = oldHTML;
-}
-
-
-function challengeBeerus() {
-    if (currentPowerLevel >= 25000000) {
-        document.body.innerHTML = "";
-        document.body.style.backgroundColor = "#0f0f23";
-        document.body.innerHTML =
-            "<div id='score'>Score: <span id='player-score'>0</span> - <span id='computer-score'>0</span></div>" + 
-            "<div id='gameOver' style='display: none;'>" +
-            "<p style='color: white; font-size: 24px;' id='resultText'></p>" +
-            "</div>" +
-            "<div style='display: flex; flex-direction: column; align-items: center;'>" +
-            "<p style='color: white; font-size: 24px;'>Let's play Rock, Paper, Scissors!</p>" +
-            "<div style='display: flex; justify-content: space-between; width: 50%;'>" +
-            "<img src='https://media.discordapp.net/attachments/1067525557824266400/1072662765627519128/image_1.png' style='width: 500px; height: 500px;'>" +
-            "<div style='display: flex; flex-direction: column; align-items: center;'>" +
-            "<button id='rock' style='background-color: white; font-size: 20px; padding: 10px 20px;'>Rock</button>" +
-            "<button id='paper' style='background-color: white; font-size: 20px; padding: 10px 20px;'>Paper</button>" +
-            "<button id='scissors' style='background-color: white; font-size: 20px; padding: 10px 20px;'>Scissors</button>" +
-            "<p id='result' style='color: white; font-size: 20px;'></p>" +
-            "</div>" +
-            "<img src='https://media.discordapp.net/attachments/1067525557824266400/1071837156596789248/UgteUdL.png' style='width: 500px; height: 500px;'>" +
-            "</div>" +
-            "</div>";
-
-
-        var playerScoreSpan = document.getElementById("player-score");
-        var computerScoreSpan = document.getElementById("computer-score");
-        var resultP = document.getElementById("result");
-        var rockBtn = document.getElementById("rock");
-        var paperBtn = document.getElementById("paper");
-        var scissorsBtn = document.getElementById("scissors");
-        var playerScore = 0;
-        var computerScore = 0;
-
-        function getComputerChoice() {
-            var choices = ['rock', 'paper', 'scissors'];
-            var randomIndex = Math.floor(Math.random() * 3);
-            return choices[randomIndex];
-        }
-
-        function win(playerChoice, computerChoice) {
-            playerScore++;
-            playerScoreSpan.innerHTML = playerScore;
-            resultP.innerHTML = "You win! " + playerChoice + " beats " + computerChoice + ".";
-            checkForWin();
-        }
-
-        function lose(playerChoice, computerChoice) {
-            computerScore++;
-            computerScoreSpan.innerHTML = computerScore;
-            resultP.innerHTML = "You lose! " + computerChoice + " beats " + playerChoice + ".";
-            checkForWin();
-        }
-
-        function checkForWin() {
-            if (playerScore === 3) {
-                resultP.innerHTML = "You beat Beerus! Congrats!";
-                disableButtons();
-                BeerusFight = true;
-            } else if (computerScore === 3) {
-                resultP.innerHTML = "Beerus has beaten you. Better luck next time.";
-                disableButtons();
-            }
-        }
-
-        function disableButtons() {
-            rockBtn.disabled = true;
-            paperBtn.disabled = true;
-            scissorsBtn.disabled = true;
-        }
-
-        rockBtn.addEventListener("click", function () {
-            var computerChoice = getComputerChoice();
-            if (computerChoice === "rock") {
-                resultP.innerHTML = "It's a draw!";
-            } else if (computerChoice === "paper") {
-                lose("rock", "paper");
-            } else {
-                win("rock", "scissors");
-            }
-        });
-
-        paperBtn.addEventListener("click", function () {
-            var computerChoice = getComputerChoice();
-            if (computerChoice === "rock") {
-                win("paper", "rock");
-            } else if (computerChoice === "paper") {
-                resultP.innerHTML = "It's a draw!";
-            } else {
-                lose("paper", "scissors");
-            }
-        });
-
-        scissorsBtn.addEventListener("click", function () {
-            var computerChoice = getComputerChoice();
-            if (computerChoice === "rock") {
-                lose("scissors", "rock");
-            } else if (computerChoice === "paper") {
-                win("scissors", "paper");
-            } else {
-                resultP.innerHTML = "It's a draw!";
-            }
-        });
-
-    } else {
-        alert("To challenge Lord Beerus get your powerlevel to 25,000,000!");
-    }
-}
-
-function challengeJiren() {
-    if (currentPowerLevel >= 25000000000) {
-        document.body.innerHTML = "";
-        document.body.style.backgroundColor = "#0f0f23";
-        document.body.innerHTML =
-            "<div id='score'>Score: <span id='player-score'>0</span> - <span id='computer-score'>0</span></div>" +
-            "<div id='gameOver' style='display: none;'>" +
-            "<p style='color: white; font-size: 24px;' id='resultText'></p>" +
-            "</div>" +
-            "<div style='display: flex; flex-direction: column; align-items: center;'>" +
-            "<p style='color: white; font-size: 24px;'>Let's play Rock, Paper, Scissors!</p>" +
-            "<div style='display: flex; justify-content: space-between; width: 50%;'>" +
-            "<img src='https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/4c208d33-9bf9-4217-8941-f9ceac3c8824/df6qzhr-8778c440-31f0-4d0b-a8ba-fbc2f22bbec8.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzRjMjA4ZDMzLTliZjktNDIxNy04OTQxLWY5Y2VhYzNjODgyNFwvZGY2cXpoci04Nzc4YzQ0MC0zMWYwLTRkMGItYThiYS1mYmMyZjIyYmJlYzgucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.C_pJOiJVjePrz07EcsXmijxthyrtPPmiLAEYVA7sJEw' style='width: 500px; height: 500px;'>" +
-            "<div style='display: flex; flex-direction: column; align-items: center;'>" +
-            "<button id='rock' style='background-color: white; font-size: 20px; padding: 10px 20px;'>Rock</button>" +
-            "<button id='paper' style='background-color: white; font-size: 20px; padding: 10px 20px;'>Paper</button>" +
-            "<button id='scissors' style='background-color: white; font-size: 20px; padding: 10px 20px;'>Scissors</button>" +
-            "<p id='result' style='color: white; font-size: 20px;'></p>" +
-            "</div>" +
-            "<img src='https://media.discordapp.net/attachments/1067525557824266400/1072681010275287080/image_2.png' style='width: 500px; height: 500px;'>" +
-            "</div>" +
-            "</div>";
-
-
-        var playerScoreSpan = document.getElementById("player-score");
-        var computerScoreSpan = document.getElementById("computer-score");
-        var resultP = document.getElementById("result");
-        var rockBtn = document.getElementById("rock");
-        var paperBtn = document.getElementById("paper");
-        var scissorsBtn = document.getElementById("scissors");
-        var playerScore = 0;
-        var computerScore = 0;
-
-        function getComputerChoice() {
-            var choices = ['rock', 'paper', 'scissors'];
-            var randomIndex = Math.floor(Math.random() * 3);
-            return choices[randomIndex];
-        }
-
-        function win(playerChoice, computerChoice) {
-            playerScore++;
-            playerScoreSpan.innerHTML = playerScore;
-            resultP.innerHTML = "You win! " + playerChoice + " beats " + computerChoice + ".";
-            checkForWin();
-        }
-
-        function lose(playerChoice, computerChoice) {
-            computerScore++;
-            computerScoreSpan.innerHTML = computerScore;
-            resultP.innerHTML = "You lose! " + computerChoice + " beats " + playerChoice + ".";
-            checkForWin();
-        }
-
-        function checkForWin() {
-            if (playerScore === 3) {
-                resultP.innerHTML = "You beat Jiren! Congrats!";
-                disableButtons();
-                JirenFight = true;
-            } else if (computerScore === 3) {
-                resultP.innerHTML = "Jiren has beaten you. Better luck next time.";
-                disableButtons();
-            }
-        }
-
-        function disableButtons() {
-            rockBtn.disabled = true;
-            paperBtn.disabled = true;
-            scissorsBtn.disabled = true;
-        }
-
-        rockBtn.addEventListener("click", function () {
-            var computerChoice = getComputerChoice();
-            if (computerChoice === "rock") {
-                resultP.innerHTML = "It's a draw!";
-            } else if (computerChoice === "paper") {
-                lose("rock", "paper");
-            } else {
-                win("rock", "scissors");
-            }
-        });
-
-        paperBtn.addEventListener("click", function () {
-            var computerChoice = getComputerChoice();
-            if (computerChoice === "rock") {
-                win("paper", "rock");
-            } else if (computerChoice === "paper") {
-                resultP.innerHTML = "It's a draw!";
-            } else {
-                lose("paper", "scissors");
-            }
-        });
-
-        scissorsBtn.addEventListener("click", function () {
-            var computerChoice = getComputerChoice();
-            if (computerChoice === "rock") {
-                lose("scissors", "rock");
-            } else if (computerChoice === "paper") {
-                win("scissors", "paper");
-            } else {
-                resultP.innerHTML = "It's a draw!";
-            }
-        });
-    } else {
-        alert("To challenge Jiren get your powerlevel to 25,000,000,000!");
-    }
 }

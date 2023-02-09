@@ -16,7 +16,7 @@ const button18 = document.getElementById("button18");
 
 
 
-var multiplier = 1000000;
+var multiplier = 1;
 
 let currentPowerLevel = 0;
 

@@ -27,6 +27,8 @@ let button14 = false;
 let button15 = false;
 let button16 = false;
 let button17 = false;
+let FriezaFight = false;
+let FatBuuFight = false;
 let BeerusFight = false;
 let JirenFight = false;
 
@@ -43,6 +45,260 @@ trainButton.addEventListener("click", function() {
   localStorage.setItem("powerLevel", currentPowerLevel);
 
 });
+
+function openLeaderboardsModal() {
+    document.getElementById("leaderboardsModal").style.display = "block";
+}
+
+function closeLeaderboardsModal() {
+    document.getElementById("leaderboardsModal").style.display = "none";
+}
+
+window.onclick = function (event) {
+    if (event.target == document.getElementById("leaderboardsModal")) {
+        document.getElementById("leaderboardsModal").style.display = "none";
+    }
+}
+
+function challengeFrieza() {
+    if (currentPowerLevel >= 2500) {
+        document.body.innerHTML = "";
+        document.body.style.backgroundColor = "#0f0f23";
+        document.body.innerHTML =
+            "<div id='score' style='font-size: 36px; color: white; text-align: center; position: absolute; top: 0; width: 100%;'>Score: <span id='player-score' style='font-size: 36px; color: white;'>0</span> - <span id='computer-score' style='font-size: 36px; color: white;'>0</span></div>" +
+            "<div id='gameOver' style='display: none;'>" +
+            "<p style='color: white; font-size: 24px;' id='resultText'></p>" +
+            "</div>" +
+            "<div style='display: flex; flex-direction: column; align-items: center;'>" +
+            "<p style='color: white; font-size: 24px;'>Let's play Rock, Paper, Scissors!</p>" +
+            "<div style='display: flex; justify-content: space-between; width: 50%;'>" +
+            "<img src='https://media.discordapp.net/attachments/1067525557824266400/1073412678778884106/image_3.png' style='width: 500px; height: 500px;'>" +
+            "<div style='display: flex; flex-direction: column; align-items: center;'>" +
+            "<button id='rock' style='background-color: white; font-size: 20px; padding: 10px 20px;'>Rock</button>" +
+            "<button id='paper' style='background-color: white; font-size: 20px; padding: 10px 20px;'>Paper</button>" +
+            "<button id='scissors' style='background-color: white; font-size: 20px; padding: 10px 20px;'>Scissors</button>" +
+            "<p id='result' style='color: white; font-size: 20px;'></p>" +
+            "</div>" +
+            "<img src='https://media.discordapp.net/attachments/1067525557824266400/1073410224842612858/dezdby1-2bffa88d-9bcb-4b23-b28c-b76c29ed9d8a.png?width=572&height=572' style='width: 500px; height: 500px;'>" +
+            "<button id='goBackBtn' style='display: block; margin: 20px auto; width: 250px; height: 50px; margin-top: 20px; background-color: #0f0f23; color: white; border-radius: 10px; box-shadow: 0px 0px 10px black; cursor: pointer;   font-size: 20px; align-items: center;'>Leave Fight.</button>" +
+            "</div>" +
+            "</div>";
+
+        var goBackBtn = document.getElementById("goBackBtn");
+        goBackBtn.removeEventListener("click", goBack);
+        goBackBtn.addEventListener("click", function () {
+            location.reload();
+        });
+
+        function goBack() {
+            document.body.innerHTML = "";
+            document.body.innerHTML = oldHTML;
+        }
+
+        var playerScoreSpan = document.getElementById("player-score");
+        var computerScoreSpan = document.getElementById("computer-score");
+        var resultP = document.getElementById("result");
+        var rockBtn = document.getElementById("rock");
+        var paperBtn = document.getElementById("paper");
+        var scissorsBtn = document.getElementById("scissors");
+        var playerScore = 0;
+        var computerScore = 0;
+
+        function getComputerChoice() {
+            var choices = ['rock', 'paper', 'scissors'];
+            var randomIndex = Math.floor(Math.random() * 3);
+            return choices[randomIndex];
+        }
+
+        function win(playerChoice, computerChoice) {
+            playerScore++;
+            playerScoreSpan.innerHTML = playerScore;
+            resultP.innerHTML = "You win! " + playerChoice + " beats " + computerChoice + ".";
+            checkForWin();
+        }
+
+        function lose(playerChoice, computerChoice) {
+            computerScore++;
+            computerScoreSpan.innerHTML = computerScore;
+            resultP.innerHTML = "You lose! " + computerChoice + " beats " + playerChoice + ".";
+            checkForWin();
+        }
+
+        function checkForWin() {
+            if (playerScore === 3) {
+                resultP.innerHTML = "You beat Frieza! Congrats!";
+                disableButtons();
+                localStorage.setItem("FriezaFight", true);
+            } else if (computerScore === 3) {
+                resultP.innerHTML = "Frieza has beaten you. Better luck next time.";
+                disableButtons();
+            }
+        }
+
+
+        function disableButtons() {
+            rockBtn.disabled = true;
+            paperBtn.disabled = true;
+            scissorsBtn.disabled = true;
+        }
+
+        rockBtn.addEventListener("click", function () {
+            var computerChoice = getComputerChoice();
+            if (computerChoice === "rock") {
+                resultP.innerHTML = "It's a draw!";
+            } else if (computerChoice === "paper") {
+                lose("rock", "paper");
+            } else {
+                win("rock", "scissors");
+            }
+        });
+
+        paperBtn.addEventListener("click", function () {
+            var computerChoice = getComputerChoice();
+            if (computerChoice === "rock") {
+                win("paper", "rock");
+            } else if (computerChoice === "paper") {
+                resultP.innerHTML = "It's a draw!";
+            } else {
+                lose("paper", "scissors");
+            }
+        });
+
+        scissorsBtn.addEventListener("click", function () {
+            var computerChoice = getComputerChoice();
+            if (computerChoice === "rock") {
+                lose("scissors", "rock");
+            } else if (computerChoice === "paper") {
+                win("scissors", "paper");
+            } else {
+                resultP.innerHTML = "It's a draw!";
+            }
+        });
+
+    } else {
+        alert("To challenge Frieza get your powerlevel to 2,500!");
+    }
+}
+
+function challengeFatBuu() {
+    if (currentPowerLevel >= 250000) {
+        document.body.innerHTML = "";
+        document.body.style.backgroundColor = "#0f0f23";
+        document.body.innerHTML =
+            "<div id='score' style='font-size: 36px; color: white; text-align: center; position: absolute; top: 0; width: 100%;'>Score: <span id='player-score' style='font-size: 36px; color: white;'>0</span> - <span id='computer-score' style='font-size: 36px; color: white;'>0</span></div>" +
+            "<div id='gameOver' style='display: none;'>" +
+            "<p style='color: white; font-size: 24px;' id='resultText'></p>" +
+            "</div>" +
+            "<div style='display: flex; flex-direction: column; align-items: center;'>" +
+            "<p style='color: white; font-size: 24px;'>Let's play Rock, Paper, Scissors!</p>" +
+            "<div style='display: flex; justify-content: space-between; width: 50%;'>" +
+            "<img src='https://images-ext-1.discordapp.net/external/nK-2XnWJj9p9oFC_DtWfMCVE_RcLKFyU7fcWYSNDreI/%3Fitok%3Dg60Rdp95/https/gamepress.gg/dblegends/sites/dblegends/files/styles/522x522/public/2018-11/N8Txh6E.png' style='width: 500px; height: 500px;'>" +
+            "<div style='display: flex; flex-direction: column; align-items: center;'>" +
+            "<button id='rock' style='background-color: white; font-size: 20px; padding: 10px 20px;'>Rock</button>" +
+            "<button id='paper' style='background-color: white; font-size: 20px; padding: 10px 20px;'>Paper</button>" +
+            "<button id='scissors' style='background-color: white; font-size: 20px; padding: 10px 20px;'>Scissors</button>" +
+            "<p id='result' style='color: white; font-size: 20px;'></p>" +
+            "</div>" +
+            "<img src='https://images-ext-1.discordapp.net/external/MidZpdlmS1yZmPJWlhzYtxVUQTcdps6xeEBVcRxoFzU/%3Ftoken%3DeyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzg0ZGMxM2I3LWEyZTctNGI0NS04M2VjLTMxMWU3MmU4MjkwMFwvZGNxdWo3bi0wYjgyZDUwZi01NDMwLTRmMDMtYmUxZC1kOTgxOTU5ZDc1NmMucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.XGi6qs8QN2Zv9gmDFxAA6UZR_GeEOU-V6jYoOAremUc/https/images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/84dc13b7-a2e7-4b45-83ec-311e72e82900/dcquj7n-0b82d50f-5430-4f03-be1d-d981959d756c.png?width=609&height=609' style='width: 500px; height: 500px;'>" +
+            "<button id='goBackBtn' style='display: block; margin: 20px auto; width: 250px; height: 50px; margin-top: 20px; background-color: #0f0f23; color: white; border-radius: 10px; box-shadow: 0px 0px 10px black; cursor: pointer;   font-size: 20px; align-items: center;'>Leave Fight.</button>" +
+            "</div>" +
+            "</div>";
+
+        var goBackBtn = document.getElementById("goBackBtn");
+        goBackBtn.removeEventListener("click", goBack);
+        goBackBtn.addEventListener("click", function () {
+            location.reload();
+        });
+
+        function goBack() {
+            document.body.innerHTML = "";
+            document.body.innerHTML = oldHTML;
+        }
+
+        var playerScoreSpan = document.getElementById("player-score");
+        var computerScoreSpan = document.getElementById("computer-score");
+        var resultP = document.getElementById("result");
+        var rockBtn = document.getElementById("rock");
+        var paperBtn = document.getElementById("paper");
+        var scissorsBtn = document.getElementById("scissors");
+        var playerScore = 0;
+        var computerScore = 0;
+
+        function getComputerChoice() {
+            var choices = ['rock', 'paper', 'scissors'];
+            var randomIndex = Math.floor(Math.random() * 3);
+            return choices[randomIndex];
+        }
+
+        function win(playerChoice, computerChoice) {
+            playerScore++;
+            playerScoreSpan.innerHTML = playerScore;
+            resultP.innerHTML = "You win! " + playerChoice + " beats " + computerChoice + ".";
+            checkForWin();
+        }
+
+        function lose(playerChoice, computerChoice) {
+            computerScore++;
+            computerScoreSpan.innerHTML = computerScore;
+            resultP.innerHTML = "You lose! " + computerChoice + " beats " + playerChoice + ".";
+            checkForWin();
+        }
+
+        function checkForWin() {
+            if (playerScore === 3) {
+                resultP.innerHTML = "You beat Fat Buu! Congrats!";
+                disableButtons();
+                localStorage.setItem("FatBuuFight", true);
+            } else if (computerScore === 3) {
+                resultP.innerHTML = "Fat Buu has beaten you. Better luck next time.";
+                disableButtons();
+            }
+        }
+
+
+        function disableButtons() {
+            rockBtn.disabled = true;
+            paperBtn.disabled = true;
+            scissorsBtn.disabled = true;
+        }
+
+        rockBtn.addEventListener("click", function () {
+            var computerChoice = getComputerChoice();
+            if (computerChoice === "rock") {
+                resultP.innerHTML = "It's a draw!";
+            } else if (computerChoice === "paper") {
+                lose("rock", "paper");
+            } else {
+                win("rock", "scissors");
+            }
+        });
+
+        paperBtn.addEventListener("click", function () {
+            var computerChoice = getComputerChoice();
+            if (computerChoice === "rock") {
+                win("paper", "rock");
+            } else if (computerChoice === "paper") {
+                resultP.innerHTML = "It's a draw!";
+            } else {
+                lose("paper", "scissors");
+            }
+        });
+
+        scissorsBtn.addEventListener("click", function () {
+            var computerChoice = getComputerChoice();
+            if (computerChoice === "rock") {
+                lose("scissors", "rock");
+            } else if (computerChoice === "paper") {
+                win("scissors", "paper");
+            } else {
+                resultP.innerHTML = "It's a draw!";
+            }
+        });
+
+    } else {
+        alert("To challenge Fat Buu get your powerlevel to 250,000!");
+    }
+}
 
 
 function challengeBeerus() {
@@ -343,6 +599,7 @@ button1.addEventListener("click", function () {
     var kiBlastLevel = parseInt(localStorage.getItem("kiBlastLevel")) || 0;
     var kamehamehaLevel = parseInt(localStorage.getItem("kamehamehaLevel")) || 0;
     var spiritBombLevel = parseInt(localStorage.getItem("spiritBombLevel")) || 0;
+    var FriezaFight = JSON.parse(localStorage.getItem("FriezaFight")) || false;
     if (currentPowerLevel >= 5000 && kiBlastLevel >= 3 && kamehamehaLevel >= 2 && spiritBombLevel >= 1) {
         centerImage.style.backgroundImage = "url('https://media.discordapp.net/attachments/1067525557824266400/1071190774068297768/RLHhO3g.png?width=470&height=470')";
         multiplier = 500;
@@ -361,6 +618,9 @@ button1.addEventListener("click", function () {
           if (spiritBombLevel < 1) {
               reason += "You need to upgrade your spirit bomb. ";
           }
+          if (!FriezaFight) {
+            reason += "You need to defeat Frieza! ";
+            }
           alert(reason);
       }
   });  
@@ -395,6 +655,8 @@ button1.addEventListener("click", function () {
     var kiBlastLevel = parseInt(localStorage.getItem("kiBlastLevel")) || 0;
     var kamehamehaLevel = parseInt(localStorage.getItem("kamehamehaLevel")) || 0;
     var spiritBombLevel = parseInt(localStorage.getItem("spiritBombLevel")) || 0;
+    var FatBuuFight = JSON.parse(localStorage.getItem("FatBuuFight")) || false;
+
     if (currentPowerLevel >= 500000 && kiBlastLevel >= 3 && kamehamehaLevel >= 3 && spiritBombLevel >= 3) {
          centerImage.style.backgroundImage = "url('https://images-ext-2.discordapp.net/external/Ipib-8vRJbyphGVMi2BD0Bh3qa_a3nQU8qjRY78GByY/%3Fitok%3DXn7yY7Hj/https/gamepress.gg/dblegends/sites/dblegends/files/styles/522x522/public/2021-04/AIUVUDX.png?width=470&height=470')";
          multiplier = 10000;
@@ -412,7 +674,10 @@ button1.addEventListener("click", function () {
             }
             if (spiritBombLevel < 3) {
                 reason += "You need to upgrade your spirit bomb. ";
-            }
+        }
+        if (!FatBuuFight) {
+            reason += "You need to defeat FatBuu! ";
+        }
         alert(reason);
         }
     });
@@ -421,6 +686,7 @@ button1.addEventListener("click", function () {
       var kiBlastLevel = parseInt(localStorage.getItem("kiBlastLevel")) || 0;
       var kamehamehaLevel = parseInt(localStorage.getItem("kamehamehaLevel")) || 0;
       var spiritBombLevel = parseInt(localStorage.getItem("spiritBombLevel")) || 0;
+
       if (currentPowerLevel >= 5000000 && kiBlastLevel >= 4 && kamehamehaLevel >= 3 && spiritBombLevel >= 3) {
           centerImage.style.backgroundImage = "url('https://media.discordapp.net/attachments/1067525557824266400/1071469246376312882/spssjggokuredfighter.png')";
           multiplier = 50000000000;
@@ -814,12 +1080,19 @@ function createNewScreen() {
     document.body.innerHTML = "<h1 style='text-align: center; color: white; background-color: #008080; padding: 20px;'>Boss Selection</h1>" +
         "<button id='goBackBtn' style='display: block; margin: 0 auto; width: 250px; height: 50px; margin-top: 20px; background-color: #0f0f23; color: white; border-radius: 10px; box-shadow: 0px 0px 10px black; cursor: pointer; font-size: 20px;'>Go back</button>" +
         "<div style='display: flex; justify-content: center; align-items: center;'>" +
+        "<div id='divFrieza' style='margin: 20px; text-align: center;'>" +
+        "<img id='imgFrieza' style='center: block; width: 250px; height: 250px; margin-bottom: 20px; margin-left: 50px;' src='https://media.discordapp.net/attachments/1067525557824266400/1073410524672434236/LSGUz1u.png' alt='Frieza'>" +
+        "<p style='text-align: center; color: white;'>Challenge Frieza! (2,500 Powerlevel Required)</p>" +
+        "<div id='divFatBuu' style='margin: 20px; text-align: center;'>" +
+        "<img id='imgFatBuu' style='center: block; width: 250px; height: 250px; margin-bottom: 20px; margin-left: 50px;' src='https://media.discordapp.net/attachments/1067525557824266400/1073413781704691762/XQtli5W.png' alt='FatBuu'>" +
+        "<p style='text-align: center; color: white;'>Challenge Fat Buu! (250,000 Powerlevel Required)</p>" +
+        "</div>" +
         "<div id='divBeerus' style='margin: 20px; text-align: center;'>" +
-        "<img id='imgBeerus' style='display: block; width: 250px; height: 250px; margin-bottom: 20px; margin-left: 50px;' src='https://media.discordapp.net/attachments/1067525557824266400/1072310350562721792/O1FlHVi_1.png?width=472&height=207' alt='Beerus'>" +
+        "<img id='imgBeerus' style='center: block; width: 250px; height: 250px; margin-bottom: 20px; margin-left: 50px;' src='https://media.discordapp.net/attachments/1067525557824266400/1072310350562721792/O1FlHVi_1.png?width=472&height=207' alt='Beerus'>" +
         "<p style='text-align: center; color: white;'>Challenge Lord Beerus! (25,000,000 Powerlevel Required)</p>" +
         "</div>" +
         "<div id='divJiren' style='margin: 20px; text-align: center;'>" +
-        "<img id='imgJiren' style='display: block; width: 250px; height: 250px; margin-bottom: 20px; margin-left: 50px;' src='https://media.discordapp.net/attachments/1067525557824266400/1072310553831293019/l4IMSEd_1.png?width=521&height=202' alt='Jiren'>" +
+        "<img id='imgJiren' style='center: block; width: 250px; height: 250px; margin-bottom: 20px; margin-left: 50px;' src='https://media.discordapp.net/attachments/1067525557824266400/1072310553831293019/l4IMSEd_1.png?width=521&height=202' alt='Jiren'>" +
         "<p style='text-align: center; color: white;'>Challenge Jiren (25,000,000,000 Powerlevel Required)</p>" +
         "</div>" +
 
@@ -832,14 +1105,16 @@ function createNewScreen() {
         location.reload();
     });
 
-    
-
     document.querySelectorAll("img")[0].style.boxShadow = "0px 0px 10px purple";
-    document.querySelectorAll("img")[1].style.boxShadow = "0px 0px 10px red";
+    document.querySelectorAll("img")[1].style.boxShadow = "0px 0px 10px pink";
+    document.querySelectorAll("img")[2].style.boxShadow = "0px 0px 10px purple";
+    document.querySelectorAll("img")[3].style.boxShadow = "0px 0px 10px red";
     document.querySelectorAll("img").forEach(img => {
         img.style.borderRadius = "10px";
         img.style.cursor = "pointer";
     });
+    document.getElementById("imgFatBuu").addEventListener("click", challengeFatBuu);
+    document.getElementById("imgFrieza").addEventListener("click", challengeFrieza);
     document.getElementById("imgBeerus").addEventListener("click", challengeBeerus);
     document.getElementById("imgJiren").addEventListener("click", challengeJiren);
 }

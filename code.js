@@ -63,7 +63,8 @@ window.onclick = function (event) {
 function challengeFrieza() {
     if (currentPowerLevel >= 2500) {
         document.body.innerHTML = "";
-        document.body.style.backgroundColor = "#0f0f23";
+        document.body.style.backgroundImage = "url(https://i.pinimg.com/originals/b5/5b/0a/b55b0a86983d46d4dde3a5e1dd4f2a62.png)";
+        document.body.style.backgroundSize = "cover";
         document.body.innerHTML =
             "<div id='score' style='font-size: 36px; color: white; text-align: center; position: absolute; top: 0; width: 100%;'>Score: <span id='player-score' style='font-size: 36px; color: white;'>0</span> - <span id='computer-score' style='font-size: 36px; color: white;'>0</span></div>" +
             "<div id='gameOver' style='display: none;'>" +
@@ -183,7 +184,8 @@ function challengeFrieza() {
 function challengeFatBuu() {
     if (currentPowerLevel >= 250000) {
         document.body.innerHTML = "";
-        document.body.style.backgroundColor = "#0f0f23";
+        document.body.style.backgroundImage = "url(https://images8.alphacoders.com/677/677260.jpg)";
+        document.body.style.backgroundSize = "cover";
         document.body.innerHTML =
             "<div id='score' style='font-size: 36px; color: white; text-align: center; position: absolute; top: 0; width: 100%;'>Score: <span id='player-score' style='font-size: 36px; color: white;'>0</span> - <span id='computer-score' style='font-size: 36px; color: white;'>0</span></div>" +
             "<div id='gameOver' style='display: none;'>" +
@@ -304,7 +306,8 @@ function challengeFatBuu() {
 function challengeBeerus() {
     if (currentPowerLevel >= 25000000) {
         document.body.innerHTML = "";
-        document.body.style.backgroundColor = "#0f0f23";
+        document.body.style.backgroundImage = "url(https://i0.wp.com/i.imgur.com/CCUXgRa.jpg)";
+        document.body.style.backgroundSize = "cover";
         document.body.innerHTML =
             "<div id='score'>Score: <span id='player-score'>0</span> - <span id='computer-score'>0</span></div>" +
             "<div id='gameOver' style='display: none;'>" +
@@ -424,7 +427,8 @@ function challengeBeerus() {
 function challengeJiren() {
     if (currentPowerLevel >= 25000000000) {
         document.body.innerHTML = "";
-        document.body.style.backgroundColor = "#0f0f23";
+        document.body.style.backgroundImage = "url(https://images-ext-1.discordapp.net/external/Ho1N8qVdg8LD28N8nd7ki9p-DVFTsfjVMEhYyyn6mzc/https/videogamemods.com/xenoverse/wp-content/uploads/sites/3/cmdm/250208/1536250899_vlcsnap-2018-09-05-16h40m30s183-1600x900.png?width=1083&height=609)";
+        document.body.style.backgroundSize = "cover";
         document.body.innerHTML =
             "<div id='score'>Score: <span id='player-score'>0</span> - <span id='computer-score'>0</span></div>" +
             "<div id='gameOver' style='display: none;'>" +
@@ -676,7 +680,7 @@ button1.addEventListener("click", function () {
                 reason += "You need to upgrade your spirit bomb. ";
         }
         if (!FatBuuFight) {
-            reason += "You need to defeat FatBuu! ";
+            reason += "You need to defeat Fat Buu! ";
         }
         alert(reason);
         }
@@ -829,7 +833,7 @@ button9.addEventListener("click", function () {
 
   
   document.getElementById("button11").addEventListener("click", function() {
-    if (currentPowerLevel >= 1000) {
+    if (currentPowerLevel >= 100) {
       button11 = true;
       button12 = false;
       button13 = false;
@@ -929,7 +933,7 @@ button9.addEventListener("click", function () {
   
   setInterval(() => {
     if (button11) {
-      currentPowerLevel += 10;
+      currentPowerLevel += 5;
     }
     if (button12) {
       currentPowerLevel += 100;
@@ -953,7 +957,7 @@ button9.addEventListener("click", function () {
   }, 1000);
 
   document.getElementById("button11").addEventListener("click", function() {
-    if (currentPowerLevel >= 1000) 
+      if (currentPowerLevel >= 100) 
     document.body.style.backgroundImage = "url('https://media.discordapp.net/attachments/1067525557824266400/1071585507022217277/1135882.png?width=880&height=587')";
   });
   document.getElementById("button12").addEventListener("click", function() {
@@ -1097,7 +1101,8 @@ function createNewScreen() {
         "</div>" +
 
         "</div>";
-    document.body.style.backgroundColor = "#0f0f23";
+    document.body.style.backgroundImage = "url(http://oyster.ignimgs.com/wordpress/stg.ign.com/2017/05/DBS90StarsCollide.jpg)";
+    document.body.style.backgroundSize = "cover";
 
     var goBackBtn = document.getElementById("goBackBtn");
     goBackBtn.removeEventListener("click", goBack);

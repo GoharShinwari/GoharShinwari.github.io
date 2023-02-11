@@ -46,19 +46,6 @@ trainButton.addEventListener("click", function() {
 
 });
 
-function openLeaderboardsModal() {
-    document.getElementById("leaderboardsModal").style.display = "block";
-}
-
-function closeLeaderboardsModal() {
-    document.getElementById("leaderboardsModal").style.display = "none";
-}
-
-window.onclick = function (event) {
-    if (event.target == document.getElementById("leaderboardsModal")) {
-        document.getElementById("leaderboardsModal").style.display = "none";
-    }
-}
 
 function challengeFrieza() {
     if (currentPowerLevel >= 2500) {
@@ -1040,6 +1027,8 @@ closeBtn.addEventListener("click", function () {
     upgradeModal.style.display = "none";
 });
 
+
+
 kiBlastBtn.addEventListener("click", function () {
     var currentLevel = parseInt(localStorage.getItem("kiBlastLevel")) || 0;
     if (currentPowerLevel >= (1000 * (currentLevel + 1)) && currentLevel < 5) {
@@ -1134,3 +1123,51 @@ function goBack() {
     document.body.innerHTML = "";
     document.body.innerHTML = oldHTML;
 }
+
+
+
+function updateLeaderboard() {
+    const leaderboardTable = document.getElementById("leaderboardTable");
+    const leaderboardBody = document.getElementById("leaderboardBody");
+    leaderboardBody.innerHTML = "";
+
+    let scores = JSON.parse(localStorage.getItem("scores")) || [];
+
+    scores.sort((a, b) => b.score - a.score);
+
+    for (let i = 0; i < scores.length; i++) {
+        const row = leaderboardBody.insertRow();
+        const rank = row.insertCell(0);
+        const username = row.insertCell(1);
+        const score = row.insertCell(2);
+
+        rank.innerHTML = i + 1;
+        username.innerHTML = scores[i].username;
+        score.innerHTML = scores[i].score;
+    }
+}
+
+function submitScore(event) {
+    event.preventDefault();
+
+    const usernameInput = document.getElementById("usernameInput");
+    const scoreInput = document.getElementById("scoreInput");
+
+    let scores = JSON.parse(localStorage.getItem("scores")) || [];
+
+    scores.push({
+        username: usernameInput.value,
+        score: parseInt(scoreInput.value)
+    });
+
+    localStorage.setItem("scores", JSON.stringify(scores));
+
+    updateLeaderboard();
+
+    event.target.reset();
+}
+
+const leaderboardForm = document.getElementById("leaderboardForm");
+leaderboardForm.addEventListener("submit", submitScore);
+
+updateLeaderboard();

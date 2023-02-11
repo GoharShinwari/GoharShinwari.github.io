@@ -13,8 +13,8 @@
 
       <button id="upgradeBtn">Skill Tree!</button>
 
-      <div id="upgradeModal" class="modal">
-          <div class="modal-content">
+      <div id="upgradeModal" class="modal1">
+          <div class="modal-content1">
               <span class="close">&times;</span>
               <h2>Skill Tree!</h2>
               <div id="upgradeButtons1">
@@ -55,12 +55,34 @@
           <h3>Leaderboard</h3>
           <button id="button19" onclick="openLeaderboardsModal()">Open Leaderboards</button>
       </div>
-
-      <div id="leaderboardsModal" class="modal1">
-          <div class="modal-content1">
-              <span class="close" onclick="closeLeaderboardsModal()">&times;</span>
+      <div id="leaderboardModal" class="modal">
+          <div class="modal-content">
+              <span class="close1" onclick="closeLeaderboardModal()">&times;</span>
+              <h2>Leaderboard</h2>
+              <table id="leaderboardTable">
+                  <thead>
+                      <tr>
+                          <th>Rank</th>
+                          <th>Username</th>
+                          <th>Score</th>
+                      </tr>
+                  </thead>
+                  <tbody id="leaderboardBody">
+                  </tbody>
+              </table>
+              <form id="leaderboardForm">
+                  <h2>Enter Your Score</h2>
+                  <label for="usernameInput">Username:</label>
+                  <input type="text" id="usernameInput" required>
+                  <label for="scoreInput">Score:</label>
+                  <input type="number" id="scoreInput" required>
+                  <button type="submit" id="submitScoreButton">Submit</button>
+              </form>
           </div>
       </div>
+
+
+
 
 
 
@@ -81,5 +103,6 @@
       <h2> Press Button to Reset</h2>
       <script src="code.js"></script>
       <link rel="stylesheet" type="text/css" href="style.css">
+
       </body>
 </html>

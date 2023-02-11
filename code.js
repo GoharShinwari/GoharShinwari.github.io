@@ -820,7 +820,7 @@ button9.addEventListener("click", function () {
 
   
   document.getElementById("button11").addEventListener("click", function() {
-    if (currentPowerLevel >= 100) {
+      if (currentPowerLevel >= 1000) {
       button11 = true;
       button12 = false;
       button13 = false;
@@ -944,7 +944,7 @@ button9.addEventListener("click", function () {
   }, 1000);
 
   document.getElementById("button11").addEventListener("click", function() {
-      if (currentPowerLevel >= 100) 
+      if (currentPowerLevel >= 1000) 
     document.body.style.backgroundImage = "url('https://media.discordapp.net/attachments/1067525557824266400/1071585507022217277/1135882.png?width=880&height=587')";
   });
   document.getElementById("button12").addEventListener("click", function() {
@@ -1124,50 +1124,3 @@ function goBack() {
     document.body.innerHTML = oldHTML;
 }
 
-
-
-function updateLeaderboard() {
-    const leaderboardTable = document.getElementById("leaderboardTable");
-    const leaderboardBody = document.getElementById("leaderboardBody");
-    leaderboardBody.innerHTML = "";
-
-    let scores = JSON.parse(localStorage.getItem("scores")) || [];
-
-    scores.sort((a, b) => b.score - a.score);
-
-    for (let i = 0; i < scores.length; i++) {
-        const row = leaderboardBody.insertRow();
-        const rank = row.insertCell(0);
-        const username = row.insertCell(1);
-        const score = row.insertCell(2);
-
-        rank.innerHTML = i + 1;
-        username.innerHTML = scores[i].username;
-        score.innerHTML = scores[i].score;
-    }
-}
-
-function submitScore(event) {
-    event.preventDefault();
-
-    const usernameInput = document.getElementById("usernameInput");
-    const scoreInput = document.getElementById("scoreInput");
-
-    let scores = JSON.parse(localStorage.getItem("scores")) || [];
-
-    scores.push({
-        username: usernameInput.value,
-        score: parseInt(scoreInput.value)
-    });
-
-    localStorage.setItem("scores", JSON.stringify(scores));
-
-    updateLeaderboard();
-
-    event.target.reset();
-}
-
-const leaderboardForm = document.getElementById("leaderboardForm");
-leaderboardForm.addEventListener("submit", submitScore);
-
-updateLeaderboard();

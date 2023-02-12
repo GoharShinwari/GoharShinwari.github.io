@@ -173,6 +173,9 @@ button1.addEventListener("click", function () {
 <<<<<<< HEAD
 =======
     var FriezaFight = JSON.parse(localStorage.getItem("FriezaFight")) || false;
+<<<<<<< HEAD
+>>>>>>> parent of 3b88a59 (skill tree)
+=======
 >>>>>>> parent of 3b88a59 (skill tree)
     if (currentPowerLevel >= 5000 && kiBlastLevel >= 3 && kamehamehaLevel >= 2 && spiritBombLevel >= 1) {
         centerImage.style.backgroundImage = "url('https://media.discordapp.net/attachments/1067525557824266400/1071190774068297768/RLHhO3g.png?width=470&height=470')";
@@ -230,6 +233,9 @@ button1.addEventListener("click", function () {
 =======
     var FatBuuFight = JSON.parse(localStorage.getItem("FatBuuFight")) || false;
 
+<<<<<<< HEAD
+>>>>>>> parent of 3b88a59 (skill tree)
+=======
 >>>>>>> parent of 3b88a59 (skill tree)
     if (currentPowerLevel >= 500000 && kiBlastLevel >= 3 && kamehamehaLevel >= 3 && spiritBombLevel >= 3) {
          centerImage.style.backgroundImage = "url('https://images-ext-2.discordapp.net/external/Ipib-8vRJbyphGVMi2BD0Bh3qa_a3nQU8qjRY78GByY/%3Fitok%3DXn7yY7Hj/https/gamepress.gg/dblegends/sites/dblegends/files/styles/522x522/public/2021-04/AIUVUDX.png?width=470&height=470')";
@@ -260,6 +266,9 @@ button1.addEventListener("click", function () {
 <<<<<<< HEAD
 =======
 
+<<<<<<< HEAD
+>>>>>>> parent of 3b88a59 (skill tree)
+=======
 >>>>>>> parent of 3b88a59 (skill tree)
       if (currentPowerLevel >= 5000000 && kiBlastLevel >= 4 && kamehamehaLevel >= 3 && spiritBombLevel >= 3) {
           centerImage.style.backgroundImage = "url('https://media.discordapp.net/attachments/1067525557824266400/1071469246376312882/spssjggokuredfighter.png')";
@@ -411,7 +420,11 @@ button10.addEventListener("click", function () {
   
   document.getElementById("button11").addEventListener("click", function() {
 <<<<<<< HEAD
+<<<<<<< HEAD
     if (currentPowerLevel >= 1000) {
+=======
+      if (currentPowerLevel >= 1000) {
+>>>>>>> parent of 3b88a59 (skill tree)
 =======
       if (currentPowerLevel >= 1000) {
 >>>>>>> parent of 3b88a59 (skill tree)
@@ -539,7 +552,11 @@ button10.addEventListener("click", function () {
 
   document.getElementById("button11").addEventListener("click", function() {
 <<<<<<< HEAD
+<<<<<<< HEAD
     if (currentPowerLevel >= 1000) 
+=======
+      if (currentPowerLevel >= 1000) 
+>>>>>>> parent of 3b88a59 (skill tree)
 =======
       if (currentPowerLevel >= 1000) 
 >>>>>>> parent of 3b88a59 (skill tree)
@@ -597,6 +614,12 @@ resetButton.addEventListener("click", function () {
     
         localStorage.setItem("spiritBombLevel", 1);
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+    BeerusFight = false;
+    JirenFight = false;
+>>>>>>> parent of 3b88a59 (skill tree)
 =======
 
     BeerusFight = false;

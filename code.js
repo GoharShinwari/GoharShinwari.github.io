@@ -13,10 +13,7 @@ const button8 = document.getElementById("button8");
 const button9 = document.getElementById("button9");
 const button10 = document.getElementById("button10");
 const button18 = document.getElementById("button18");
-const transformationSelect = document.getElementById("transformationSelect");
-const kiBlastLevel = parseInt(localStorage.getItem("kiBlastLevel")) || 0;
-const kamehamehaLevel = parseInt(localStorage.getItem("kamehamehaLevel")) || 0;
-const spiritBombLevel = parseInt(localStorage.getItem("spiritBombLevel")) || 0;
+
 
 
 var multiplier = 1;
@@ -47,62 +44,7 @@ trainButton.addEventListener("click", function() {
 
 });
 
-transformationSelect.addEventListener("change", function() {
-    const selectedValue = transformationSelect.value;
-  
-    switch (selectedValue) {
-      case "KaioKen Goku (150 Powerlevel Required)":
-        if (currentPowerLevel >= 150 && kiBlastLevel >= 1 && kamehamehaLevel >= 1 && spiritBombLevel >= 1) {
-          centerImage.style.backgroundImage = "url('https://images-ext-2.discordapp.net/external/C37HM8WiJ-FmY67LW9TR-TjxFAKCgHw2M5oBxKhyQxM/https/gamepress.gg/dblegends/sites/dblegends/files/2022-02/i5IPZPe.png?width=609&height=609')";
-          multiplier = 5;
-        } else {
-          var reason = "";
-          if (currentPowerLevel < 150) {
-            reason = "Your current power level is not high enough. ";
-          }
-          if (kiBlastLevel < 1) {
-            reason += "You need to upgrade your ki blast. ";
-          }
-          if (kamehamehaLevel < 1) {
-            reason += "You need to upgrade your kamehameha. ";
-          }
-          if (spiritBombLevel < 1) {
-            reason += "You need to upgrade your spirit bomb. ";
-          }
-          alert(reason);
-        }
-        break;
-      case "SSJ Goku (500 Powerlevel Required)":
-        // code to handle the transformation
-        break;
-      case "SSJ2 Goku (5,000 Powerlevel Required)":
-        // code to handle the transformation
-        break;
-      case "SSJ3 Goku (50,000 Powerlevel Required)":
-        // code to handle the transformation
-        break;
-      case "SSJ4 Goku (500,000 Powerlevel Required)":
-        // code to handle the transformation
-        break;
-      case "SSG Goku (5,000,000 Powerlevel Required)":
-        // code to handle the transformation
-        break;
-      case "SSB Goku (50,000,000 Powerlevel Required)":
-        // code to handle the transformation
-        break;
-      case "SSBKK Goku (500,000,000 Powerlevel Required)":
-        // code to handle the transformation
-        break;
-      case "UI Goku (5,000,000,000 Powerlevel Required)":
-        // code to handle the transformation
-        break;
-      case "MUI Goku (50,000,000,000 Powerlevel Required)":
-        // code to handle the transformation
-        break;
-      default:
-        break;
-    }
-  });
+
 
 
 button1.addEventListener("click", function () {
@@ -881,29 +823,3 @@ function challengeJiren() {
         alert("To challenge Jiren get your powerlevel to 25,000,000,000!");
     }
 }
-
-var lb;
-
-function updateLeaderboard() {
-  lb.display(function (data) {
-    var table = document.getElementsByClassName("dreamloLBTable")[0];
-    var tableBody = table.getElementsByTagName("tbody")[0];
-    tableBody.innerHTML = "";
-
-    for (var i = 0; i < data.length; i++) {
-      var row = tableBody.insertRow();
-      var rank = row.insertCell();
-      var name = row.insertCell();
-      var score = row.insertCell();
-
-      rank.innerHTML = data[i].rank;
-      name.innerHTML = data[i].player;
-      score.innerHTML = data[i].score;
-    }
-  });
-}
-
-window.onload = function () {
-  lb = new Dreamlo("63e468bc778d3c2ae413d9ff");
-  updateLeaderboard();
-};

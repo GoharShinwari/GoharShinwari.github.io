@@ -977,7 +977,7 @@ const kiBlastBtn = document.getElementById("kiBlastBtn");
 const kamehamehaBtn = document.getElementById("kamehamehaBtn");
 const spiritBombBtn = document.getElementById("spiritBombBtn");
 const upgradeModal = document.getElementById("upgradeModal");
-const closeBtn = document.getElementsByClassName("close")[0];
+const closeBtn = document.getElementsByClassName("close1")[0];
 
 
 resetButton.addEventListener("click", function () {

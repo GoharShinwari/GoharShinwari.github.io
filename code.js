@@ -170,6 +170,10 @@ button1.addEventListener("click", function () {
     var kiBlastLevel = parseInt(localStorage.getItem("kiBlastLevel")) || 0;
     var kamehamehaLevel = parseInt(localStorage.getItem("kamehamehaLevel")) || 0;
     var spiritBombLevel = parseInt(localStorage.getItem("spiritBombLevel")) || 0;
+<<<<<<< HEAD
+=======
+    var FriezaFight = JSON.parse(localStorage.getItem("FriezaFight")) || false;
+>>>>>>> parent of 3b88a59 (skill tree)
     if (currentPowerLevel >= 5000 && kiBlastLevel >= 3 && kamehamehaLevel >= 2 && spiritBombLevel >= 1) {
         centerImage.style.backgroundImage = "url('https://media.discordapp.net/attachments/1067525557824266400/1071190774068297768/RLHhO3g.png?width=470&height=470')";
         multiplier = 500;
@@ -222,6 +226,11 @@ button1.addEventListener("click", function () {
     var kiBlastLevel = parseInt(localStorage.getItem("kiBlastLevel")) || 0;
     var kamehamehaLevel = parseInt(localStorage.getItem("kamehamehaLevel")) || 0;
     var spiritBombLevel = parseInt(localStorage.getItem("spiritBombLevel")) || 0;
+<<<<<<< HEAD
+=======
+    var FatBuuFight = JSON.parse(localStorage.getItem("FatBuuFight")) || false;
+
+>>>>>>> parent of 3b88a59 (skill tree)
     if (currentPowerLevel >= 500000 && kiBlastLevel >= 3 && kamehamehaLevel >= 3 && spiritBombLevel >= 3) {
          centerImage.style.backgroundImage = "url('https://images-ext-2.discordapp.net/external/Ipib-8vRJbyphGVMi2BD0Bh3qa_a3nQU8qjRY78GByY/%3Fitok%3DXn7yY7Hj/https/gamepress.gg/dblegends/sites/dblegends/files/styles/522x522/public/2021-04/AIUVUDX.png?width=470&height=470')";
          multiplier = 10000;
@@ -248,6 +257,10 @@ button1.addEventListener("click", function () {
       var kiBlastLevel = parseInt(localStorage.getItem("kiBlastLevel")) || 0;
       var kamehamehaLevel = parseInt(localStorage.getItem("kamehamehaLevel")) || 0;
       var spiritBombLevel = parseInt(localStorage.getItem("spiritBombLevel")) || 0;
+<<<<<<< HEAD
+=======
+
+>>>>>>> parent of 3b88a59 (skill tree)
       if (currentPowerLevel >= 5000000 && kiBlastLevel >= 4 && kamehamehaLevel >= 3 && spiritBombLevel >= 3) {
           centerImage.style.backgroundImage = "url('https://media.discordapp.net/attachments/1067525557824266400/1071469246376312882/spssjggokuredfighter.png')";
           multiplier = 100000;
@@ -269,6 +282,7 @@ button1.addEventListener("click", function () {
           alert(reason);
         }
     });
+<<<<<<< HEAD
     
     button7.addEventListener("click", function() {
       var kiBlastLevel = parseInt(localStorage.getItem("kiBlastLevel")) || 0;
@@ -278,6 +292,17 @@ button1.addEventListener("click", function () {
           centerImage.style.backgroundImage = "url('https://media.discordapp.net/attachments/1067525557824266400/1071469344044883988/Q4AVP3W.png')";
           multiplier = 1000000;
           BeerusFight = true;
+=======
+
+    button7.addEventListener("click", function () {
+        var kiBlastLevel = parseInt(localStorage.getItem("kiBlastLevel")) || 0;
+        var kamehamehaLevel = parseInt(localStorage.getItem("kamehamehaLevel")) || 0;
+        var spiritBombLevel = parseInt(localStorage.getItem("spiritBombLevel")) || 0;
+        var BeerusFight = JSON.parse(localStorage.getItem("BeerusFight")) || false;
+        if (currentPowerLevel >= 50000000 && kiBlastLevel >= 5 && kamehamehaLevel >= 4 && spiritBombLevel >= 3 && BeerusFight) {
+            centerImage.style.backgroundImage = "url('https://media.discordapp.net/attachments/1067525557824266400/1071469344044883988/Q4AVP3W.png')";
+            multiplier = 1000000;
+>>>>>>> parent of 3b88a59 (skill tree)
         } else {
 
             var reason = "";
@@ -385,7 +410,11 @@ button10.addEventListener("click", function () {
 
   
   document.getElementById("button11").addEventListener("click", function() {
+<<<<<<< HEAD
     if (currentPowerLevel >= 1000) {
+=======
+      if (currentPowerLevel >= 1000) {
+>>>>>>> parent of 3b88a59 (skill tree)
       button11 = true;
       button12 = false;
       button13 = false;
@@ -509,7 +538,11 @@ button10.addEventListener("click", function () {
   }, 1000);
 
   document.getElementById("button11").addEventListener("click", function() {
+<<<<<<< HEAD
     if (currentPowerLevel >= 1000) 
+=======
+      if (currentPowerLevel >= 1000) 
+>>>>>>> parent of 3b88a59 (skill tree)
     document.body.style.backgroundImage = "url('https://media.discordapp.net/attachments/1067525557824266400/1071585507022217277/1135882.png?width=880&height=587')";
   });
   document.getElementById("button12").addEventListener("click", function() {
@@ -563,6 +596,12 @@ resetButton.addEventListener("click", function () {
         localStorage.setItem("kamehamehaLevel", 1);
     
         localStorage.setItem("spiritBombLevel", 1);
+<<<<<<< HEAD
+=======
+
+    BeerusFight = false;
+    JirenFight = false;
+>>>>>>> parent of 3b88a59 (skill tree)
 
 });
 

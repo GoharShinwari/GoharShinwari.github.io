@@ -537,7 +537,7 @@ button1.addEventListener("click", function () {
     var kiBlastLevel = parseInt(localStorage.getItem("kiBlastLevel")) || 0;
     var kamehamehaLevel = parseInt(localStorage.getItem("kamehamehaLevel")) || 0;
     var spiritBombLevel = parseInt(localStorage.getItem("spiritBombLevel")) || 0;
-    if (currentPowerLevel >= 150 && kiBlastLevel >= 1 && kamehamehaLevel >= 1 && spiritBombLevel >= 1) {
+    if (currentPowerLevel >= 150 && kiBlastLevel >= 0 && kamehamehaLevel >= 0 && spiritBombLevel >= 0) {
         centerImage.style.backgroundImage = "url('https://images-ext-2.discordapp.net/external/C37HM8WiJ-FmY67LW9TR-TjxFAKCgHw2M5oBxKhyQxM/https/gamepress.gg/dblegends/sites/dblegends/files/2022-02/i5IPZPe.png?width=609&height=609')";
         multiplier = 5;
     } else {
@@ -564,7 +564,7 @@ button1.addEventListener("click", function () {
     var kiBlastLevel = parseInt(localStorage.getItem("kiBlastLevel")) || 0;
     var kamehamehaLevel = parseInt(localStorage.getItem("kamehamehaLevel")) || 0;
     var spiritBombLevel = parseInt(localStorage.getItem("spiritBombLevel")) || 0;
-    if (currentPowerLevel >= 500 && kiBlastLevel >= 2 && kamehamehaLevel >= 1 && spiritBombLevel >= 1) {
+    if (currentPowerLevel >= 500 && kiBlastLevel >= 1 && kamehamehaLevel >= 0 && spiritBombLevel >= 0) {
       centerImage.style.backgroundImage = "url('https://images-ext-1.discordapp.net/external/iQ0SgKTmW7bOSBNZsm5zg5DKkopbykcqvpDNmc0tMMo/%3Fitok%3DTWkPQqpY/https/gamepress.gg/dblegends/sites/dblegends/files/styles/522x522/public/2021-05/lOju6wl.png?width=470&height=470')";
       multiplier = 50;
     } else {
@@ -591,7 +591,7 @@ button1.addEventListener("click", function () {
     var kamehamehaLevel = parseInt(localStorage.getItem("kamehamehaLevel")) || 0;
     var spiritBombLevel = parseInt(localStorage.getItem("spiritBombLevel")) || 0;
     var FriezaFight = JSON.parse(localStorage.getItem("FriezaFight")) || false;
-    if (currentPowerLevel >= 5000 && kiBlastLevel >= 3 && kamehamehaLevel >= 2 && spiritBombLevel >= 1) {
+    if (currentPowerLevel >= 5000 && kiBlastLevel >= 2 && kamehamehaLevel >= 1 && spiritBombLevel >= 0) {
         centerImage.style.backgroundImage = "url('https://media.discordapp.net/attachments/1067525557824266400/1071190774068297768/RLHhO3g.png?width=470&height=470')";
         multiplier = 500;
     } else {
@@ -620,7 +620,7 @@ button1.addEventListener("click", function () {
     var kiBlastLevel = parseInt(localStorage.getItem("kiBlastLevel")) || 0;
     var kamehamehaLevel = parseInt(localStorage.getItem("kamehamehaLevel")) || 0;
     var spiritBombLevel = parseInt(localStorage.getItem("spiritBombLevel")) || 0;
-    if (currentPowerLevel >= 50000 && kiBlastLevel >= 3 && kamehamehaLevel >= 2 && spiritBombLevel >= 2) {
+    if (currentPowerLevel >= 50000 && kiBlastLevel >= 3 && kamehamehaLevel >= 2 && spiritBombLevel >= 1) {
          centerImage.style.backgroundImage = "url('https://gamepress.gg/dblegends/sites/dblegends/files/2019-10/3YDgjhf.png')";
          multiplier = 5000;
     } else {
@@ -648,7 +648,7 @@ button1.addEventListener("click", function () {
     var spiritBombLevel = parseInt(localStorage.getItem("spiritBombLevel")) || 0;
     var FatBuuFight = JSON.parse(localStorage.getItem("FatBuuFight")) || false;
 
-    if (currentPowerLevel >= 500000 && kiBlastLevel >= 3 && kamehamehaLevel >= 3 && spiritBombLevel >= 3) {
+    if (currentPowerLevel >= 500000 && kiBlastLevel >= 4 && kamehamehaLevel >= 3 && spiritBombLevel >= 2) {
          centerImage.style.backgroundImage = "url('https://images-ext-2.discordapp.net/external/Ipib-8vRJbyphGVMi2BD0Bh3qa_a3nQU8qjRY78GByY/%3Fitok%3DXn7yY7Hj/https/gamepress.gg/dblegends/sites/dblegends/files/styles/522x522/public/2021-04/AIUVUDX.png?width=470&height=470')";
          multiplier = 10000;
     } else {
@@ -678,7 +678,7 @@ button1.addEventListener("click", function () {
       var kamehamehaLevel = parseInt(localStorage.getItem("kamehamehaLevel")) || 0;
       var spiritBombLevel = parseInt(localStorage.getItem("spiritBombLevel")) || 0;
 
-      if (currentPowerLevel >= 5000000 && kiBlastLevel >= 4 && kamehamehaLevel >= 3 && spiritBombLevel >= 3) {
+      if (currentPowerLevel >= 5000000 && kiBlastLevel >= 5 && kamehamehaLevel >= 4 && spiritBombLevel >= 3) {
           centerImage.style.backgroundImage = "url('https://media.discordapp.net/attachments/1067525557824266400/1071469246376312882/spssjggokuredfighter.png')";
           multiplier = 50000000000;
       } else {
@@ -705,7 +705,7 @@ button1.addEventListener("click", function () {
         var kamehamehaLevel = parseInt(localStorage.getItem("kamehamehaLevel")) || 0;
         var spiritBombLevel = parseInt(localStorage.getItem("spiritBombLevel")) || 0;
         var BeerusFight = JSON.parse(localStorage.getItem("BeerusFight")) || false;
-        if (currentPowerLevel >= 50000000 && kiBlastLevel >= 5 && kamehamehaLevel >= 4 && spiritBombLevel >= 3 && BeerusFight) {
+        if (currentPowerLevel >= 50000000 && kiBlastLevel >= 5 && kamehamehaLevel >= 5 && spiritBombLevel >= 4 && BeerusFight) {
             centerImage.style.backgroundImage = "url('https://media.discordapp.net/attachments/1067525557824266400/1071469344044883988/Q4AVP3W.png')";
             multiplier = 1000000;
         } else {
@@ -737,7 +737,7 @@ button1.addEventListener("click", function () {
       var kiBlastLevel = parseInt(localStorage.getItem("kiBlastLevel")) || 0;
       var kamehamehaLevel = parseInt(localStorage.getItem("kamehamehaLevel")) || 0;
       var spiritBombLevel = parseInt(localStorage.getItem("spiritBombLevel")) || 0;
-      if (currentPowerLevel >= 500000000 && kiBlastLevel >= 5 && kamehamehaLevel >= 5 && spiritBombLevel >= 3) {
+      if (currentPowerLevel >= 500000000 && kiBlastLevel >= 5 && kamehamehaLevel >= 5 && spiritBombLevel >= 5) {
           centerImage.style.backgroundImage = "url('https://media.discordapp.net/attachments/1067525557824266400/1071469740641497139/FN8-dsqX0AIdlG0.png?width=440&height=586')";
           multiplier = 10000000;
       } else {
@@ -763,7 +763,7 @@ button9.addEventListener("click", function () {
     var kiBlastLevel = parseInt(localStorage.getItem("kiBlastLevel")) || 0;
     var kamehamehaLevel = parseInt(localStorage.getItem("kamehamehaLevel")) || 0;
     var spiritBombLevel = parseInt(localStorage.getItem("spiritBombLevel")) || 0;
-    if (currentPowerLevel >= 5000000000 && kiBlastLevel >= 5 && kamehamehaLevel >= 5 && spiritBombLevel >= 4) {
+    if (currentPowerLevel >= 5000000000 && kiBlastLevel >= 5 && kamehamehaLevel >= 5 && spiritBombLevel >= 5) {
         centerImage.style.backgroundImage = "url('https://media.discordapp.net/attachments/1067525557824266400/1071469968903917679/5aHUyRX.png?width=586&height=586')";
         multiplier = 100000000;
     } else {
@@ -820,7 +820,7 @@ button9.addEventListener("click", function () {
 
   
   document.getElementById("button11").addEventListener("click", function() {
-      if (currentPowerLevel >= 1000) {
+      if (currentPowerLevel >= 100) {
       button11 = true;
       button12 = false;
       button13 = false;
@@ -944,7 +944,7 @@ button9.addEventListener("click", function () {
   }, 1000);
 
   document.getElementById("button11").addEventListener("click", function() {
-      if (currentPowerLevel >= 1000) 
+      if (currentPowerLevel >= 100) 
     document.body.style.backgroundImage = "url('https://media.discordapp.net/attachments/1067525557824266400/1071585507022217277/1135882.png?width=880&height=587')";
   });
   document.getElementById("button12").addEventListener("click", function() {
@@ -993,26 +993,31 @@ resetButton.addEventListener("click", function () {
     button17 = false;
     centerImage.style.backgroundImage = "url('https://media.discordapp.net/attachments/1067525557824266400/1071579223191457802/D8OiWCt.png?width=586&height=586')";
 
-        localStorage.setItem("kiBlastLevel", 1);
+        localStorage.setItem("kiBlastLevel", 0);
    
-        localStorage.setItem("kamehamehaLevel", 1);
+        localStorage.setItem("kamehamehaLevel", 0);
     
-        localStorage.setItem("spiritBombLevel", 1);
+        localStorage.setItem("spiritBombLevel", 0);
 
     BeerusFight = false;
     JirenFight = false;
+    FatBuuFight = false;
+    FriezaFight = false;
+
+
+    location.reload();
 
 });
 
 
 if (localStorage.getItem("kiBlastLevel") === null) {
-    localStorage.setItem("kiBlastLevel", 1);
+    localStorage.setItem("kiBlastLevel", 0);
 }
 if (localStorage.getItem("kamehamehaLevel") === null) {
-    localStorage.setItem("kamehamehaLevel", 1);
+    localStorage.setItem("kamehamehaLevel", 0);
 }
 if (localStorage.getItem("spiritBombLevel") === null) {
-    localStorage.setItem("spiritBombLevel", 1);
+    localStorage.setItem("spiritBombLevel", 0);
 }
 
 kiBlastBtn.innerHTML = `Ki Blast (${localStorage.getItem("kiBlastLevel")}/5)`;
@@ -1031,40 +1036,47 @@ closeBtn.addEventListener("click", function () {
 
 kiBlastBtn.addEventListener("click", function () {
     var currentLevel = parseInt(localStorage.getItem("kiBlastLevel")) || 0;
-    if (currentPowerLevel >= (1000 * (currentLevel + 1)) && currentLevel < 5) {
+    var powerLevels = [250, 2500, 25000, 250000, 2500000];
+    var requiredPowerLevel = powerLevels[currentLevel];
+    if (currentPowerLevel >= requiredPowerLevel && currentLevel < 5) {
         localStorage.setItem("kiBlastLevel", currentLevel + 1);
         kiBlastBtn.innerHTML = `Ki Blast (${currentLevel + 1}/5)`;
-  } else if (currentLevel >= 5) {
-    alert("Ki Blast is already at maximum level");
-} else {
-    alert("Not enough power level to upgrade Ki Blast");
-}
-});
-
-kamehamehaBtn.addEventListener("click", function () {
-    var currentLevel = parseInt(localStorage.getItem("kamehamehaLevel")) || 0;
-    if (currentPowerLevel >= (1500 * (currentLevel + 1)) && currentLevel < 5) {
-        localStorage.setItem("kamehamehaLevel", currentLevel + 1);
-        kamehamehaBtn.innerHTML = `Kamehameha(${ currentLevel + 1} /5)`;
-} else if (currentLevel >= 5) {
-    alert("Kamehameha is already at maximum level");
-} else {
-    alert("Not enough power level to upgrade Kamehameha");
-}
-});
-
-spiritBombBtn.addEventListener("click", function () {
-    var currentLevel = parseInt(localStorage.getItem("spiritBombLevel")) || 0;
-    if (currentPowerLevel >= (2000 * (currentLevel + 1)) && currentLevel < 5) {
-        localStorage.setItem("spiritBombLevel", currentLevel + 1);
-        spiritBombBtn.innerHTML = `Spirit Bomb(${currentLevel + 1} /5)`;
     } else if (currentLevel >= 5) {
-        alert("Spirit Bomb is already at maximum level");
+        alert("Ki Blast is already at maximum level");
     } else {
-        alert("Not enough power level to upgrade Spirit Bomb");
+        alert(`Not enough power level to upgrade Ki Blast. Required power level: ${requiredPowerLevel}`);
     }
 });
 
+
+kamehamehaBtn.addEventListener("click", function () {
+    var currentLevel = parseInt(localStorage.getItem("kamehamehaLevel")) || 0;
+    var powerLevels = [2500, 25000, 250000, 2500000, 25000000];
+    var requiredPowerLevel1 = powerLevels[currentLevel];
+    if (currentPowerLevel >= requiredPowerLevel1 && currentLevel < 5) {
+        localStorage.setItem("kamehamehaLevel", currentLevel + 1);
+        kamehamehaBtn.innerHTML = `Kamehameha (${currentLevel + 1}/5)`;
+    } else if (currentLevel >= 5) {
+        alert("Kamehameha is already at maximum level");
+    } else {
+        alert(`Not enough power level to upgrade Kamehameha. Required power level: ${requiredPowerLevel1}`);
+    }
+});
+
+
+spiritBombBtn.addEventListener("click", function () {
+    var currentLevel = parseInt(localStorage.getItem("spiritBombLevel")) || 0;
+    var powerLevels = [25000, 250000, 2500000, 25000000, 250000000];
+    var requiredPowerLevel2 = powerLevels[currentLevel];
+    if (currentPowerLevel >= requiredPowerLevel2 && currentLevel < 5) {
+        localStorage.setItem("spiritBombLevel", currentLevel + 1);
+        kamehamehaBtn.innerHTML = `Spirit Bomb (${currentLevel + 1}/5)`;
+    } else if (currentLevel >= 5) {
+        alert("Spirit Bomb is already at maximum level");
+    } else {
+        alert(`Not enough power level to upgrade Spirit Bomb. Required power level: ${requiredPowerLevel2}`);
+    }
+});
 
 
 function createNewScreen() {

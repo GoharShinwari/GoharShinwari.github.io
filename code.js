@@ -1084,23 +1084,23 @@ function createNewScreen() {
     document.body.innerHTML = "";
     document.body.innerHTML = "<h1 style='text-align: center; color: white; background-color: #008080; padding: 20px;'>Boss Selection</h1>" +
         "<button id='goBackBtn' style='display: block; margin: 0 auto; width: 250px; height: 50px; margin-top: 20px; background-color: #0f0f23; color: white; border-radius: 10px; box-shadow: 0px 0px 10px black; cursor: pointer; font-size: 20px;'>Go back</button>" +
-        "<div style='display: flex; justify-content: center; align-items: center;'>" +
+        "<div style='display: flex; justify-content: center; align-items: center; flex-wrap: wrap;'>" +
         "<div id='divFrieza' style='margin: 20px; text-align: center;'>" +
-        "<img id='imgFrieza' style='center: block; width: 250px; height: 250px; margin-bottom: 20px; margin-left: 50px;' src='https://media.discordapp.net/attachments/1067525557824266400/1073410524672434236/LSGUz1u.png' alt='Frieza'>" +
+        "<img id='imgFrieza' style='center: block; width: 250px; height: 250px; margin-bottom: 20px;' src='https://media.discordapp.net/attachments/1067525557824266400/1073410524672434236/LSGUz1u.png' alt='Frieza'>" +
         "<p style='text-align: center; color: white;'>Challenge Frieza! (2,500 Powerlevel Required)</p>" +
+        "</div>" +
         "<div id='divFatBuu' style='margin: 20px; text-align: center;'>" +
-        "<img id='imgFatBuu' style='center: block; width: 250px; height: 250px; margin-bottom: 20px; margin-left: 50px;' src='https://media.discordapp.net/attachments/1067525557824266400/1073413781704691762/XQtli5W.png' alt='FatBuu'>" +
+        "<img id='imgFatBuu' style='center: block; width: 250px; height: 250px; margin-bottom: 20px;' src='https://media.discordapp.net/attachments/1067525557824266400/1073413781704691762/XQtli5W.png' alt='FatBuu'>" +
         "<p style='text-align: center; color: white;'>Challenge Fat Buu! (250,000 Powerlevel Required)</p>" +
         "</div>" +
         "<div id='divBeerus' style='margin: 20px; text-align: center;'>" +
-        "<img id='imgBeerus' style='center: block; width: 250px; height: 250px; margin-bottom: 20px; margin-left: 50px;' src='https://media.discordapp.net/attachments/1067525557824266400/1072310350562721792/O1FlHVi_1.png?width=472&height=207' alt='Beerus'>" +
+        "<img id='imgBeerus' style='center: block; width: 250px; height: 250px; margin-bottom: 20px;' src='https://media.discordapp.net/attachments/1067525557824266400/1072310350562721792/O1FlHVi_1.png?width=472&height=207' alt='Beerus'>" +
         "<p style='text-align: center; color: white;'>Challenge Lord Beerus! (25,000,000 Powerlevel Required)</p>" +
         "</div>" +
         "<div id='divJiren' style='margin: 20px; text-align: center;'>" +
-        "<img id='imgJiren' style='center: block; width: 250px; height: 250px; margin-bottom: 20px; margin-left: 50px;' src='https://media.discordapp.net/attachments/1067525557824266400/1072310553831293019/l4IMSEd_1.png?width=521&height=202' alt='Jiren'>" +
+        "<img id='imgJiren' style='center: block; width: 250px; height: 250px; margin-bottom: 20px;' src='https://media.discordapp.net/attachments/1067525557824266400/1072310553831293019/l4IMSEd_1.png?width=521&height=202' alt='Jiren'>" +
         "<p style='text-align: center; color: white;'>Challenge Jiren (25,000,000,000 Powerlevel Required)</p>" +
         "</div>" +
-
         "</div>";
     document.body.style.backgroundImage = "url(http://oyster.ignimgs.com/wordpress/stg.ign.com/2017/05/DBS90StarsCollide.jpg)";
     document.body.style.backgroundSize = "cover";

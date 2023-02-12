@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Game Login</title>
-  </head>
+    <title>DBZ Clicker</title>
+    <link rel="stylesheet" href="MenuStyle.css">  </head>
   <body>
-    <h1>Welcome to the Game!</h1>
+    <h1>Welcome to Dragon Ball Z Clicker!</h1>
     <p>Please select an option to continue:</p>
     <button onclick="location.href='game.html'">Play as Guest</button>
     <button onclick="showLoginForm()">Log in</button>
@@ -12,22 +12,25 @@
     
     <div id="login-form" style="display:none;">
       <h2>Log in</h2>
-      <form>
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username"><br><br>
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password"><br><br>
+      <form onsubmit="return submitForm('login')">
+        <label for="login-username">Username:</label>
+        <input type="text" id="login-username" name="username"><br><br>
+        <label for="login-password">Password:</label>
+        <input type="password" id="login-password" name="password"><br><br>
         <button type="submit">Submit</button>
       </form>
     </div>
     
+    
     <div id="signup-form" style="display:none;">
       <h2>Sign up</h2>
-      <form>
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username"><br><br>
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password"><br><br>
+      <form onsubmit="return submitForm('signup')">
+        <label for="signup-username">Username:</label>
+        <input type="text" id="signup-username" name="username"><br><br>
+        <label for="signup-password">Password:</label>
+        <input type="password" id="signup-password" name="password"><br><br>
+        <label for="signup-password-confirm">Confirm Password:</label>
+        <input type="password" id="signup-password-confirm" name="password-confirm"><br><br>
         <button type="submit">Submit</button>
       </form>
     </div>
@@ -41,6 +44,31 @@
       function showSignupForm() {
         document.getElementById("signup-form").style.display = "block";
         document.getElementById("login-form").style.display = "none";
+      }
+      
+      function validateForm(type) {
+        let username = document.getElementById(type + "-username").value;
+        let password = document.getElementById(type + "-password").value;
+        if (!username || !password) {
+          alert("Please enter a username and password.");
+          return false;
+        }
+        if (type === "signup") {
+          let passwordConfirm = document.getElementById("signup-password-confirm").value;
+          if (password !== passwordConfirm) {
+            alert("Passwords do not match.");
+            return false;
+          }
+        }
+        return true;
+      }
+      
+      function submitForm(type) {
+        if (!validateForm(type)) {
+          return false;
+        }
+        location.href = "game.html";
+        return false;
       }
     </script>
   </body>

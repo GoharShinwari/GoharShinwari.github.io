@@ -1,6 +1,6 @@
 const powerLevel = document.getElementById("powerLevel");
 const trainButton = document.getElementById("trainButton");
-const centerImage = document.getElementById("centerImage");
+const VegetacenterImage = document.getElementById("VegetacenterImage");
 const resetButton = document.getElementById("resetButton");
 const button1 = document.getElementById("button1");
 const button2 = document.getElementById("button2");
@@ -537,23 +537,23 @@ button1.addEventListener("click", function () {
     var kiBlastLevel = parseInt(localStorage.getItem("kiBlastLevel")) || 0;
     var kamehamehaLevel = parseInt(localStorage.getItem("kamehamehaLevel")) || 0;
     var spiritBombLevel = parseInt(localStorage.getItem("spiritBombLevel")) || 0;
-    if (currentPowerLevel >= 150 && kiBlastLevel >= 0 && kamehamehaLevel >= 0 && spiritBombLevel >= 0) {
-        centerImage.style.backgroundImage = "url('https://images-ext-2.discordapp.net/external/C37HM8WiJ-FmY67LW9TR-TjxFAKCgHw2M5oBxKhyQxM/https/gamepress.gg/dblegends/sites/dblegends/files/2022-02/i5IPZPe.png?width=609&height=609')";
+    if (currentPowerLevel >= 10000 && kiBlastLevel >= 0 && kamehamehaLevel >= 0 && spiritBombLevel >= 0) {
+        VegetacenterImage.style.backgroundImage = "url('https://images-ext-2.discordapp.net/external/sAtdhOg-SWYQdXqtIS25Jgwf4Sr2ZmmnZc9HBNIFa3M/%3Ftoken%3DeyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzg0ZGMxM2I3LWEyZTctNGI0NS04M2VjLTMxMWU3MmU4MjkwMFwvZGRjMnBkNy01ZTkzY2VlNC05ZWJmLTRiODItODE5MS1lZjI2YjYwYjBkZjEucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.44WjYNWHH7ukgRXO5s1JtIzjZAUDb2ezVjUAMeK6VNI/https/images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/84dc13b7-a2e7-4b45-83ec-311e72e82900/ddc2pd7-5e93cee4-9ebf-4b82-8191-ef26b60b0df1.png?width=586&height=586')";
         multiplier = 5;
     } else {
 
         var reason = "";
-        if (currentPowerLevel < 150) {
-            reason = "Your current power level is not high enough.";
+        if (currentPowerLevel < 10000) {
+            reason = "Your current power level is not high enough. ";
         }
         if (kiBlastLevel < 1) {
-            reason += "You need to upgrade your ki blast.";
+            reason += "You need to upgrade your ki blast. ";
         }
         if (kamehamehaLevel < 1) {
-            reason += "You need to upgrade your kamehameha.";
+            reason += "You need to upgrade your kamehameha. ";
         }
         if (spiritBombLevel < 1) {
-            reason += "You need to upgrade your spirit bomb.";
+            reason += "You need to upgrade your spirit bomb. ";
         }
         alert(reason);
     }

@@ -6,7 +6,7 @@
   <body>
     <h1>Welcome to Dragon Ball Z Clicker!</h1>
     <p>Please select an option to continue:</p>
-    <button onclick="location.href='game.html'">Play as Guest</button>
+    <button onclick="location.href='Goku.html'">Play as Guest</button>
     <button onclick="showLoginForm()">Log in</button>
     <button onclick="showSignupForm()">Sign up</button>
     
@@ -17,7 +17,7 @@
         <input type="text" id="login-username" name="username"><br><br>
         <label for="login-password">Password:</label>
         <input type="password" id="login-password" name="password"><br><br>
-        <button type="submit">Submit</button>
+        <button type="submit">Play</button>
       </form>
     </div>
     
@@ -31,7 +31,7 @@
         <input type="password" id="signup-password" name="password"><br><br>
         <label for="signup-password-confirm">Confirm Password:</label>
         <input type="password" id="signup-password-confirm" name="password-confirm"><br><br>
-        <button type="submit">Submit</button>
+        <button type="submit">Play</button>
       </form>
     </div>
     
@@ -67,7 +67,7 @@
         if (!validateForm(type)) {
           return false;
         }
-        location.href = "game.html";
+        location.href = "Goku.html";
         return false;
       }
     </script>

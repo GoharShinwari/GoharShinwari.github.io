@@ -680,7 +680,7 @@ button1.addEventListener("click", function () {
 
       if (currentPowerLevel >= 5000000 && kiBlastLevel >= 5 && kamehamehaLevel >= 4 && spiritBombLevel >= 3) {
           centerImage.style.backgroundImage = "url('https://media.discordapp.net/attachments/1067525557824266400/1071469246376312882/spssjggokuredfighter.png')";
-          multiplier = 50000000000;
+          multiplier = 100000;
       } else {
 
             var reason = "";

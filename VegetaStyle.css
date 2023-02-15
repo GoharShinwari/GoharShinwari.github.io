@@ -5,36 +5,36 @@ body {
     color: #fff;
     font-family: Arial, sans-serif;
     text-align: center;
-}
-
-
-
-.close {
+  }
+  
+  
+  
+  .close {
     color: #aaa;
     float: right;
     font-size: 28px;
     font-weight: bold;
-}
-
+  }
+  
     .close:hover,
     .close:focus {
         color: black;
         text-decoration: none;
         cursor: pointer;
     }
-
-
-h1 {
+  
+  
+  h1 {
   font-size: 48px;
   margin-top: 50px;
-}
-
-h3 {
+  }
+  
+  h3 {
     font-size: 38px;
     margin-top: 50px;
-}
-
-#trainButton {
+  }
+  
+  #trainButton {
   background-color: transparent;
   background-image: url(https://media.discordapp.net/attachments/1067525557824266400/1071584631704535100/download.png);
   background-size: cover;
@@ -50,18 +50,18 @@ h3 {
   box-shadow: 0 0 10px #ffd700;
   animation: glowing 1s ease-in-out infinite alternate;
   border-radius: 50%;
-}
-
-@keyframes glowing {
+  }
+  
+  @keyframes glowing {
   from {
     box-shadow: 0 0 5px #ffd700;
   }
   to {
     box-shadow: 0 0 20px #ffd700;
   }
-}
-
-.button {
+  }
+  
+  .button {
     background-color: #4CAF50;
     border: none;
     color: white;
@@ -70,8 +70,8 @@ h3 {
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-}
-.modal1 {
+  }
+  .modal1 {
     display: none;
     position: fixed;
     z-index: 1;
@@ -81,35 +81,35 @@ h3 {
     height: 100%;
     overflow: auto;
     background-color: rgba(0, 0, 0, 0.5);
-}
-
-.modal-content1 {
+  }
+  
+  .modal-content1 {
     background-color: #0f0f23;
     margin: 10% auto;
     padding: 20px;
     width: 80%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
-.close {
+  }
+  
+  .close1 {
     color: #aaa;
     float: right;
     font-size: 28px;
     font-weight: bold;
-}
-
-    .close:hover,
-    .close:focus {
+  }
+  
+    .close1:hover,
+    .close1:focus {
         color: black;
         text-decoration: none;
         cursor: pointer;
     }
-
-#upgradeButtons1 {
+  
+  #upgradeButtons1 {
     display: flex;
     justify-content: space-between;
-}
-
+  }
+  
     #upgradeButtons1 button {
         background-color: #4CAF50;
         border: none;
@@ -124,19 +124,19 @@ h3 {
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
         cursor: pointer;
     }
-
+  
         #upgradeButtons1 button:hover {
             background-color: #407342;
         }
-
-
-#resetButton {
+  
+  
+  #resetButton {
   height: 50px;
   width: 50px;
   background-color: orangered;
-}
-
-#upgradeBtn {
+  }
+  
+  #upgradeBtn {
     background-color: #4CAF50;
     border: none;
     color: white;
@@ -146,43 +146,43 @@ h3 {
     border-radius: 8px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     cursor: pointer;
-}
-#buttons {
+  }
+  #buttons {
     position: absolute;
     right: 0;
     top: 50%;
     transform: translateY(-50%);
     text-align: center;
-}
-
-#buttons1 {
+  }
+  
+  #buttons1 {
   position: absolute;
   left: 0;
   top: 50%;
   transform: translateY(-50%);
   text-align: center;
-}
-
-#buttons2 {
+  }
+  
+  #buttons2 {
     position: absolute;
     left: 50px;
     top: 0;
-
-}
-
-#buttons3 {
+  
+  }
+  
+  #buttons3 {
     position: absolute;
     right: 100px;
     top: 0;
-}
-
-button.upgradeButton {
+  }
+  
+  button.upgradeButton {
   display: block;
   margin-bottom: 10px;
-}
-
-
-.upgradeButton {
+  }
+  
+  
+  .upgradeButton {
   padding: 10px 20px;
   border-radius: 5px;
   border: none;
@@ -191,10 +191,10 @@ button.upgradeButton {
   color: white;
   font-size: 16px;
   cursor: pointer;
-}
-
-#centerImage {
-  background-image: url(https://media.discordapp.net/attachments/1067525557824266400/1071579223191457802/D8OiWCt.png?width=586&height=586);
+  }
+  
+  #VegetacenterImage {
+  background-image: url(https://gamepress.gg/dblegends/sites/dblegends/files/2021-02/wdvxQKO.png);
   background-size: contain;
   background-repeat: no-repeat;
   width: 400px;
@@ -202,9 +202,9 @@ button.upgradeButton {
   background-size: cover;
   background-position: center;
   margin: 20px auto;
-}
-
-#button18 {
+  }
+  
+  #button18 {
     padding: 10px 20px;
     border-radius: 5px;
     border: none;
@@ -213,20 +213,6 @@ button.upgradeButton {
     color: white;
     font-size: 16px;
     cursor: pointer;
-}
-
-#leaderboardButton {
-    background-color: #4CAF50;
-    border: none;
-    color: white;
-    padding: 20px;
-    font-size: 15px;
-    text-align: center;
-    margin: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    cursor: pointer;
-    position: absolute;
-    right: 150px;
-    top: 0;
-}
+  }
+  
+  

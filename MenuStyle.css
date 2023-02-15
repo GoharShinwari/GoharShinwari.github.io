@@ -1,0 +1,84 @@
+body {
+    background-image: url(https://wallpaperaccess.com/full/387093.png);
+    color: black;
+    font-family: Arial, sans-serif;
+    text-align: center;
+  }
+  
+  h1 {
+    font-size: 3em;
+    margin-top: 0;
+  }
+  
+  button {
+    background-color: #f0833a;
+    color: black;
+    font-size: 1.2em;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    margin: 10px;
+    cursor: pointer;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.2s ease-in-out, transform 0.1s ease-in-out;
+  }
+  
+  button:hover {
+    background-color: #f0833a;
+    transform: translateY(-2px);
+  }
+  
+  button:active {
+    background-color: #f0833a;
+    transform: translateY(0);
+  }
+  
+  form {
+    display: inline-block;
+    text-align: left;
+  }
+  
+  label {
+    display: block;
+    font-size: 1.2em;
+    margin-bottom: 5px;
+  }
+  
+  input[type="text"],
+  input[type="password"] {
+    font-size: 1.2em;
+    padding: 5px;
+    margin-bottom: 10px;
+    width: 250px;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  #login-form,
+  #signup-form {
+    color: #ffffff;
+    font-size: 1.2em;
+    padding: 20px;
+    border-radius: 5px;
+    margin-top: 20px;
+    display: none;
+  }
+  
+  #login-form h2,
+  #signup-form h2 {
+    margin-top: 0;
+  }
+  
+  #signup-form input[type="password"],
+  #signup-form input[type="password-confirm"] {
+    margin-bottom: 20px;
+  }
+  
+  #game-logo {
+    display: block;
+    margin: 50px auto 20px;
+    max-width: 500px;
+    height: auto;
+  }
+  

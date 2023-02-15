@@ -993,21 +993,25 @@ resetButton.addEventListener("click", function () {
     button17 = false;
     centerImage.style.backgroundImage = "url('https://media.discordapp.net/attachments/1067525557824266400/1071579223191457802/D8OiWCt.png?width=586&height=586')";
 
-        localStorage.setItem("kiBlastLevel", 0);
-   
-        localStorage.setItem("kamehamehaLevel", 0);
-    
-        localStorage.setItem("spiritBombLevel", 0);
+    localStorage.setItem("kiBlastLevel", 0);
+
+    localStorage.setItem("kamehamehaLevel", 0);
+
+    localStorage.setItem("spiritBombLevel", 0);
 
     BeerusFight = false;
     JirenFight = false;
     FatBuuFight = false;
     FriezaFight = false;
 
+    localStorage.setItem("BeerusFight", false);
+    localStorage.setItem("JirenFight", false);
+    localStorage.setItem("FatBuuFight", false);
+    localStorage.setItem("FriezaFight", false);
 
-    location.reload();
-
+    location.reload(); 
 });
+
 
 
 if (localStorage.getItem("kiBlastLevel") === null) {
@@ -1135,4 +1139,3 @@ function goBack() {
     document.body.innerHTML = "";
     document.body.innerHTML = oldHTML;
 }
-

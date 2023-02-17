@@ -48,7 +48,7 @@ function register() {
             database_ref.child('users/' + user.uid).set(user_data)
 
             // DOne
-            alert('User Created!!')
+            alert('Account Created!')
         })
         .catch(function (error) {
             // Firebase will use this to alert of its errors
@@ -89,7 +89,7 @@ function login() {
             database_ref.child('users/' + user.uid).update(user_data)
 
             // DOne
-            alert('User Logged In!!')
+            alert('Logged in!')
             location.href = "Goku.html";
 
         })

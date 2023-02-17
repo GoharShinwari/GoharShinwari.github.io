@@ -1,75 +1,48 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>DBZ Clicker</title>
-    <link rel="stylesheet" href="MenuStyle.css">  </head>
-  <body>
-    <h1>Welcome to Dragon Ball Z Clicker!</h1>
-    <p>Please select an option to continue:</p>
-    <button onclick="location.href='Goku.html'">Play as Guest</button>
-    <button onclick="showLoginForm()">Log in</button>
-    <button onclick="showSignupForm()">Sign up</button>
-    
-    <div id="login-form" style="display:none;">
-      <h2>Log in</h2>
-      <form onsubmit="return submitForm('login')">
-        <label for="login-username">Username:</label>
-        <input type="text" id="login-username" name="username"><br><br>
-        <label for="login-password">Password:</label>
-        <input type="password" id="login-password" name="password"><br><br>
-        <button type="submit">Play</button>
-      </form>
+<head>
+    <meta charset="utf-8">
+    <title>Login + Firebase Database</title>
+    <!-- Cool Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bowlby+One+SC&display=swap" rel="stylesheet">
+    <!-- Our stylesheet -->
+    <link rel="stylesheet" type="text/css" href="index.css">
+</head>
+<body>
+    <div id="content_container">
+        <div id="form_container">
+            <div id="form_header_container">
+                <h2 id="form_header"> Dragon Ball Z Clicker </h2>
+            </div>
+
+            <div id="form_content_container">
+                <div id="form_content_inner_container">
+                    <input type="text" id="full_name" placeholder="Username">
+                    <input type="email" id="email" placeholder="Email">
+                    <input type="password" id="password" placeholder="Password">
+                    <div id="button_container">
+                        <button onclick="login()">Login</button>
+                        <button onclick="register()">Register</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
     </div>
-    
-    
-    <div id="signup-form" style="display:none;">
-      <h2>Sign up</h2>
-      <form onsubmit="return submitForm('signup')">
-        <label for="signup-username">Username:</label>
-        <input type="text" id="signup-username" name="username"><br><br>
-        <label for="signup-password">Password:</label>
-        <input type="password" id="signup-password" name="password"><br><br>
-        <label for="signup-password-confirm">Confirm Password:</label>
-        <input type="password" id="signup-password-confirm" name="password-confirm"><br><br>
-        <button type="submit">Play</button>
-      </form>
-    </div>
-    
-    <script>
-      function showLoginForm() {
-        document.getElementById("login-form").style.display = "block";
-        document.getElementById("signup-form").style.display = "none";
-      }
-      
-      function showSignupForm() {
-        document.getElementById("signup-form").style.display = "block";
-        document.getElementById("login-form").style.display = "none";
-      }
-      
-      function validateForm(type) {
-        let username = document.getElementById(type + "-username").value;
-        let password = document.getElementById(type + "-password").value;
-        if (!username || !password) {
-          alert("Please enter a username and password.");
-          return false;
-        }
-        if (type === "signup") {
-          let passwordConfirm = document.getElementById("signup-password-confirm").value;
-          if (password !== passwordConfirm) {
-            alert("Passwords do not match.");
-            return false;
-          }
-        }
-        return true;
-      }
-      
-      function submitForm(type) {
-        if (!validateForm(type)) {
-          return false;
-        }
-        location.href = "Goku.html";
-        return false;
-      }
-    </script>
-  </body>
+</body>
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+
+<!-- Our script must be loaded after firebase references -->
+<script src="index.js"></script>
+
 </html>

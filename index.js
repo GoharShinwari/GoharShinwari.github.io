@@ -41,7 +41,6 @@ function register() {
             var user_data = {
                 email: email,
                 full_name: full_name,
-                currentPowerLevel: powerLevel,
                 last_login: Date.now()
             }
 

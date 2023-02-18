@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Characters",
+    "\\CharSelectScreen"
   ],
-  "SelectedNode": "\\index.html",
+  "SelectedNode": "\\Characters",
   "PreviewInSolutionExplorer": false
 }

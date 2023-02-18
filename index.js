@@ -90,7 +90,7 @@ function login() {
 
             // DOne
             alert('Logged in!')
-            location.href = "Goku.html";
+            location.href = "CharSelect.html";
 
         })
         .catch(function (error) {

@@ -1,0 +1,82 @@
+
+
+body {
+    background-color: #f2f2f2;
+    font-family: Montserrat;
+    background-image: url("https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/d6dbcd10-6299-48af-9c41-ed89ea8f12d4/ddtcmtm-a8bd2aa3-2797-4ac6-abb7-75581e43550e.png/v1/fill/w_1280,h_720,q_80,strp/dragon_ball_z_kakarot__loading_screen___epilogue_by_purplehato_ddtcmtm-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NzIwIiwicGF0aCI6IlwvZlwvZDZkYmNkMTAtNjI5OS00OGFmLTljNDEtZWQ4OWVhOGYxMmQ0XC9kZHRjbXRtLWE4YmQyYWEzLTI3OTctNGFjNi1hYmI3LTc1NTgxZTQzNTUwZS5wbmciLCJ3aWR0aCI6Ijw9MTI4MCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.gmHNOrfHB_Tb3Qng4dIeClruPjHlXZGYUa3qj67UIMQ");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 10rem;
+}
+
+.container1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 10rem;
+}
+
+
+
+h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3rem;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.selectButton {
+    background-color: #987a62;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px #999;
+    cursor: pointer;
+    margin: 1rem;
+    padding: 0.5rem;
+    transition: transform 0.2s;
+}
+
+    .selectButton:hover {
+        transform: scale(1.05);
+    }
+
+button5 {
+    background-color: #2f2f2f;
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    margin-top: 2rem;
+    padding: 1rem;
+    transition: background-color 0.2s;
+}
+
+    button5:hover {
+        background-color: #1a1a1a;
+    }
+
+.selectButton img {
+    max-width: 100%;
+}
+
+@media screen and (max-width: 600px) {
+    .selectButton {
+        display: block;
+        margin: 1rem auto;
+    }
+}
+
+
+
+
+

@@ -1,12 +1,4 @@
-var firebaseConfig = {
-    apiKey: "AIzaSyA3XwxWAXFUZ_78nNNrqAIXjBtm3Qg1yaQ",
-    authDomain: "dbzc-login.firebaseapp.com",
-    projectId: "dbzc-login",
-    storageBucket: "dbzc-login.appspot.com",
-    messagingSenderId: "55300042822",
-    appId: "1:55300042822:web:dfe7b562a06e584b8c9a47",
-    measurementId: "G-H2JPL632X4"
-};
+
 
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);

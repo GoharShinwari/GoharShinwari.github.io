@@ -1,0 +1,93 @@
+html {
+    background-image: url(https://i.pinimg.com/originals/b5/5b/0a/b55b0a86983d46d4dde3a5e1dd4f2a62.png);
+    background-size: cover;
+}
+
+#character-images {
+    display: flex;
+    justify-content: center;
+}
+
+#SSGoku, #Frieza {
+    margin: 0 8px;
+    width: 530px;
+    height: 530px;
+}
+
+.battle-bars {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 120px;
+}
+
+.bar-label {
+    transform: translate(140%, 140%);
+    right: 200px;
+    font-weight: bold;
+    color: white;
+    z-index: 1;
+    line-height: 1;
+}
+
+
+
+
+.hp-bar,
+.ki-bar {
+    width: 300px;
+    height: 20px;
+    background-color: #ddd;
+    border: 2px solid #000;
+    border-radius: 10px;
+    margin: 5px;
+    position: relative;
+}
+
+.bar-label {
+    position: absolute;
+    top: -20px;
+    left: 10px;
+    font-weight: bold;
+}
+
+.hp-bar-fill {
+    width: 100%;
+    height: 100%;
+    background-color: green;
+    border-radius: 10px;
+}
+
+    .hp-bar-fill.yellow {
+        background-color: yellow;
+    }
+
+    .hp-bar-fill.red {
+        background-color: red;
+    }
+
+.ki-bar-fill {
+    width: 100%;
+    height: 100%;
+    background-color: blue;
+    border-radius: 10px;
+}
+
+.character-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 10px;
+}
+
+
+.battle-container {
+    display: flex;
+    justify-content: center;
+}
+
+
+.goku-bars,
+.frieza-bars {
+    margin-top: 10px;
+}

@@ -1,3 +1,234 @@
+var firebaseConfig = {
+    apiKey: "AIzaSyA3XwxWAXFUZ_78nNNrqAIXjBtm3Qg1yaQ",
+    authDomain: "dbzc-login.firebaseapp.com",
+    projectId: "dbzc-login",
+    storageBucket: "dbzc-login.appspot.com",
+    messagingSenderId: "55300042822",
+    appId: "1:55300042822:web:dfe7b562a06e584b8c9a47",
+    measurementId: "G-H2JPL632X4"
+};
+
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+// Initialize variables
+const auth = firebase.auth()
+const database = firebase.database()
+
+function register() {
+    // Get all our input fields
+    email = document.getElementById('email').value
+    password = document.getElementById('password').value
+    full_name = document.getElementById('full_name').value
+
+    // Validate input fields
+    if (validate_email(email) == false || validate_password(password) == false) {
+        alert('Email or Password is Outta Line!!')
+        return
+        // Don't continue running the code
+    }
+
+    // Move on with Auth
+    auth.createUserWithEmailAndPassword(email, password)
+        .then(function () {
+            // Declare user variable
+            var user = auth.currentUser
+
+            // Add this user to Firebase Database
+            var database_ref = database.ref()
+
+            // Create User data
+            var user_data = {
+                email: email,
+                full_name: full_name,
+                last_login: Date.now(),
+                currentPowerLevel: 0,
+                FriezaFight: false,
+                FatBuuFight: false,
+                BeerusFight: false,
+                JirenFight: false
+            }
+
+            // Push to Firebase Database
+            database_ref.child('users/' + user.uid).set(user_data)
+
+            // Read the initial data from the Firebase Realtime Database
+            var userRef = database_ref.child('users/' + user.uid)
+
+            userRef.on('value', function (snapshot) {
+                var data = snapshot.val()
+
+                currentPowerLevel = data.currentPowerLevel;
+                FriezaFight = data.FriezaFight;
+                FatBuuFight = data.FatBuuFight;
+                BeerusFight = data.BeerusFight;
+                JirenFight = data.JirenFight;
+            }, function (error) {
+                console.error('Error reading variables:', error);
+            })
+
+            // Done
+            alert('Account Created!')
+        })
+        .catch(function (error) {
+            // Firebase will use this to alert of its errors
+            var error_code = error.code
+            var error_message = error.message
+
+            alert(error_message)
+        })
+}
+
+
+// Set up our login function
+function login() {
+    // Get all our input fields
+    email = document.getElementById('email').value
+    password = document.getElementById('password').value
+
+    // Validate input fields
+    if (validate_email(email) == false || validate_password(password) == false) {
+        alert('Email or Password is Outta Line!!')
+        return
+        // Don't continue running the code
+    }
+
+    auth.signInWithEmailAndPassword(email, password)
+        .then(function () {
+            // Declare user variable
+            var user = auth.currentUser
+
+            // Add this user to Firebase Database
+            var database_ref = database.ref()
+
+            // Create User data
+            var user_data = {
+                last_login: Date.now()
+            }
+
+            // Push to Firebase Database
+            database_ref.child('users/' + user.uid).update(user_data)
+
+            // DOne
+            alert('Logged in!')
+            location.href = "CharSelect.html";
+
+        })
+        .catch(function (error) {
+            // Firebase will use this to alert of its errors
+            var error_code = error.code
+            var error_message = error.message
+
+            alert(error_message)
+        })
+}
+
+
+
+
+// Validate Functions
+function validate_email(email) {
+    expression = /^[^@]+@\w+(\.\w+)+\w$/
+    if (expression.test(email) == true) {
+        // Email is good
+        return true
+    } else {
+        // Email is not good
+        return false
+    }
+}
+
+function validate_password(password) {
+    // Firebase only accepts lengths greater than 6
+    if (password < 6) {
+        return false
+    } else {
+        return true
+    }
+}
+
+function validate_field(field) {
+    if (field == null) {
+        return false
+    }
+
+    if (field.length <= 0) {
+        return false
+    } else {
+        return true
+    }
+}
+
+firebase.auth().onAuthStateChanged(function (user) {
+    if (user) {
+        var userId = user.uid;
+        var userRef = firebase.database().ref('users/' + userId);
+
+        userRef.on('value', function (snapshot) {
+            var data = snapshot.val();
+
+            // Read the current power level from the database
+            var currentPowerLevel = data.currentPowerLevel;
+
+            // Update the local storage value as well
+            localStorage.setItem('currentPowerLevel', currentPowerLevel);
+
+            // Read the other variables from the database
+            var FriezaFight = data.FriezaFight;
+            var FatBuuFight = data.FatBuuFight;
+            var BeerusFight = data.BeerusFight;
+            var JirenFight = data.JirenFight;
+
+            console.log(currentPowerLevel);
+            console.log(FriezaFight);
+            console.log(FatBuuFight);
+            console.log(BeerusFight);
+            console.log(JirenFight);
+        }, function (error) {
+            console.error('Error reading variables:', error);
+        });
+
+        // Listen for changes to the currentPowerLevel variable and update both
+        // local storage and Firebase
+        firebase.database().ref('users/' + userId + '/currentPowerLevel')
+            .on('value', function (snapshot) {
+                var newPowerLevel = snapshot.val();
+                localStorage.setItem('currentPowerLevel', newPowerLevel);
+            });
+
+        setInterval(function () {
+            var currentPowerLevel = parseInt(localStorage.getItem('currentPowerLevel'));
+
+            userRef.update({ currentPowerLevel: currentPowerLevel }, function (error) {
+                if (error) {
+                    console.error('Error updating currentPowerLevel:', error);
+                } else {
+                    console.log('currentPowerLevel updated successfully');
+                }
+            });
+        }, 30000);
+
+        document.getElementById('button21').addEventListener('click', function () {
+            firebase.auth().signOut().then(function () {
+                console.log('User signed out');
+                localStorage.removeItem('currentPowerLevel');
+                location.href = 'index.html';
+            }, function (error) {
+                console.error('Sign out error:', error);
+            });
+        });
+
+    } else {
+        console.log('No user is signed in');
+    }
+});
+
+
+
+
+
+
+
+
 const powerLevel = document.getElementById("powerLevel");
 const trainButton = document.getElementById("trainButton");
 const centerImage = document.getElementById("centerImage");
@@ -34,10 +265,6 @@ let JirenFight = false;
 
 let backgroundImage = 1;
 
-if (localStorage.getItem("powerLevel")) {
-  currentPowerLevel = parseInt(localStorage.getItem("powerLevel"));
-  powerLevel.innerHTML = currentPowerLevel;
-}
 
 trainButton.addEventListener("click", function() {
   currentPowerLevel += multiplier;
@@ -49,120 +276,7 @@ trainButton.addEventListener("click", function() {
 
 function challengeFrieza() {
     if (currentPowerLevel >= 2500) {
-        document.body.innerHTML = "";
-        document.body.style.backgroundImage = "url(https://i.pinimg.com/originals/b5/5b/0a/b55b0a86983d46d4dde3a5e1dd4f2a62.png)";
-        document.body.style.backgroundSize = "cover";
-        document.body.innerHTML =
-            "<div id='score' style='font-size: 36px; color: white; text-align: center; position: absolute; top: 0; width: 100%;'>Score: <span id='player-score' style='font-size: 36px; color: white;'>0</span> - <span id='computer-score' style='font-size: 36px; color: white;'>0</span></div>" +
-            "<div id='gameOver' style='display: none;'>" +
-            "<p style='color: white; font-size: 24px;' id='resultText'></p>" +
-            "</div>" +
-            "<div style='display: flex; flex-direction: column; align-items: center;'>" +
-            "<p style='color: white; font-size: 24px;'>Let's play Rock, Paper, Scissors!</p>" +
-            "<div style='display: flex; justify-content: space-between; width: 50%;'>" +
-            "<img src='https://media.discordapp.net/attachments/1067525557824266400/1073412678778884106/image_3.png' style='width: 500px; height: 500px;'>" +
-            "<div style='display: flex; flex-direction: column; align-items: center;'>" +
-            "<button id='rock' style='background-color: white; font-size: 20px; padding: 10px 20px;'>Rock</button>" +
-            "<button id='paper' style='background-color: white; font-size: 20px; padding: 10px 20px;'>Paper</button>" +
-            "<button id='scissors' style='background-color: white; font-size: 20px; padding: 10px 20px;'>Scissors</button>" +
-            "<p id='result' style='color: white; font-size: 20px;'></p>" +
-            "</div>" +
-            "<img src='https://media.discordapp.net/attachments/1067525557824266400/1073410224842612858/dezdby1-2bffa88d-9bcb-4b23-b28c-b76c29ed9d8a.png?width=572&height=572' style='width: 500px; height: 500px;'>" +
-            "<button id='goBackBtn' style='display: block; margin: 20px auto; width: 250px; height: 50px; margin-top: 20px; background-color: #0f0f23; color: white; border-radius: 10px; box-shadow: 0px 0px 10px black; cursor: pointer;   font-size: 20px; align-items: center;'>Leave Fight.</button>" +
-            "</div>" +
-            "</div>";
-
-        var goBackBtn = document.getElementById("goBackBtn");
-        goBackBtn.removeEventListener("click", goBack);
-        goBackBtn.addEventListener("click", function () {
-            location.reload();
-        });
-
-        function goBack() {
-            document.body.innerHTML = "";
-            document.body.innerHTML = oldHTML;
-        }
-
-        var playerScoreSpan = document.getElementById("player-score");
-        var computerScoreSpan = document.getElementById("computer-score");
-        var resultP = document.getElementById("result");
-        var rockBtn = document.getElementById("rock");
-        var paperBtn = document.getElementById("paper");
-        var scissorsBtn = document.getElementById("scissors");
-        var playerScore = 0;
-        var computerScore = 0;
-
-        function getComputerChoice() {
-            var choices = ['rock', 'paper', 'scissors'];
-            var randomIndex = Math.floor(Math.random() * 3);
-            return choices[randomIndex];
-        }
-
-        function win(playerChoice, computerChoice) {
-            playerScore++;
-            playerScoreSpan.innerHTML = playerScore;
-            resultP.innerHTML = "You win! " + playerChoice + " beats " + computerChoice + ".";
-            checkForWin();
-        }
-
-        function lose(playerChoice, computerChoice) {
-            computerScore++;
-            computerScoreSpan.innerHTML = computerScore;
-            resultP.innerHTML = "You lose! " + computerChoice + " beats " + playerChoice + ".";
-            checkForWin();
-        }
-
-        function checkForWin() {
-            if (playerScore === 3) {
-                resultP.innerHTML = "You beat Frieza! Congrats!";
-                disableButtons();
-                localStorage.setItem("FriezaFight", true);
-            } else if (computerScore === 3) {
-                resultP.innerHTML = "Frieza has beaten you. Better luck next time.";
-                disableButtons();
-            }
-        }
-
-
-        function disableButtons() {
-            rockBtn.disabled = true;
-            paperBtn.disabled = true;
-            scissorsBtn.disabled = true;
-        }
-
-        rockBtn.addEventListener("click", function () {
-            var computerChoice = getComputerChoice();
-            if (computerChoice === "rock") {
-                resultP.innerHTML = "It's a draw!";
-            } else if (computerChoice === "paper") {
-                lose("rock", "paper");
-            } else {
-                win("rock", "scissors");
-            }
-        });
-
-        paperBtn.addEventListener("click", function () {
-            var computerChoice = getComputerChoice();
-            if (computerChoice === "rock") {
-                win("paper", "rock");
-            } else if (computerChoice === "paper") {
-                resultP.innerHTML = "It's a draw!";
-            } else {
-                lose("paper", "scissors");
-            }
-        });
-
-        scissorsBtn.addEventListener("click", function () {
-            var computerChoice = getComputerChoice();
-            if (computerChoice === "rock") {
-                lose("scissors", "rock");
-            } else if (computerChoice === "paper") {
-                win("scissors", "paper");
-            } else {
-                resultP.innerHTML = "It's a draw!";
-            }
-        });
-
+        location.href = "FriezaFight.html";
     } else {
         alert("To challenge Frieza get your powerlevel to 2,500!");
     }
@@ -1082,7 +1196,7 @@ spiritBombBtn.addEventListener("click", function () {
 function createNewScreen() {
     oldHTML = document.body.innerHTML;
     document.body.innerHTML = "";
-    document.body.innerHTML = "<h1 style='text-align: center; color: white; background-color: #008080; padding: 20px;'>Boss Selection</h1>" +
+    document.body.innerHTML = "<h1 style='text-align: center; color: white; background-color: #008080; padding: 20px;'>Boss Fights</h1>" +
         "<button id='goBackBtn' style='display: block; margin: 0 auto; width: 250px; height: 50px; margin-top: 20px; background-color: #0f0f23; color: white; border-radius: 10px; box-shadow: 0px 0px 10px black; cursor: pointer; font-size: 20px;'>Go back</button>" +
         "<div style='display: flex; justify-content: center; align-items: center; flex-wrap: wrap;'>" +
         "<div id='divFrieza' style='margin: 20px; text-align: center;'>" +

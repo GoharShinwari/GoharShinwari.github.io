@@ -129,11 +129,21 @@ to {
           background-color: #407342;
       }
 
+.SignOutButton {
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    margin: 0 10px;
+    background-color: #1DB954;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
 
 #resetButton {
-height: 50px;
-width: 50px;
-background-color: orangered;
+    height: 50px;
+    width: 50px;
+    background-color: orangered;
 }
 
 #upgradeBtn {

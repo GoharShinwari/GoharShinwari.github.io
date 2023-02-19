@@ -41,7 +41,7 @@ function register() {
                 email: email,
                 full_name: full_name,
                 last_login: Date.now(),
-                currentPowerLevel: 0,
+                powerlevel: 0,
                 FriezaFight: false,
                 FatBuuFight: false,
                 BeerusFight: false,
@@ -57,7 +57,7 @@ function register() {
             userRef.on('value', function (snapshot) {
                 var data = snapshot.val()
 
-                currentPowerLevel = data.currentPowerLevel;
+                currentPowerLevel = data.powerlevel;
                 FriezaFight = data.FriezaFight;
                 FatBuuFight = data.FatBuuFight;
                 BeerusFight = data.BeerusFight;
@@ -158,6 +158,8 @@ function validate_field(field) {
     }
 }
 
+
+// powerlevel is saving to firebase but make it so when user signs in their localstorage is sync'd with their firebase and when logged out it's reset 
 firebase.auth().onAuthStateChanged(function (user) {
     if (user) {
         var userId = user.uid;
@@ -167,10 +169,7 @@ firebase.auth().onAuthStateChanged(function (user) {
             var data = snapshot.val();
 
             // Read the current power level from the database
-            var currentPowerLevel = data.currentPowerLevel;
-
-            // Update the local storage value as well
-            localStorage.setItem('currentPowerLevel', currentPowerLevel);
+            var currentPowerLevel = data.powerlevel;
 
             // Read the other variables from the database
             var FriezaFight = data.FriezaFight;
@@ -178,7 +177,7 @@ firebase.auth().onAuthStateChanged(function (user) {
             var BeerusFight = data.BeerusFight;
             var JirenFight = data.JirenFight;
 
-            console.log(currentPowerLevel);
+            console.log(powerlevel);
             console.log(FriezaFight);
             console.log(FatBuuFight);
             console.log(BeerusFight);
@@ -186,41 +185,42 @@ firebase.auth().onAuthStateChanged(function (user) {
         }, function (error) {
             console.error('Error reading variables:', error);
         });
-
-        // Listen for changes to the currentPowerLevel variable and update both
-        // local storage and Firebase
-        firebase.database().ref('users/' + userId + '/currentPowerLevel')
-            .on('value', function (snapshot) {
-                var newPowerLevel = snapshot.val();
-                localStorage.setItem('currentPowerLevel', newPowerLevel);
-            });
-
-        setInterval(function () {
-            var currentPowerLevel = parseInt(localStorage.getItem('currentPowerLevel'));
-
-            userRef.update({ currentPowerLevel: currentPowerLevel }, function (error) {
-                if (error) {
-                    console.error('Error updating currentPowerLevel:', error);
-                } else {
-                    console.log('currentPowerLevel updated successfully');
-                }
-            });
-        }, 30000);
-
-        document.getElementById('button21').addEventListener('click', function () {
-            firebase.auth().signOut().then(function () {
-                console.log('User signed out');
-                localStorage.removeItem('currentPowerLevel');
-                location.href = 'index.html';
-            }, function (error) {
-                console.error('Sign out error:', error);
-            });
-        });
-
     } else {
         console.log('No user is signed in');
     }
+
+    setInterval(function () {
+        firebase.auth().onAuthStateChanged(function (user) {
+            if (user) {
+                var userId = user.uid;
+                var userRef = firebase.database().ref('users/' + userId);
+                currentPowerLevel = localStorage.getItem('powerlevel');
+
+                userRef.update({ powerLevel: parseInt(currentPowerLevel) }, function (error) {
+                    if (error) {
+                        console.error('Error updating currentPowerLevel:', error);
+                    } else {
+                        console.log('currentPowerLevel updated successfully');
+                    }
+                });
+            } else {
+                console.log('No user is signed in');
+            }
+        });
+    }, 30000);
+
+
+    document.getElementById('button21').addEventListener('click', function () {
+        location.href = 'index.html';
+        firebase.auth().signOut().then(function () {
+            console.log('User signed out');
+            localStorage.setItem("powerlevel", 0);
+        }, function (error) {
+            console.error('Sign out error:', error);
+        });
+    });
 });
+
 
 
 
@@ -265,11 +265,15 @@ let JirenFight = false;
 
 let backgroundImage = 1;
 
+if (localStorage.getItem("powerlevel")) {
+    currentPowerLevel = parseInt(localStorage.getItem("powerlevel"));
+    powerLevel.innerHTML = currentPowerLevel;
+}
 
 trainButton.addEventListener("click", function() {
   currentPowerLevel += multiplier;
   powerLevel.innerHTML = currentPowerLevel;
-  localStorage.setItem("powerLevel", currentPowerLevel);
+    localStorage.setItem("powerlevel", currentPowerLevel);
 
 });
 

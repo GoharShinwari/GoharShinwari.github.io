@@ -239,13 +239,7 @@ firebase.auth().onAuthStateChanged(function (user) {
             });
         });
 
-
-
-
-
-
-
-
+        /// fix boss fights lol
 
 
         const powerLevel = document.getElementById("powerLevel");

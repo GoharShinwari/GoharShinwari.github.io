@@ -271,10 +271,10 @@ firebase.auth().onAuthStateChanged(function (user) {
         let button15 = false;
         let button16 = false;
         let button17 = false;
-        let FriezaFight = false;
-        let FatBuuFight = false;
-        let BeerusFight = false;
-        let JirenFight = false;
+        let FriezaFight = true;
+        let FatBuuFight = true;
+        let BeerusFight = true;
+        let JirenFight = true;
 
         let backgroundImage = 1;
 

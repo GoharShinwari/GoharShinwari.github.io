@@ -8,12 +8,12 @@ let gokuBeat = false;
 let vegetaBeat = false;
 
 button1.addEventListener("click", function () {
-    window.location.href = "Goku.html";
+    window.location.href = "../Goku/Goku.html";
 });
 
 button2.addEventListener("click", function () {
     if (gokuBeat) {
-        location.href = "Vegeta.html";
+        location.href = "../Vegeta/Vegeta.html";
     } else {
         alert("You haven't beat Goku yet!");
     }

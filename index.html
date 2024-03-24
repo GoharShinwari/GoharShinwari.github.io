@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>World of Insects Project</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="top-bar">    
+        <h1>Pokemon Insects</h1>
+    </div>
+    <h2>What Insects would you like to view?</h1>
+
+    <div class="insect-selection">
+        <div class="coleoptera">
+            <img src="https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/pinsir.png">
+            <button onclick="showPopup('coleoptera')">Coleoptera</button>
+            <img src="https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/heracross.png">
+        </div> 
+
+        <div class="diptera">
+            <img src="https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/buzzwole.png">
+            <button onclick="showPopup('diptera')">Diptera</button>
+            <img src="https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/ribombee.png">
+        </div>
+
+        <div class="hemiptera">
+            <img src="https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/ninjask.png">
+            <button onclick="showPopup('hemiptera')">Hemiptera</button>
+            <img src="https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/shedinja.png">
+        </div>
+
+        <div class="hymenoptera">
+            <img src="https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/beedrill.png">
+            <button onclick="showPopup('hymenoptera')">Hymenoptera</button>
+            <img src="https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/vespiquen.png">
+        </div>
+
+        <div class="lepidoptera">
+            <img src="https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/volcarona.png">
+            <button onclick="showPopup('lepidoptera')">Lepidoptera</button>
+            <img src="https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/butterfree.png">
+        </div>
+
+        <div class="mantodea">
+            <img src="https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/scizor.png">
+            <button onclick="showPopup('mantodea')">Mantodea</button>
+            <img src="https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/lurantis.png">
+        </div>
+
+        <div class="neuroptera">
+            <img src="https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/trapinch.png">
+            <button onclick="showPopup('neuroptera')">Neuroptera</button>
+            <img src="https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/flygon.png">
+        </div>
+
+        <div class="odonata">
+            <img src="https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/yanma.png">
+            <button onclick="showPopup('odonata')">Odonata</button>
+            <img src="https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/yanmega.png">
+        </div>
+
+        <div class="orthoptera">
+            <img src="https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen8/regular/kricketot.png">
+            <button onclick="showPopup('orthoptera')">Orthoptera</button>
+            <img src="https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/kricketune.png">
+        </div>
+
+        <div class="phasmatodea">
+            <img src="https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/sewaddle.png">
+            <button onclick="showPopup('phasmatodea')">Phasmatodea</button>
+            <img src="https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/leavanny.png">
+        </div>
+
+        <div class="blattodea">
+            <img src="https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/pheromosa.png">
+            <button onclick="showPopup('blattodea')">Blattodea</button>
+            <img src="https://raw.githubusercontent.com/msikma/pokesprite/master/pokemon-gen7x/regular/pheromosa.png">
+        </div>
+
+    </div>
+
+    <div id="coleoptera-popup" class="insect-popup">
+        <span class="insect-close-button" onclick="hidePopup('coleoptera')">X</span>
+        <h2>Order: Coleoptera</h2>
+        <h3>Family: Lucanidae</h3>
+        <p>The Lucanidae family consists of beetles known as stag beetles. These beetles are characterized by their large mandibles, which are used primarily for fighting and mating. Pokémon in this family, like Pinsir, are inspired by these formidable insects. </p>
+        <hr>
+        <img src="https://projectpokemon.org/images/normal-sprite/pinsir.gif">
+        <p>Pinsir is a Bug-type Pokémon known for its powerful pincers, which it uses to crush its opponents in battle.</p>
+        <hr>
+        <img src="https://projectpokemon.org/images/normal-sprite/grubbin.gif">
+        <img src="https://projectpokemon.org/images/normal-sprite/charjabug.gif">
+        <img src="https://projectpokemon.org/images/normal-sprite/vikavolt.gif">
+        <p>Grubbin, Charjabug, and Vikavolt are Bug/Electric-type Pokémon that undergo metamorphosis similar to real-life insects. They start as Grubbin, then evolve into Charjabug, and finally into Vikavolt.</p>
+        <hr>
+    
+        <h3>Family: Coccinellidae</h3>
+        <p>The Coccinellidae family consists of lady beetles, also known as ladybugs. These insects are often brightly colored and are considered beneficial to gardens as they prey on pests like aphids. Pokémon in this family, such as Ledyba and Ledian, are inspired by ladybugs.</p>
+        <hr>
+        <img src="https://projectpokemon.org/images/normal-sprite/ledyba.gif">
+        <img src="https://projectpokemon.org/images/normal-sprite/ledian.gif">
+        <p>Ledyba and Ledian are Bug/Flying-type Pokémon known for their graceful flight and ability to emit a pleasant scent from their antennae.</p>
+        <hr>
+        <h3>Family: Scarabaeidae</h3>
+        <p>The Scarabaeidae family includes beetles commonly known as scarab beetles. These beetles are often associated with ancient Egyptian culture and are revered as symbols of rebirth and regeneration. Pokémon in this family, such as Heracross, draw inspiration from scarab beetles.</p>
+        <hr>
+        <img src="https://projectpokemon.org/images/normal-sprite/heracross.gif">
+        <p>Heracross is a Bug/Fighting-type Pokémon known for its incredible strength and stamina. Its design is reminiscent of a rhinoceros beetle, a type of scarab beetle known for its powerful horn.</p>
+        <hr>
+        <h3>Family: Lampyridae</h3>
+        <p>The Lampyridae family, commonly known as fireflies or lightning bugs, is famous for its members' ability to produce bioluminescent light. This light is used for communication, mating, and defense. Pokémon in this family, such as Volbeat and Illumise, are inspired by fireflies.</p>
+        <hr>
+        <img src="https://projectpokemon.org/images/normal-sprite/volbeat.gif">
+        <img src="https://projectpokemon.org/images/normal-sprite/illumise.gif">
+        <p>Volbeat and Illumise are Bug-type Pokémon known for their ability to illuminate the night sky with their glowing patterns. They are often seen dancing together in the darkness, creating beautiful displays of light.</p>
+        <hr>
+        <h3>Family: Elateridae</h3>
+        <p>The Elateridae family, commonly known as click beetles or snapping beetles, is named after the clicking sound produced by some species when they flip themselves upright using a special mechanism. These beetles are characterized by their elongated bodies and ability to jump when threatened. Pokémon in this family, such as Karrablast and Escavalier, are inspired by click beetles.</p>
+        <hr>
+        <img src="https://projectpokemon.org/images/normal-sprite/karrablast.gif">
+        <img src="https://projectpokemon.org/images/normal-sprite/escavalier.gif">
+        <p>Karrablast and Escavalier are Bug/Steel-type Pokémon known for their formidable armor and lance-like horns. They are often seen charging at opponents with great speed and precision.</p>
+        <hr>
+    </div>
+    
+    
+    <div id="diptera-popup" class="insect-popup">
+        <span class="insect-close-button" onclick="hidePopup('diptera')">X</span>
+        <h2>Order: Diptera</h2>
+        
+        <h3>Family: Bombyliidae</h3>
+        <p>The Bombyliidae family consists of flies known as bee flies. These flies are often mistaken for bees due to their appearance, but they do not possess stingers. Pokémon in this family include Cutiefly (#742), which evolves into Ribombee (#743). Both Cutiefly and Ribombee are inspired by bee flies, resembling small insects resembling bees. Cutiefly represents the larval stage, while Ribombee represents the adult stage.</p>
+        <hr>
+        <img src="https://projectpokemon.org/images/normal-sprite/cutiefly.gif">
+        <img src="https://projectpokemon.org/images/normal-sprite/ribombee.gif">
+        <p>Both Cutiefly and Ribombee are integral members of the Bombyliidae family and play unique roles in the Pokémon world.</p>
+        <hr>
+    
+        <h3>Family: Culicidae</h3>
+        <p>The Culicidae family includes mosquitoes, known for their blood-feeding habits. Pokémon in this family include Buzzwole (#794), an Ultra Beast. Buzzwole is a Bug/Fighting-type Pokémon known for its immense strength and muscular physique. It is revered for its prowess in battle, despite its resemblance to a mosquito.</p>
+        <hr>
+        <img src="https://projectpokemon.org/images/normal-sprite/buzzwole.gif">
+        <p>Buzzwole is a legendary Ultra Beast with incredible strength and the ability to bulk up its muscles during battles.</p>
+        <hr>
+    </div>
+    
+    
+    <div id="hemiptera-popup" class="insect-popup">
+        <span class="insect-close-button" onclick="hidePopup('hemiptera')">X</span>
+        <h2>Order: Hemiptera</h2>
+        
+        <h3>Family: Gerridae and Fulgoridae</h3>
+        <p>The Gerridae and Fulgoridae families belong to the order Hemiptera, which includes true bugs. In the Pokémon world, Surskit evolves into Masquerain. Surskit is a Water/Bug-type Pokémon known for its ability to glide effortlessly on water's surface using its specialized feet. Masquerain retains this ability and gains additional capabilities, resembling an elegant insect with unique wing patterns.</p>
+        <hr>
+        <img src="https://projectpokemon.org/images/normal-sprite/surskit.gif">
+        <img src="https://projectpokemon.org/images/normal-sprite/masquerain.gif">
+        <p>Surskit and Masquerain are members of the Gerridae and Fulgoridae families, respectively, showcasing the diversity and adaptability of insects in the Pokémon world.</p>
+        <hr>
+    
+        <h3>Family: Cicadidae</h3>
+        <p>The Cicadidae family consists of cicadas, known for their distinct buzzing sound produced by males to attract mates. Cicadas are famous for their unique life cycle, spending most of their lives underground as nymphs before emerging as adults, often in synchronized mass emergences known as "brood years" or "cicada emergences." These events, which can occur every 13 or 17 years depending on the species, capture the fascination of scientists and enthusiasts alike.</p>
+        <hr>
+        <img src="https://projectpokemon.org/images/normal-sprite/nincada.gif">
+        <img src="https://projectpokemon.org/images/normal-sprite/ninjask.gif">
+        <img src="https://projectpokemon.org/images/normal-sprite/shedinja.gif">
+        <p>Nincada, Ninjask, and Shedinja showcase the life cycle of cicadas within the Cicadidae family, demonstrating the resilience and adaptability of these fascinating insects.</p>
+        <hr>
+        <img src="https://projectpokemon.org/images/normal-sprite/paras.gif">
+        <img src="https://projectpokemon.org/images/normal-sprite/parasect.gif">
+        <p>Paras and Parasect exemplify the parasitic relationship between fungi and insects in the Cicadidae family, showcasing the unique and often complex interactions found in nature.</p>
+        <hr>
+    </div>
+    
+    
+    <div id="hymenoptera-popup" class="insect-popup">
+        <span class="insect-close-button" onclick="hidePopup('hymenoptera')">X</span>
+        <h2>Order: Hymenoptera</h2>
+    
+        <h3>Family: Tenthredinidae</h3>
+        <p>The Tenthredinidae family consists of sawflies, named for the saw-like ovipositor females use to cut into plants to lay their eggs. In the Pokémon world, Weedle evolves into Kakuna and then into Beedrill.</p>
+        <hr>
+        <img src="https://projectpokemon.org/images/normal-sprite/weedle.gif">
+        <img src="https://projectpokemon.org/images/normal-sprite/kakuna.gif">
+        <img src="https://projectpokemon.org/images/normal-sprite/beedrill.gif">
+        <p>The evolutionary line of Weedle, Kakuna, and Beedrill exemplifies the life cycle and defensive adaptations of sawflies in the Tenthredinidae family.</p>
+        <hr>
+    
+        <h3>Family: Apidae</h3>
+        <p>The Apidae family consists of bees, essential pollinators crucial for ecosystems and agriculture. In the Pokémon world, Combee evolves into Vespiquen, but only females can evolve. Combee is a Bug/Flying-type Pokémon known for its three-member hive structure. Vespiquen, the evolved form, is a Bug/Flying-type Pokémon known for its role as a queen bee, commanding an army of Combee. It's a symbol of leadership and strength among bee Pokémon.</p>
+        <hr>
+        <img src="https://projectpokemon.org/images/normal-sprite/combee.gif">
+        <img src="https://projectpokemon.org/images/normal-sprite/vespiquen.gif">
+        <p>Combee and Vespiquen demonstrate the social structure and cooperation seen in bee colonies, reflecting the importance of teamwork in the Apidae family.</p>
+        <hr>
+    
+        <h3>Family: Formicidae</h3>
+        <p>The Formicidae family consists of ants, known for their social organization and industrious nature. In the Pokémon world, Durant is a representation of ants. Durant is a Bug/Steel-type Pokémon known for its colony behavior and steel-hard exoskeleton. It often works together with its colony members to defend its territory and gather food, showcasing the teamwork and resilience of ants in the Formicidae family.</p>
+        <hr>
+        <img src="https://projectpokemon.org/images/normal-sprite/durant.gif">
+        <p>Durant serves as a reminder of the strength and unity found in ant colonies, highlighting the importance of cooperation in the Formicidae family.</p>
+        <hr>
+    </div>
+    
+    
+    <div id="lepidoptera-popup" class="insect-popup">
+        <span class="insect-close-button" onclick="hidePopup('lepidoptera')">X</span>
+        <h2>Order: Lepidoptera</h2>
+        
+        <h3>Family: Papilionidae</h3>
+        <p>The Papilionidae family includes species commonly known as swallowtail butterflies. In the Pokémon world, Caterpie evolves into Metapod and then into Butterfree. Caterpie is a Bug-type Pokémon often found nibbling on leaves, while Metapod, its cocoon stage, is known for its hard shell, providing protection while it undergoes metamorphosis. Butterfree, the final evolution, is a majestic Bug/Flying-type Pokémon known for its graceful flight and the ability to release a fine powder that causes sleep.</p>
+        <hr>
+        <img src="https://projectpokemon.org/images/normal-sprite/caterpie.gif">
+        <img src="https://projectpokemon.org/images/normal-sprite/metapod.gif">
+        <img src="https://projectpokemon.org/images/normal-sprite/butterfree.gif">
+        <p>Caterpie, Metapod, and Butterfree represent the life cycle of butterflies in the Papilionidae family, showcasing the beauty and wonder of nature.</p>
+        <hr>
+    
+        <h3>Family: Geometridae and Arctiidae</h3>
+        <p>The Geometridae and Arctiidae families consist of moth species known for their diverse appearances and patterns. In the Pokémon world, Venonat evolves into Venomoth. Venonat is a Bug/Poison-type Pokémon with large, compound eyes and soft fur, resembling a moth in its early stages. As it evolves into Venomoth, it gains wings and becomes more moth-like, retaining its Bug/Poison typing.</p>
+        <hr>
+        <img src="https://projectpokemon.org/images/normal-sprite/venonat.gif">
+        <img src="https://projectpokemon.org/images/normal-sprite/venomoth.gif">
+        <p>Venonat and Venomoth exemplify the diversity of moth species found in the Geometridae and Arctiidae families, showcasing the intricate patterns and adaptations seen in these fascinating insects.</p>
+        <hr>
+    
+        <h3>Family: Riodinidae</h3>
+        <p>The Riodinidae family consists of small, brightly colored butterflies known for their striking appearance. In the Pokémon world, Scatterbug evolves into Spewpa and then into Vivillon. Scatterbug is a Bug-type Pokémon often found clinging to trees, resembling a caterpillar in its early stages. As it evolves into Spewpa, it gains a protective cocoon-like shell. Finally, it evolves into Vivillon, a Bug/Flying-type Pokémon known for its colorful wing patterns, which vary based on the geographic location where it was hatched.</p>
+        <hr>
+        <img src="https://projectpokemon.org/images/normal-sprite/scatterbug.gif">
+        <img src="https://projectpokemon.org/images/normal-sprite/spewpa.gif">
+        <img src="https://projectpokemon.org/images/normal-sprite/vivillon.gif">
+        <p>Scatterbug, Spewpa, and Vivillon showcase the life cycle and regional diversity of butterflies within the Riodinidae family, demonstrating the beauty and adaptability of these enchanting insects.</p>
+        <hr>
+    
+        <h3>Family: Psychidae</h3>
+        <p>The Psychidae family consists of bagworm moths known for their unique method of protection. In the Pokémon world, Pineco evolves into Forretress. Pineco is a Bug-type Pokémon that resembles a pinecone and constructs a protective shell using silk and leaves. As it evolves into Forretress, it becomes a sturdy Bug/Steel-type Pokémon enclosed in a durable steel shell, resembling the fortress-like cocoons spun by bagworm moths.</p>
+        <hr>
+        <img src="https://projectpokemon.org/images/normal-sprite/pineco.gif">
+        <img src="https://projectpokemon.org/images/normal-sprite/forretress.gif">
+        <p>Pineco and Forretress exemplify the protective adaptations seen in bagworm moths within the Psychidae family, showcasing the ingenuity and resilience of these remarkable insects.</p>
+        <hr>
+    
+        <h3>Family: Nymphalidae</h3>
+        <p>The Nymphalidae family includes a diverse array of butterflies known for their vibrant colors and patterns. In the Pokémon world, Wurmple evolves into Silcoon and then into Beautifly. Wurmple is a Bug-type Pokémon resembling a caterpillar, often found munching on leaves. As it evolves into Silcoon, it spins a silk cocoon for protection. Finally, it emerges as Beautifly, a graceful Bug/Flying-type Pokémon known for its elegant flight and beautiful wing patterns.</p>
+        <hr>
+        <img src="https://projectpokemon.org/images/normal-sprite/wurmple.gif">
+        <img src="https://projectpokemon.org/images/normal-sprite/silcoon.gif">
+        <img src="https://projectpokemon.org/images/normal-sprite/beautifly.gif">
+        <p>Wurmple, Silcoon, and Beautifly showcase the life cycle and dazzling beauty of butterflies within the Nymphalidae family, highlighting the diversity and splendor of these enchanting insects.</p>
+        <hr>
+    
+        <h3>Family: Saturniidae</h3>
+        <p>The Saturniidae family consists of large and colorful moths known for their robust bodies and intricate wing patterns. In the Pokémon world, Wurmple evolves into Cascoon and then into Dustox. Wurmple is a Bug-type Pokémon resembling a caterpillar, often found crawling on the ground in search of food. As it evolves into Cascoon, it spins a sturdy cocoon for protection. Finally, it emerges as Dustox, a formidable Bug/Poison-type Pokémon with vibrant wing patterns and the ability to release toxic dust from its wings.</p>
+        <hr>
+        <img src="https://projectpokemon.org/images/normal-sprite/wurmple.gif">
+        <img src="https://projectpokemon.org/images/normal-sprite/cascoon.gif">
+        <img src="https://projectpokemon.org/images/normal-sprite/dustox.gif">
+        <p>Wurmple, Cascoon, and Dustox exemplify the metamorphosis and resilience seen in moths within the Saturniidae family, showcasing the beauty and adaptability of these majestic insects.</p>
+        <hr>
+
+        <img src="https://projectpokemon.org/images/normal-sprite/larvesta.gif">
+        <img src="https://projectpokemon.org/images/normal-sprite/volcarona.gif">
+        <p>Larvesta and Volcarona showcase the majestic and powerful nature of moths within the Saturniidae family, symbolizing resilience and transformation.</p>
+        <hr>
+</div>
+
+    </div>
+    
+    <div id="mantodea-popup" class="insect-popup">
+        <span class="insect-close-button" onclick="hidePopup('mantodea')">X</span>
+        <h2>Order: Mantodea</h2>
+        
+        <h3>Family: Mantidae</h3>
+        <p>The Mantidae family comprises praying mantises, known for their distinctive appearance and predatory behavior.</p>
+        <hr>
+        <img src="https://projectpokemon.org/images/normal-sprite/scyther.gif">
+        <img src="https://projectpokemon.org/images/normal-sprite/scizor.gif">
+        <p>Scyther and Scizor embody the agility and ferocity of mantises, showcasing their strength and adaptability in combat.</p>    
+        <hr>
+        <img src="https://projectpokemon.org/images/normal-sprite/fomantis.gif">
+        <img src="https://projectpokemon.org/images/normal-sprite/lurantis.gif">
+        <p>Fomantis and Lurantis symbolize the elegance and strength of mantises within the Mantidae family, showcasing their beauty and prowess in the natural world.</p>
+        <hr>
+    </div>
+    
+    
+    <div id="neuroptera-popup" class="insect-popup">
+        <span class="insect-close-button" onclick="hidePopup('neuroptera')">X</span>
+        <h2>Order: Neuroptera</h2>
+        
+        <h3>Family: Myrmeleontidae</h3>
+        <p>The Myrmeleontidae family consists of insects commonly known as antlions, characterized by their unique larval form that constructs pit traps to capture prey.</p>
+        <hr>
+        <img src="https://projectpokemon.org/images/normal-sprite/trapinch.gif">
+        <img src="https://projectpokemon.org/images/normal-sprite/vibrava.gif">
+        <img src="https://projectpokemon.org/images/normal-sprite/flygon.gif">
+        <p>Trapinch, Vibrava, and Flygon embody the stealth and power of antlions within the Myrmeleontidae family, showcasing their adaptability and strength in the Pokémon world.</p>
+        <hr>
+    </div>
+    
+    
+    <div id="odonata-popup" class="insect-popup">
+        <span class="insect-close-button" onclick="hidePopup('odonata')">X</span>
+        <h2>Order: Odonata</h2>
+        
+        <h3>Family: Libellulidae and Aeshnidae</h3>
+        <p>The Odonata order comprises dragonflies and damselflies, with representatives from families such as Libellulidae and Aeshnidae. In the Pokémon world, this order is represented by Yanma and Yanmega. Yanma, resembling a dragonfly, evolves into Yanmega, a powerful Bug/Flying-type Pokémon.</p>
+        <hr>
+        <img src="https://projectpokemon.org/images/normal-sprite/yanma.gif">
+        <img src="https://projectpokemon.org/images/normal-sprite/yanmega.gif">
+        <p>Yanma and Yanmega exemplify the grace and prowess of dragonflies within the Odonata order, showcasing their aerial superiority and remarkable abilities in battles.</p>
+        <hr>
+    </div>
+    
+    
+    <div id="orthoptera-popup" class="insect-popup">
+        <span class="insect-close-button" onclick="hidePopup('orthoptera')">X</span>
+        <h2>Order: Orthoptera</h2>
+        <h3>Family: Gryllidae</h3>
+        <p>The Gryllidae family consists of crickets, known for their distinctive chirping sound produced by males to attract mates. In the Pokémon world, this family is represented by Kricketot and Kricketune. Kricketot, resembling a cricket, evolves into Kricketune.</p>
+        <hr>
+        <img src="https://projectpokemon.org/images/normal-sprite/kricketot.gif">
+        <img src="https://projectpokemon.org/images/normal-sprite/kricketune.gif">
+        <p>Kricketot and Kricketune symbolize the enchanting sounds and resilience of crickets within the Gryllidae family, showcasing their musical abilities and adaptability in the Pokémon world.</p>
+        <hr>
+    </div>
+    
+    
+    <div id="phasmatodea-popup" class="insect-popup">
+        <span class="insect-close-button" onclick="hidePopup('phasmatodea')">X</span>
+        <h2>Order: Phasmatodea</h2>
+        
+        <h3>Family: Tortricidae, Hesperiidae, and Phylliidae</h3>
+        <p>The Phasmatodea order encompasses various families, including Tortricidae, Hesperiidae, and Phylliidae, which consist of insects such as leaf insects and moths. In the Pokémon world, this order is represented by Sewaddle, Swadloon, and Leavanny. Sewaddle, resembling a caterpillar or a leaf insect larva, evolves into Swadloon, a cocoon-like Pokémon that later evolves into Leavanny.</p>
+        <hr>
+        <img src="https://projectpokemon.org/images/normal-sprite/sewaddle.gif">
+        <img src="https://projectpokemon.org/images/normal-sprite/swadloon.gif">
+        <img src="https://projectpokemon.org/images/normal-sprite/leavanny.gif">
+        <p>Sewaddle, Swadloon, and Leavanny embody the camouflage and adaptability of leaf insects and moths within the Phasmatodea order, showcasing their resilience and resourcefulness in the Pokémon world.</p>
+        <hr>
+
+
+    </div>
+
+    <div id="blattodea-popup" class="insect-popup">
+        <span class="insect-close-button" onclick="hidePopup('blattodea')">X</span>
+        <h2>Order: Blattodea</h2>
+        
+        <h3>Family: Blattidae</h3>
+        <p>The Blattidae family consists of cockroaches, known for their resilience and adaptability to various environments. In the Pokémon world, this family is represented by Pheromosa. Pheromosa is an Ultra Beast, a Bug/Fighting-type Pokémon characterized by its incredible speed and agility, reminiscent of the swift movements of cockroaches.</p>
+        <hr>
+        <img src="https://projectpokemon.org/images/normal-sprite/pheromosa.gif">
+        <p>Pheromosa epitomizes the agility and tenacity of cockroaches within the Blattidae family, showcasing its remarkable speed and combat prowess in battles.</p>
+        <hr>
+    </div>
+    
+
+
+
+    <div class="credits">
+        <h3>Website designed by Gohar Shinwari</3>
+        <h3>Information and Sources: https://jgeekstudies.org/2018/10/12/entomological-diversity-of-pokemon/comment-page-1/</h3>
+    </div>
+    
+</body>
+<script src="script.js"></script>
+</html>
